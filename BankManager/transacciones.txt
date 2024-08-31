@@ -1,0 +1,23 @@
+Caja: Caja Preferencial, Cliente: Sergio Rudin, ID: 1, Hora Creación: 2024-08-22T19:05:43.187400700, Hora Atención: 2024-08-22T19:05:43.187400700
+Caja: Caja Rápida, Cliente: Javier Garita, ID: 2, Hora Creación: 2024-08-22T19:05:58.318898900, Hora Atención: 2024-08-22T19:05:58.318898900
+Caja: Caja 1, Cliente: Steven Barrantes, ID: 3, Hora Creación: 2024-08-22T19:06:04.084736700, Hora Atención: 2024-08-22T19:06:09.494767100
+Caja: Caja Preferencial, Cliente: Sergio Rudin, ID: 1, Hora Creación: 2024-08-23T19:02:40.877296300, Hora Atención: 2024-08-23T19:02:40.877296300
+Caja: Caja Rápida, Cliente: Javier Garita, ID: 2, Hora Creación: 2024-08-23T19:02:43.415996800, Hora Atención: 2024-08-23T19:02:43.415996800
+Caja: Caja 1, Cliente: Steven Barrantes, ID: 3, Hora Creación: 2024-08-23T19:02:43.797598800, Hora Atención: 2024-08-23T19:02:44.030913700
+Caja: Caja Rápida, Cliente: Texto1, ID: Texto2, Hora Creación: 2024-08-23T19:20:57.143566800, Hora Atención: 2024-08-23T19:20:57.143566800
+Caja: Caja Rápida, Cliente: Texto1, ID: Texto2, Hora Creación: 2024-08-23T19:21:19.484382800, Hora Atención: 2024-08-23T19:21:19.485383
+Caja: Caja Rápida, Cliente: Texto1, ID: Texto2, Hora Creación: 2024-08-23T19:21:47.462138300, Hora Atención: 2024-08-23T19:21:47.462138300
+Caja: Caja Rápida, Cliente: Texto1, ID: Texto2, Hora Creación: 2024-08-23T19:22:06.307813700, Hora Atención: 2024-08-23T19:22:06.307813700
+Caja: Caja 1, Cliente: 5, ID: Texto2, Hora Creación: 2024-08-23T19:24:06.107465, Hora Atención: 2024-08-23T19:24:12.385324100
+Caja: Caja Preferencial, Cliente: sergio, ID: Texto2, Hora Creación: 2024-08-27T09:41:24.195826, Hora Atención: 2024-08-27T09:41:24.195826
+Caja: Caja 1, Cliente: steven, ID: Texto2, Hora Creación: 2024-08-27T09:41:46.576840, Hora Atención: 2024-08-27T09:42:01.093237800
+Caja: Caja 1, Cliente: sergio, ID: Texto2, Hora Creación: 2024-08-27T09:44:44.961108300, Hora Atención: 2024-08-27T09:44:48.771857500
+Caja: Caja 1, Cliente: sergio, ID: Texto2, Hora Creación: 2024-08-27T09:49:30.031751700, Hora Atención: 2024-08-27T09:49:40.047332400
+Caja: Caja 1, Cliente: sergio2, ID: Texto2, Hora Creación: 2024-08-28T19:15:03.630130100, Hora Atención: 2024-08-28T19:15:12.079542300
+Caja: Caja Rápida, Cliente: jazmin, ID: Texto2, Hora Creación: 2024-08-28T19:15:38.982522400, Hora Atención: 2024-08-28T19:15:38.982522400
+Caja: Caja 1, Cliente: hoal, ID: Texto2, Hora Creación: 2024-08-28T19:16:21.144342200, Hora Atención: 2024-08-28T19:16:33.365647400
+Caja: Caja 1, Cliente: jjjj, ID: Texto2, Hora Creación: 2024-08-28T19:18:04.509230900, Hora Atención: 2024-08-28T19:18:16.314350100
+Caja: Caja 1, Cliente: jhl, ID: Texto2, Hora Creación: 2024-08-28T19:33:12.503220600, Hora Atención: 2024-08-28T19:33:17.243591700
+Caja: Caja 1, Cliente: elsa, ID: 6, Hora Creación: 2024-08-28T19:43:08.582851100, Hora Atención: 2024-08-28T19:43:13.221875
+Caja: Caja 1, Cliente: prueba1, ID: 7, Hora Creación: 2024-08-28T19:47:31.076971600, Hora Atención: 2024-08-28T19:47:41.211481700
+Caja: Caja 1, Cliente: asd, ID: 84, Hora Creación: 2024-08-30T23:06:43.719351900, Hora Atención: 2024-08-30T23:06:46.732569900

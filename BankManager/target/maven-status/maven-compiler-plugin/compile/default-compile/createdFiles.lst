@@ -1,0 +1,7 @@
+com\mycompany\BankManager\SistemaBanco.class
+com\mycompany\BankManager\ColaClientes.class
+com\mycompany\BankManager\ConfiguracionBanco.class
+com\mycompany\BankManager\WebScraper.class
+com\mycompany\BankManager\Registro.class
+com\mycompany\BankManager\BankManager.class
+com\mycompany\BankManager\NodoCliente.class

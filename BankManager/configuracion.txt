@@ -1,0 +1,5 @@
+Nombre del Banco: BAC
+Cantidad de Cajas: 5
+Caja Preferencial: 1
+Caja Rápida: 1
+Cajas Regulares: 3
