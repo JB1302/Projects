@@ -1,14 +1,14 @@
 package net.testing.backendTests.models.responses;
 
 public class UserRest {
-  private String userId,firstName,lastname,email;
+  private String userId,firstname,lastname,email;
 
   public String getFirstName() {
-    return firstName;
+    return firstname;
   }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
+  public void setFirstName(String firstname) {
+    this.firstname = firstname;
   }
 
   public String getLastname() {

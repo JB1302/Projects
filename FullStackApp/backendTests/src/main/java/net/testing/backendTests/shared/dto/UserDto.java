@@ -6,19 +6,21 @@ public class UserDto implements Serializable{
 
   private static final long serialVersionUID = 1L;
 
-  private String firstName,lastname,email,password;
+  private String firstname,lastname,email,password;
 
   //Añadidos
   private long id;
   private String userId;
   private String encryptedPassword;
   
-  public String getFirstName() {
-    return firstName;
-  }
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+  public String getFirstname() {
+    return firstname;
+}
+
+public void setFirstname(String firstname) {
+    this.firstname = firstname;
+}
+
   public String getLastname() {
     return lastname;
   }

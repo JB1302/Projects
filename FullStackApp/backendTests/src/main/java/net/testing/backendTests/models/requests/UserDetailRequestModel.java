@@ -2,14 +2,15 @@ package net.testing.backendTests.models.requests;
 
 public class UserDetailRequestModel {
 
-  private String firstName,lastname,email,password;
+  private String firstname;
+  private String lastname,email,password;
 
-  public String getFirstName() {
-    return firstName;
+  public String getfirstname() {
+    return firstname;
   }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
+  public void setfirstname(String firstname) {
+    this.firstname = firstname;
   }
 
   public String getLastname() {
