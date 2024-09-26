@@ -27,5 +27,14 @@ public class UserRest {
     this.email = email;
   }
 
+  public String getUserId() {
+    return userId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
+  
 
 }
