@@ -1,7 +1,7 @@
 package net.testing.backendTests.controllers;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import net.testing.backendTests.models.requests.UserDetailRequestModel;
 import net.testing.backendTests.models.responses.UserRest;
+import net.testing.backendTests.services.UserServiceInterface;
 import net.testing.backendTests.shared.dto.UserDto;
 
 @RestController //Definir como controlador
 @RequestMapping ("/users")  //localhost:8080/users
 public class UserController {
+
+  @Autowired
+  UserServiceInterface userService;
 
   @GetMapping //Definir la ruta del Getter
   public String getUser(){
