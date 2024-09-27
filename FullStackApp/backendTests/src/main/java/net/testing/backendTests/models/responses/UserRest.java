@@ -1,40 +1,41 @@
 package net.testing.backendTests.models.responses;
 
 public class UserRest {
-  private String userId,firstname,lastname,email;
+    private String userId;
+    private String firstname; // Asegúrate de que este campo esté presente
+    private String lastname;
+    private String email;
 
-  public String getFirstName() {
-    return firstname;
-  }
+    // Getters y Setters
+    public String getUserId() {
+        return userId;
+    }
 
-  public void setFirstName(String firstname) {
-    this.firstname = firstname;
-  }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
-  public String getLastname() {
-    return lastname;
-  }
+    public String getFirstname() {
+        return firstname;
+    }
 
-  public void setLastname(String lastname) {
-    this.lastname = lastname;
-  }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public String getLastname() {
+        return lastname;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
-  public String getUserId() {
-    return userId;
-  }
+    public String getEmail() {
+        return email;
+    }
 
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
-
-  
-
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

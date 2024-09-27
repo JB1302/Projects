@@ -2,62 +2,72 @@ package net.testing.backendTests.shared.dto;
 
 import java.io.Serializable;
 
-public class UserDto implements Serializable{
+public class UserDto implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  private String firstname,lastname,email,password;
+    private String firstname, lastname, email, password;
 
-  //Añadidos
-  private long id;
-  private String userId;
-  private String encryptedPassword;
-  
-  public String getFirstname() {
-    return firstname;
-}
+    // Añadidos
+    private long id;
+    private String userId;
+    private String encryptedPassword;
 
-public void setFirstname(String firstname) {
-    this.firstname = firstname;
-}
+    public String getFirstname() {
+        return firstname; // Getter correcto
+    }
 
-  public String getLastname() {
-    return lastname;
-  }
-  public void setLastname(String lastname) {
-    this.lastname = lastname;
-  }
-  public String getEmail() {
-    return email;
-  }
-  public void setEmail(String email) {
-    this.email = email;
-  }
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
-  }
-  public long getId() {
-    return id;
-  }
-  public void setId(long id) {
-    this.id = id;
-  }
-  public String getUserId() {
-    return userId;
-  }
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
-  public String getEncryptedPassword() {
-    return encryptedPassword;
-  }
-  public void setEncryptedPassword(String encryptedPassword) {
-    this.encryptedPassword = encryptedPassword;
-  }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname; // Setter correcto
+    }
 
-  //Datos adicionales futuros:
-  
+    public String getLastname() {
+        return lastname; // Getter correcto
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname; // Setter correcto
+    }
+
+    public String getEmail() {
+        return email; // Getter correcto
+    }
+
+    public void setEmail(String email) {
+        this.email = email; // Setter correcto
+    }
+
+    public String getPassword() {
+        return password; // Getter correcto
+    }
+
+    public void setPassword(String password) {
+        this.password = password; // Setter correcto
+    }
+
+    public long getId() {
+        return id; // Getter correcto
+    }
+
+    public void setId(long id) {
+        this.id = id; // Setter correcto
+    }
+
+    public String getUserId() {
+        return userId; // Getter correcto
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId; // Setter correcto
+    }
+
+    public String getEncryptedPassword() {
+        return encryptedPassword; // Getter correcto
+    }
+
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword; // Setter correcto
+    }
+
+    // Datos adicionales futuros:
 }

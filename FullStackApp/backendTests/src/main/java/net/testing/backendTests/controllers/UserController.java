@@ -25,23 +25,27 @@ public class UserController {
     return "get User Details";
   }
 
-  @PostMapping //Crear un nuevo usuario desde JSON a Java
-  public UserRest createUser(@RequestBody UserDetailRequestModel userDetails){
-    
-    //Crear un nuevo objeto UserRest para devolver al cliente
-    UserRest userToReturn = new UserRest();
-    //Data transfer object (DTO) para transferir datos de usuario
-    UserDto userDto = new UserDto();
-    //Copiar datos del usuario del RequestModel al DTO
-    BeanUtils.copyProperties(userDetails, userDto);
-    //Crear el usuario en la base de datos
-    UserDto createdUser = userService.createUser(userDto);
-    //Transferir los datos del usuario creado al objecto REST que se devolvera
-    BeanUtils.copyProperties(createdUser, userToReturn);
-
-    //Devolvemos el usauario al cliente
-    return userToReturn;
+  @PostMapping // Crear un nuevo usuario desde JSON a Java
+  public UserRest createUser(@RequestBody UserDetailRequestModel userDetails) {
+      // Crear un nuevo objeto UserRest para devolver al cliente
+      UserRest userToReturn = new UserRest();
+      
+      // Data transfer object (DTO) para transferir datos de usuario
+      UserDto userDto = new UserDto();
+      
+      // Copiar datos del usuario del RequestModel al DTO
+      BeanUtils.copyProperties(userDetails, userDto);
+      
+      // Crear el usuario en la base de datos
+      UserDto createdUser = userService.createUser(userDto);
+      
+      // Transferir los datos del usuario creado al objeto REST que se devolverá
+      BeanUtils.copyProperties(createdUser, userToReturn);
+  
+      // Devolvemos el usuario al cliente
+      return userToReturn;
   }
+  
 
 }
 
