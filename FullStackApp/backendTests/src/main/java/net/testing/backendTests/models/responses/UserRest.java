@@ -2,7 +2,7 @@ package net.testing.backendTests.models.responses;
 
 public class UserRest {
     private String userId;
-    private String firstname; // Asegúrate de que este campo esté presente
+    private String firstname; 
     private String lastname;
     private String email;
 
