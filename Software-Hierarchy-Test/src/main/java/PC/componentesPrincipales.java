@@ -1,6 +1,7 @@
 package PC;
 
 import PC.Apps.InstalledApplications.installWiz;
+import PC.Apps.InstalledApplications.AntiVirus;
 
 //Nivel 1
 public class componentesPrincipales {
@@ -87,6 +88,18 @@ public class componentesPrincipales {
         }else{
             System.out.println("La aplicación no se encuentra instalada");
         }
+
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - -");
+
+        AntiVirus RedNote = new AntiVirus();
+        RedNote.checkVirus(3,2);
+
+        if (RedNote.checkApp()){
+            System.out.println("Favor eliminar el programa para prevenir perdida de información");
+        }
+
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - -");
+
 
     }
 }

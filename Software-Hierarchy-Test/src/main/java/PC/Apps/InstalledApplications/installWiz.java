@@ -16,7 +16,6 @@ public class installWiz extends AppManager {
         this.appFile = new File(folderPath, appName + ".java");
     }
 
-
     @Override
     public boolean checkApp() {
         return appFile.exists();
