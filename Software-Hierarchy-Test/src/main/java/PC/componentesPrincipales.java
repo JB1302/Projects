@@ -1,5 +1,7 @@
 package PC;
 
+import PC.Apps.InstalledApplications.installWiz;
+
 //Nivel 1
 public class componentesPrincipales {
     // Definir variables
@@ -7,6 +9,9 @@ public class componentesPrincipales {
     private String CPU;
     private int RAM;
     final String ipAddress = "192.168.45.123";
+
+    public componentesPrincipales() {
+    }
 
     // Constructor base de componentes
     public componentesPrincipales(String hostName, String CPU, int RAM) {
@@ -74,6 +79,14 @@ public class componentesPrincipales {
         software2.mostrarConfiguracionDeSoftware();
 
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - -");
+
+        installWiz Teams = new installWiz("Teams");
+
+        if (Teams.checkApp()){
+            System.out.println("La aplicación ya se encuentra instalada");
+        }else{
+            System.out.println("La aplicación no se encuentra instalada");
+        }
 
     }
 }
