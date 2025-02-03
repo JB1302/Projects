@@ -2,6 +2,9 @@ package PC;
 
 import PC.Apps.InstalledApplications.installWiz;
 import PC.Apps.InstalledApplications.AntiVirus;
+import PC.Apps.userManager;
+import PC.Apps.users.Admin;
+import PC.Apps.users.Guest;
 
 //Nivel 1
 public class componentesPrincipales {
@@ -99,6 +102,16 @@ public class componentesPrincipales {
         }
 
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - -");
+
+        userManager login = new Admin();
+        userManager Guest = new Guest();
+
+        login.login("admin","1234");
+        Guest.login("1234","1234");
+
+
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - -");
+
 
 
     }
