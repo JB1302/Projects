@@ -6,7 +6,8 @@ import java.util.Date;
 
 public class Transaccion {
 
-
+    // Variable para almacenar el capital (saldo) actual
+    private double capitalActual = 1500.0;
 
     private double monto;
     private String descripcion;
@@ -25,6 +26,8 @@ public class Transaccion {
     }
 
     HashMap<Integer,RegistroTransaccion> baseDeDatos = new HashMap<>();
+
+
 
     public double getMonto() {
         return monto;
@@ -49,6 +52,14 @@ public class Transaccion {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public Transaccion(){
+        Date fechaHoraActual = new Date();
+        String fechaString = fechaHoraActual.toString();
+        // Insertamos una transacción inicial con ID 1 que representa el capital base
+        baseDeDatos.put(1, new RegistroTransaccion(1500.0, "Capital Base", fechaString));
+    }
+
 
     public double calcularImpuestos(double monto, double impuesto){
 
