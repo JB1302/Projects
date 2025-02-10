@@ -1,10 +1,9 @@
 package TransactionManager;
-
 import java.util.Map;
-import java.util.HashMap;
+import menu.Menu;
 import java.util.Date;
 
-public class Transaccion {
+public abstract class Transaccion extends Menu {
 
     // Variable para almacenar el capital (saldo) actual
     private double capitalActual = 1500.0;
@@ -25,7 +24,7 @@ public class Transaccion {
          }
     }
 
-    HashMap<Integer,RegistroTransaccion> baseDeDatos = new HashMap<>();
+
 
 
 
@@ -61,9 +60,10 @@ public class Transaccion {
     }
 
 
-    public double calcularImpuestos(double monto, double impuesto){
+    public double calcularImpuestos(double monto){
 
-        double impuestosCalculados = 0;
+        double impuesto = 16.0;
+        double impuestosCalculados = monto *  impuesto;
 
         return impuestosCalculados;
     }
