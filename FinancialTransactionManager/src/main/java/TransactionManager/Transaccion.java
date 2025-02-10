@@ -60,12 +60,13 @@ public abstract class Transaccion extends Menu {
     }
 
 
-    public double calcularImpuestos(double monto) {
+    public void calcularImpuestos(double monto) {
 
         double impuesto = 0.16;
         double impuestosCalculados = monto * impuesto;
 
-        return impuestosCalculados;
+        System.out.printf("\nEl impuesto de Transaccion es de : $%.1f", impuestosCalculados);
+
     }
 
     public void procesarTransacción(double monto, String descripcion) {

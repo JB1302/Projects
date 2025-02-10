@@ -10,7 +10,9 @@ public class Menu {
     public static HashMap<Integer, Transaccion.RegistroTransaccion> baseDeDatos = new HashMap<>();
 
     public static void main(String[] args) {
-        Transaccion transaccion = new Transaccion() {};
+        Transaccion transaccion = new Transaccion() {
+        };
+        Ingreso ingreso = new Ingreso();
 
         // Procesamos la transacción
         transaccion.procesarTransacción(500, "Sinpe");
@@ -21,12 +23,9 @@ public class Menu {
 
         transaccion.mostrarTransacciones();
 
-        double impuestoCalculado_Transaccion = transaccion.calcularImpuestos(150.00);
-        System.out.printf("\nEl impuesto calculado es de : $%.1f", impuestoCalculado_Transaccion);
+        transaccion.calcularImpuestos(150);
 
-        Ingreso ingreso = new Ingreso();
-        double impuestoCalculado_Ingreso = ingreso.calcularImpuestos(150.00);
-        System.out.printf("\nEl impuesto calculado es de : $%.1f", impuestoCalculado_Ingreso);
+        ingreso.calcularImpuestos(150);
 
 
     }
