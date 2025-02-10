@@ -1,6 +1,9 @@
 package TransactionManager;
+
 import java.util.Map;
+
 import menu.Menu;
+
 import java.util.Date;
 
 public abstract class Transaccion extends Menu {
@@ -17,15 +20,12 @@ public abstract class Transaccion extends Menu {
         private String descripcion;
         private String fecha;
 
-        public RegistroTransaccion(double monto, String descripcion, String fecha){
+        public RegistroTransaccion(double monto, String descripcion, String fecha) {
             this.monto = monto;
             this.descripcion = descripcion;
             this.fecha = fecha;
-         }
+        }
     }
-
-
-
 
 
     public double getMonto() {
@@ -52,7 +52,7 @@ public abstract class Transaccion extends Menu {
         this.fecha = fecha;
     }
 
-    public Transaccion(){
+    public Transaccion() {
         Date fechaHoraActual = new Date();
         String fechaString = fechaHoraActual.toString();
         // Insertamos una transacción inicial con ID 1 que representa el capital base
@@ -60,15 +60,15 @@ public abstract class Transaccion extends Menu {
     }
 
 
-    public double calcularImpuestos(double monto){
+    public double calcularImpuestos(double monto) {
 
-        double impuesto = 16.0;
-        double impuestosCalculados = monto *  impuesto;
+        double impuesto = 0.16;
+        double impuestosCalculados = monto * impuesto;
 
         return impuestosCalculados;
     }
 
-    public void procesarTransacción(double monto, String descripcion){
+    public void procesarTransacción(double monto, String descripcion) {
 
         Date fechaHoraActual = new Date();
         String fechaString = fechaHoraActual.toString();
@@ -76,7 +76,7 @@ public abstract class Transaccion extends Menu {
         // Usar un ID o contador para la clave del HashMap, por ejemplo, un contador simple
         int id = baseDeDatos.size() + 1;
 
-        baseDeDatos.put(id,new RegistroTransaccion(monto,descripcion,fechaString));
+        baseDeDatos.put(id, new RegistroTransaccion(monto, descripcion, fechaString));
 
         // Imprimir la anotación añadida
         System.out.println("Anotación añadida con ID: " + id);
