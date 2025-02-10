@@ -1,22 +1,30 @@
 package TransactionManager;
 
+import java.util.Map;
 import java.util.HashMap;
+import java.util.Date;
 
 public class Transaccion {
 
-    HashMap<Integer,String> map = new HashMap<>();
 
-    double monto;
-    String descripcion;
-    String fecha;
 
-    public String getFecha() {
-        return fecha;
+    private double monto;
+    private String descripcion;
+    private String fecha;
+
+    public class RegistroTransaccion {
+        private double monto;
+        private String descripcion;
+        private String fecha;
+
+        public RegistroTransaccion(double monto, String descripcion, String fecha){
+            this.monto = monto;
+            this.descripcion = descripcion;
+            this.fecha = fecha;
+         }
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
+    HashMap<Integer,RegistroTransaccion> baseDeDatos = new HashMap<>();
 
     public double getMonto() {
         return monto;
@@ -34,17 +42,58 @@ public class Transaccion {
         this.descripcion = descripcion;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
 
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 
-    public double calcularImpuestos(double monto){
+    public double calcularImpuestos(double monto, double impuesto){
 
-        double tax = 0.16;
-        double montoDespuesImpuesto = monto * tax;
+        double impuestosCalculados = 0;
 
-        return montoDespuesImpuesto;
+        return impuestosCalculados;
     }
 
     public void procesarTransacción(double monto, String descripcion){
 
+        Date fechaHoraActual = new Date();
+        String fechaString = fechaHoraActual.toString();
+
+        // Usar un ID o contador para la clave del HashMap, por ejemplo, un contador simple
+        int id = baseDeDatos.size() + 1;
+
+        baseDeDatos.put(id,new RegistroTransaccion(monto,descripcion,fechaString));
+
+        // Imprimir la anotación añadida
+        System.out.println("Anotación añadida con ID: " + id);
+        System.out.println("Monto: $" + monto);
+        System.out.println("Descripción: " + descripcion);
+        System.out.println("Fecha: " + fechaString);
+
     }
+
+    // Método para mostrar todas las transacciones registradas
+    public void mostrarTransacciones() {
+        if (baseDeDatos.isEmpty()) {
+            System.out.println("No hay transacciones registradas.");
+            return;
+        }
+
+        System.out.println("\nListado de Transacciones:");
+        for (Map.Entry<Integer, RegistroTransaccion> entry : baseDeDatos.entrySet()) {
+            Integer id = entry.getKey();
+            RegistroTransaccion registro = entry.getValue();
+            System.out.println("ID: " + id);
+            System.out.println("Monto: $" + registro.monto);
+            System.out.println("Descripción: " + registro.descripcion);
+            System.out.println("Fecha: " + registro.fecha);
+            System.out.println("------------");
+        }
+    }
+
+
 }
+
