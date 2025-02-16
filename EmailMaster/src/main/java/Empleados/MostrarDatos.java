@@ -1,6 +1,7 @@
 package Empleados;
 
 import Logic.EmailHandler;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +22,7 @@ public class MostrarDatos extends EmailHandler {
                     String correo = resultSet.getString("correo");
 
                     // Mostrar los datos
-                    System.out.println("\n\nEmpleado encontrado:");
+                    System.out.println("Empleado encontrado:");
                     System.out.println("Nombre: " + nombre);
                     System.out.println("Apellido: " + apellido);
                     System.out.println("Correo: " + correo);

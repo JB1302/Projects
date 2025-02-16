@@ -11,24 +11,25 @@ import java.time.LocalDate;
 public class EmailHandler extends ServerGateway {
 
 
-    public String getNombre(Integer IDnumber ){
-    String query = "Select nombre FROM empleados WHERE id = ?";
-    String nombre = "";
+    public String getNombre(Integer IDnumber) {
+        String query = "Select nombre FROM empleados WHERE id = ?";
+        String nombre = "";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)){
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, IDnumber); //Reemplazar el ID a Buscar
-            try { ResultSet resultSet = statement.executeQuery();
-                if (resultSet.next()){
-                   nombre = resultSet.getString("nombre");
-                }else{
+            try {
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    nombre = resultSet.getString("nombre");
+                } else {
                     nombre = resultSet.getString("N/a");
                 }
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 throw new RuntimeException("Error al cargar ID", e);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("No se pudo obtener el nombre", e);
-      }
+        }
         return nombre;
     }
 
@@ -36,18 +37,19 @@ public class EmailHandler extends ServerGateway {
         String query = "Select apellido FROM empleados WHERE id = ?";
         String apellido = "";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)){
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, IDnumber); //Reemplazar el ID a Buscar
-            try { ResultSet resultSet = statement.executeQuery();
-                if (resultSet.next()){
+            try {
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
                     apellido = resultSet.getString("apellido");
-                }else{
+                } else {
                     apellido = resultSet.getString("N/a");
                 }
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 throw new RuntimeException("Error al cargar el ID", e);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("No se pudo obtener el nombre", e);
         }
         return apellido;
@@ -57,28 +59,29 @@ public class EmailHandler extends ServerGateway {
         String query = "Select departamento FROM empleados WHERE id = ?";
         String posición = "";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)){
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, IDnumber); //Reemplazar el ID a Buscar
-            try { ResultSet resultSet = statement.executeQuery();
-                if (resultSet.next()){
-                    if(resultSet.getString("departamento") == null){
+            try {
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    if (resultSet.getString("departamento") == null) {
                         posición = "general";
-                    }else{
+                    } else {
                         posición = resultSet.getString("departamento");
                     }
-                }else{
+                } else {
                     posición = resultSet.getString("N/a");
                 }
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 throw new RuntimeException("Error al cargar el ID", e);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("No se pudo obtener el nombre", e);
         }
         return posición;
     }
 
-    public String generatePassword(){
+    public String generatePassword() {
         Random random = new Random();
         StringBuilder passwordGenerated = new StringBuilder();
 
@@ -95,28 +98,23 @@ public class EmailHandler extends ServerGateway {
         char randomChar3 = caracteres.charAt(random.nextInt(caracteresEspeciales.length()));
         char randomChar4 = caracteresEspeciales.charAt(random.nextInt(caracteresEspeciales.length()));
 
-        passwordGenerated.append(randomInteger1)
-                .append(randomChar1)
-                .append(randomChar4)
-                .append(fecha)
-                .append(randomChar2)
-                .append(randomChar3);
+        passwordGenerated.append(randomInteger1).append(randomChar1).append(randomChar4).append(fecha).append(randomChar2).append(randomChar3);
 
         String cleanPassword = passwordGenerated.toString();
 
-        return  cleanPassword.replaceAll("-", "");
+        return cleanPassword.replaceAll("-", "");
     }
 
 
-    public String correo(Integer ID){
+    public String correo(Integer ID) {
         EmailHandler emailHandler = new EmailHandler();
 
         String nombre = emailHandler.getNombre(ID);
         String apellido = emailHandler.getApellido(ID);
-        String departamento = (emailHandler.getDepartamento(ID)).replaceAll("\\s","");
+        String departamento = (emailHandler.getDepartamento(ID)).replaceAll("\\s", "");
         String password = emailHandler.generatePassword().replaceAll("-", "");
 
-        String correo = String.format("%s.%s@%s.StevenCo.com\n\n",nombre,apellido,departamento);
+        String correo = String.format("%s.%s@%s.StevenCo.com", nombre, apellido, departamento);
 
         return correo;
     }
