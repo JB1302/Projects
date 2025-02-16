@@ -22,37 +22,50 @@ public class CalculadoraUI extends JFrame {
     private JPanel Calculadora;
 
 
+    //Variable para almacenar numeros, por ejemplo
+    // 1 + 2 seria  12 no "1" y "2"
     private String numeroActual = "";
     private double primerOperador;
     private String operadorActual = null;
 
-
+    //Metodo para agregar Numeros basado en los botones
     private void AddDigitToNumber(String numero) {
+        //Manejar el numero total
         numeroActual += numero;
+        //Actualizar la interfaz
         Output.setText(Output.getText() + numero);
     }
 
+    //Metodo para reiniciar la operacion
     private void limpiarCalculadora() {
+        //Actualizar variables a vacio
         numeroActual = "";
         primerOperador = 0;
         operadorActual = null;
-        Output.setText(""); // Clear the output when clearing calculator
+        Output.setText("");
     }
 
-
+    //Metodo para manejar operadores
     private void setOperador(String operador) {
+        //Si el numero actual tiene un valor
         if (!numeroActual.isEmpty()) {
+            //Y el operador no es nulo
             if (operadorActual != null) {
-                // Si ya hay un operador, calcula el resultado parcial
+                // Convertir el numero actual en el segundo operador de tipo Double
                 double segundoOperador = Double.parseDouble(numeroActual);
+
+                //Swich dependiendo del operador
                 switch (operadorActual) {
                     case "+":
+                        //Sumar
                         primerOperador = primerOperador + segundoOperador;
                         break;
                     case "-":
+                        //Restar
                         primerOperador = primerOperador - segundoOperador;
                         break;
                     case "*":
+                        //Multiplicar
                         primerOperador = primerOperador * segundoOperador;
                         break;
                 }
@@ -66,34 +79,41 @@ public class CalculadoraUI extends JFrame {
         }
     }
 
-
+    //Calcular Opreación
     private void calcularResultado() {
+        //Si el operador no es nulo y el numero actual no esta vacio
         if (operadorActual != null && !numeroActual.isEmpty()) {
+            //Convertir el valor actual en un Double.
             double segundoOperador = Double.parseDouble(numeroActual);
+            //Definir variable para el resultado
             double resultado = 0;
 
+            //Manejar operadores
             switch (operadorActual) {
                 case "+":
+                    //Sumar
                     resultado = primerOperador + segundoOperador;
                     break;
                 case "-":
+                    //Restar
                     resultado = primerOperador - segundoOperador;
                     break;
                 case "*":
+                    //Multiplicar
                     resultado = primerOperador * segundoOperador;
                     break;
             }
+            //Cambiar pantalla a el resultado
             numeroActual = String.valueOf(resultado);
-            Output.setText(numeroActual);  // Update output with result
-            operadorActual = null;  // Reset operator for next calculation
+            Output.setText(numeroActual);
+            operadorActual = null;
         }
     }
 
 
-
     public CalculadoraUI() {
 
-
+        //Configurar Calculadora
         setContentPane(Calculadora);
         setTitle("Calculadora");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
