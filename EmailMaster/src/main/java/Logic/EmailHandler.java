@@ -116,7 +116,7 @@ public class EmailHandler extends ServerGateway {
         String departamento = (emailHandler.getDepartamento(ID)).replaceAll("\\s","");
         String password = emailHandler.generatePassword().replaceAll("-", "");
 
-        String correo = String.format("    %s.%s@%s.StevenCo.com\n\n",nombre,apellido,departamento);
+        String correo = String.format("%s.%s@%s.StevenCo.com\n\n",nombre,apellido,departamento);
 
         return correo;
     }

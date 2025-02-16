@@ -20,9 +20,9 @@ public class EmailTemplate extends EmailHandler{
              correo.append("\n'Se ha generado un Usuario Nuevo,\n");
              correo.append(String.format("El empleado %s %s recibira las siguientes credenciales:\n\n", nombre,apellido));
              correo.append("    Correo:\n");
+             correo.append("    ");
              correo.append(emailHandler.correo(IdToFind));
              correo.append("    Contraseña:\n");
-             correo.append("    Password:\n");
              correo.append("    ");
              correo.append(password);
              correo.append("\n\nQuedamos atentos a cualquier consulta\n");

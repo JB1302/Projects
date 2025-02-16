@@ -3,6 +3,7 @@ import Logic.EmailTemplate;
 import Server.ServerInteractions;
 import java.util.Scanner;
 import Logic.EmailHandler;
+import Empleados.MostrarDatos;
 
 public class main {
     public static void main(String[] args){
@@ -15,6 +16,7 @@ public class main {
            EmailTemplate emailTemplate = new EmailTemplate();
            ServerInteractions serverInteractions = new ServerInteractions();
            EmailHandler emailHandler = new EmailHandler();
+           MostrarDatos mostrarDatos = new MostrarDatos();
 
             String correo = emailHandler.correo(IdToFind);
             String contraseña = emailHandler.generatePassword();
@@ -25,6 +27,7 @@ public class main {
            serverInteractions.actualizarInformación("correo",correo, IdToFind);
            serverInteractions.actualizarInformación("contraseña",contraseña, IdToFind);
 
+           mostrarDatos.mostrarDatos(IdToFind);
 
 
         }catch (Exception e){
