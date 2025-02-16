@@ -7,7 +7,7 @@ public class Main {
 
         //Cargar interfaz de calculadora
         SwingUtilities.invokeLater(() -> new CalculadoraUI());
-        
+
         System.out.println("Iniciando Calculadora...");
 
     }
