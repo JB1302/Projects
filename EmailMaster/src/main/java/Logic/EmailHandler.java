@@ -11,7 +11,6 @@ import java.time.LocalDate;
 public class EmailHandler extends ServerGateway {
 
 
-
     public String getNombre(Integer IDnumber ){
     String query = "Select nombre FROM empleados WHERE id = ?";
     String nombre = "";
@@ -103,8 +102,22 @@ public class EmailHandler extends ServerGateway {
                 .append(randomChar2)
                 .append(randomChar3);
 
+        String cleanPassword = passwordGenerated.toString();
+
+        return  cleanPassword.replaceAll("-", "");
+    }
 
 
-        return  passwordGenerated.toString();
+    public String correo(Integer ID){
+        EmailHandler emailHandler = new EmailHandler();
+
+        String nombre = emailHandler.getNombre(ID);
+        String apellido = emailHandler.getApellido(ID);
+        String departamento = (emailHandler.getDepartamento(ID)).replaceAll("\\s","");
+        String password = emailHandler.generatePassword().replaceAll("-", "");
+
+        String correo = String.format("    %s.%s@%s.StevenCo.com\n\n",nombre,apellido,departamento);
+
+        return correo;
     }
 }
