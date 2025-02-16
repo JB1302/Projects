@@ -3,6 +3,7 @@ package Interfaz;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 public class CalculadoraUI extends JFrame {
     private JButton CalculadoraBTN7;
@@ -24,7 +25,13 @@ public class CalculadoraUI extends JFrame {
     private JPanel Calculadora;
 
 
+    private int contador = 0;
+    private HashMap<Integer, Integer> calculo = new HashMap<>();
+
     public CalculadoraUI(){
+
+
+
 
         setContentPane(Calculadora);
         setTitle("Calculadora");
@@ -36,35 +43,38 @@ public class CalculadoraUI extends JFrame {
         CalculadoraBTN0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 0);
+                calculo.put(contador, 0);
+                contador++;
             }
         });
 
         CalculadoraBTN1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 1);
+                calculo.put(contador, 1);
+                contador++;
             }
         });
-
         CalculadoraBTN2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 2);
+                calculo.put(contador, 2);
+                contador++;
             }
         });
 
         CalculadoraBTN3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 3);
+                calculo.put(contador, 3);
+                contador++;
             }
         });
-
         CalculadoraBTN4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 4);
+                calculo.put(contador, 4);
+                contador++;
             }
         });
 
@@ -72,31 +82,34 @@ public class CalculadoraUI extends JFrame {
         CalculadoraBTN5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 5);
+                calculo.put(contador, 5);
+                contador++;
             }
         });
+
 
 
         CalculadoraBTN6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 6);
+                calculo.put(contador, 6);
+                contador++;
             }
         });
-
 
         CalculadoraBTN7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 7);
+                calculo.put(contador, 7);
+                contador++;
             }
         });
-
 
         CalculadoraBTN8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 8);
+                calculo.put(contador, 8);
+                contador++;
             }
         });
 
@@ -104,10 +117,10 @@ public class CalculadoraUI extends JFrame {
         CalculadoraBTN9.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + 9);
+                calculo.put(contador, 9);
+                contador++;
             }
         });
-
         CalculadoraSuma.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
