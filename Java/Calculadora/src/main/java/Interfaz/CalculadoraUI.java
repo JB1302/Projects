@@ -1,9 +1,6 @@
 package Interfaz;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
 
 public class CalculadoraUI extends JFrame {
     private JButton CalculadoraBTN7;
@@ -25,126 +22,107 @@ public class CalculadoraUI extends JFrame {
     private JPanel Calculadora;
 
 
-    private int contador = 0;
-    private HashMap<Integer, Integer> calculo = new HashMap<>();
+    private String numeroActual = "";
+    private double primerOperador;
+    private String operadorActual = null;
 
-    public CalculadoraUI(){
+
+    private void AddDigitToNumber(String numero) {
+        numeroActual += numero;
+        Output.setText(Output.getText() + numero);
+    }
+
+    private void limpiarCalculadora() {
+        numeroActual = "";
+        primerOperador = 0;
+        operadorActual = null;
+        Output.setText(""); // Clear the output when clearing calculator
+    }
 
 
+    private void setOperador(String operador) {
+        if (!numeroActual.isEmpty()) {
+            if (operadorActual != null) {
+                // Si ya hay un operador, calcula el resultado parcial
+                double segundoOperador = Double.parseDouble(numeroActual);
+                switch (operadorActual) {
+                    case "+":
+                        primerOperador = primerOperador + segundoOperador;
+                        break;
+                    case "-":
+                        primerOperador = primerOperador - segundoOperador;
+                        break;
+                    case "*":
+                        primerOperador = primerOperador * segundoOperador;
+                        break;
+                }
+            } else {
+                // Si es la primera operación
+                primerOperador = Double.parseDouble(numeroActual);
+            }
+            operadorActual = operador;
+            numeroActual = ""; // Reinicia el número actual para la próxima entrada
+            Output.setText(Output.getText() + operador);
+        }
+    }
+
+
+    private void calcularResultado() {
+        if (operadorActual != null && !numeroActual.isEmpty()) {
+            double segundoOperador = Double.parseDouble(numeroActual);
+            double resultado = 0;
+
+            switch (operadorActual) {
+                case "+":
+                    resultado = primerOperador + segundoOperador;
+                    break;
+                case "-":
+                    resultado = primerOperador - segundoOperador;
+                    break;
+                case "*":
+                    resultado = primerOperador * segundoOperador;
+                    break;
+            }
+            numeroActual = String.valueOf(resultado);
+            Output.setText(numeroActual);  // Update output with result
+            operadorActual = null;  // Reset operator for next calculation
+        }
+    }
+
+
+
+    public CalculadoraUI() {
 
 
         setContentPane(Calculadora);
         setTitle("Calculadora");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(295,258);
+        setSize(295, 258);
         setLocationRelativeTo(null);
         setVisible(true);
 
-        CalculadoraBTN0.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 0);
-                contador++;
-            }
-        });
+        //Configurar botones numericos
+        CalculadoraBTN0.addActionListener(e -> AddDigitToNumber("0"));
+        CalculadoraBTN1.addActionListener(e -> AddDigitToNumber("1"));
+        CalculadoraBTN2.addActionListener(e -> AddDigitToNumber("2"));
+        CalculadoraBTN3.addActionListener(e -> AddDigitToNumber("3"));
+        CalculadoraBTN4.addActionListener(e -> AddDigitToNumber("4"));
+        CalculadoraBTN5.addActionListener(e -> AddDigitToNumber("5"));
+        CalculadoraBTN6.addActionListener(e -> AddDigitToNumber("6"));
+        CalculadoraBTN7.addActionListener(e -> AddDigitToNumber("7"));
+        CalculadoraBTN8.addActionListener(e -> AddDigitToNumber("8"));
+        CalculadoraBTN9.addActionListener(e -> AddDigitToNumber("9"));
 
-        CalculadoraBTN1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 1);
-                contador++;
-            }
-        });
-        CalculadoraBTN2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 2);
-                contador++;
-            }
-        });
+        //Configurar Operadores
+        CalculadoraSuma.addActionListener(e -> setOperador("+"));
+        CalculadoraResta.addActionListener(e -> setOperador("-"));
+        CalculadoraMultiplica.addActionListener(e -> setOperador("*"));
 
-        CalculadoraBTN3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 3);
-                contador++;
-            }
-        });
-        CalculadoraBTN4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 4);
-                contador++;
-            }
-        });
+        //Resultado
+        CalculadoraTotalBtn.addActionListener(e -> calcularResultado());
 
-
-        CalculadoraBTN5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 5);
-                contador++;
-            }
-        });
-
-
-
-        CalculadoraBTN6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 6);
-                contador++;
-            }
-        });
-
-        CalculadoraBTN7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 7);
-                contador++;
-            }
-        });
-
-        CalculadoraBTN8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 8);
-                contador++;
-            }
-        });
-
-
-        CalculadoraBTN9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculo.put(contador, 9);
-                contador++;
-            }
-        });
-        CalculadoraSuma.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + "+");
-            }
-        });
-
-        CalculadoraResta.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + "-");
-            }
-        });
-
-        CalculadoraMultiplica.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Output.setText(Output.getText() + " " + "*");
-            }
-        });
-
-
-
-
+        //Borrar
+        CalculadoraBorrarBtn.addActionListener(e -> limpiarCalculadora());
 
 
     }
