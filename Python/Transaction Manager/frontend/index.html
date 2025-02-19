@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applicación de Manejo de Finanzas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div>
+    <div class="estructuraFondo">
+      <!-- Sección de indicadores -->
+      <div class="indicadoresBalances">
+        <!-- SALARIO -->
+        <div class="indicadorDinero">
+          <p class="tituloIndicadorDinero">Salario</p>
+          <input class="salario" id="salarioInput" type="number" placeholder="0"> </input>
+        </div>
+
+        <!-- EXTRAS -->
+        <div class="indicadorDinero">
+          <p class="tituloIndicadorDinero">Extras</p>
+          <input class="extras" id="extrasInput" type="number" placeholder="0"> </input>
+        </div>
+
+        <!-- SOBRANTE (TOTAL MENOS REBAJAS) -->
+        <div class="indicadorDinero">
+          <p class="tituloIndicadorDinero">Sobrante</p>
+          <div class="contenedorIndicadorDinero" id="SobranteDisplay">0</div>
+        </div>
+
+        <!-- POR PAGAR (TOTAL DE REBAJAS ACTIVAS) -->
+        <div class="indicadorDinero">
+          <p class="tituloIndicadorDinero">Por Pagar</p>
+          <div class="contenedorIndicadorDinero" id="porPagarDisplay">0</div>
+        </div>
+
+      </div>
+
+      <div class="horizontalStyle"></div>
+
+      <!-- Sección de ítems (gastos) -->
+      <div class="presupuestos">
+        <div class="panelDerecho">
+          <!-- Fila 1 -->
+          <div class="menuDeAccionables" id="1">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+          <!-- Fila 2 -->
+          <div class="menuDeAccionables" id="2">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+          <!-- Fila 3 -->
+          <div class="menuDeAccionables" id="3">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+          <!-- Fila 4 -->
+          <div class="menuDeAccionables" id="4">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+          <!-- Fila 5 -->
+          <div class="menuDeAccionables" id="5">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+          <!-- Fila 6 -->
+          <div class="menuDeAccionables" id="6">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+        </div>
+
+        <div class="verticalStyle"></div>
+
+        <div class="panelIzquierdo">
+          <!-- Fila 7 -->
+          <div class="menuDeAccionables" id="7">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+          <!-- Fila 8 -->
+          <div class="menuDeAccionables" id="8">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+
+          <!-- Fila 9 -->
+          <div class="menuDeAccionables" id="9">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+
+          <!-- Fila 10 -->
+          <div class="menuDeAccionables" id="10">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+
+          <!-- Fila 11 -->
+          <div class="menuDeAccionables" id="11">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+
+          <!-- Fila 12 -->
+          <div class="menuDeAccionables" id="12">
+            <input class="cajaDeTexto" type="text" placeholder="Nombre"></input>
+            <input class="cajaDinero" type="number" placeholder="Costo"></input>
+            <input class="cajaDeCantidad" type="text" placeholder="#"></input>
+            <button class="botonActivo">-</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    // Referencias a los elementos
+    const salarioInput = document.getElementById("salarioInput");
+    const extrasInput = document.getElementById("extrasInput");
+    const SobranteDisplay = document.getElementById("SobranteDisplay");
+    const porPagarDisplay = document.getElementById("porPagarDisplay");
+    const filasAccionables = document.querySelectorAll(".menuDeAccionables");
+
+    // Función para cargar datos guardados
+    async function loadSavedData() {
+      try {
+        let savedData = null;
+        // Si PyWebView está disponible, intentamos cargar con la API
+        if (window.pywebview && pywebview.api && pywebview.api.load_data) {
+          savedData = await pywebview.api.load_data();
+        } else {
+          // Fallback a localStorage
+          const localData = localStorage.getItem("datosApp");
+          if (localData) {
+            savedData = JSON.parse(localData);
+          }
+        }
+
+        if (savedData) {
+          if (savedData.salario !== undefined) {
+            salarioInput.value = savedData.salario;
+          }
+          if (savedData.extras !== undefined) {
+            extrasInput.value = savedData.extras;
+          }
+          if (savedData.filas && Array.isArray(savedData.filas)) {
+            filasAccionables.forEach((fila, index) => {
+              const costoInput = fila.querySelector(".cajaDinero");
+              const cantidadInput = fila.querySelector(".cajaDeCantidad");
+              const boton = fila.querySelector("button");
+              const rowData = savedData.filas[index];
+              if (rowData) {
+                costoInput.value = rowData.costo || "";
+                cantidadInput.value = rowData.cantidad || "";
+                if (rowData.activo) {
+                  boton.classList.add("botonActivo");
+                } else {
+                  boton.classList.remove("botonActivo");
+                }
+              }
+            });
+          }
+        }
+      } catch (error) {
+        console.error("Error al cargar datos:", error);
+      }
+    }
+
+    // Función para guardar los datos actuales
+    async function saveData() {
+      const data = {
+        salario: salarioInput.value,
+        extras: extrasInput.value,
+        filas: []
+      };
+
+      filasAccionables.forEach(fila => {
+        const costoInput = fila.querySelector(".cajaDinero");
+        const cantidadInput = fila.querySelector(".cajaDeCantidad");
+        const boton = fila.querySelector("button");
+        data.filas.push({
+          costo: costoInput.value,
+          cantidad: cantidadInput.value,
+          activo: boton.classList.contains("botonActivo")
+        });
+      });
+
+      try {
+        if (window.pywebview && pywebview.api && pywebview.api.save_data) {
+          const response = await pywebview.api.save_data(data);
+          console.log(response);
+        } else {
+          // Guardar en localStorage como respaldo
+          localStorage.setItem("datosApp", JSON.stringify(data));
+        }
+      } catch (error) {
+        console.error("Error al guardar datos:", error);
+      }
+    }
+
+    // Función para recalcular "por pagar" y "sobrante"
+    function recalcular() {
+      const salario = parseFloat(salarioInput.value) || 0;
+      const extras = parseFloat(extrasInput.value) || 0;
+      const totalDisponible = salario + extras;
+      let totalRebajasActivas = 0;
+
+      filasAccionables.forEach(fila => {
+        const costoInput = fila.querySelector(".cajaDinero");
+        const cantidadInput = fila.querySelector(".cajaDeCantidad");
+        const boton = fila.querySelector("button");
+
+        const costo = parseFloat(costoInput.value) || 0;
+        const cantidad = parseFloat(cantidadInput.value) || 0;
+        if (boton.classList.contains("botonActivo")) {
+          totalRebajasActivas += costo * cantidad;
+        }
+      });
+
+      porPagarDisplay.textContent = totalRebajasActivas.toLocaleString();
+      const sobrante = totalDisponible - totalRebajasActivas;
+      SobranteDisplay.textContent = sobrante.toLocaleString();
+
+      // Guardamos los datos cada vez que se recalcula
+      saveData();
+    }
+
+    // Asignamos eventos a cada fila
+    filasAccionables.forEach(fila => {
+      const costoInput = fila.querySelector(".cajaDinero");
+      const cantidadInput = fila.querySelector(".cajaDeCantidad");
+      const boton = fila.querySelector("button");
+
+      costoInput.addEventListener("input", recalcular);
+      cantidadInput.addEventListener("input", recalcular);
+      boton.addEventListener("click", () => {
+        boton.classList.toggle("botonActivo");
+        recalcular();
+      });
+    });
+
+    // Eventos para los inputs de salario y extras
+    salarioInput.addEventListener("input", recalcular);
+    extrasInput.addEventListener("input", recalcular);
+
+    // Cargamos los datos guardados y luego realizamos el primer cálculo
+    await loadSavedData();
+    recalcular();
+  });
+</script>
+
+</body>
+</html>
+  
+  
