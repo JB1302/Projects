@@ -1,0 +1,5 @@
+1,Prueba,Prueba Descripcion,300.0,350.0,NUEVA,false
+123,123,123,123.0,123.0,123,false
+1235,prueba,descripcion,500.0,550.0,NUEVO,false
+123,123,123,132.0,123.0,USADO,true
+654,987,654,23.0,59.0,USADO,true

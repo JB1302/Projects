@@ -1,0 +1,133 @@
+/* Restablecer márgenes y padding en el body */
+body {
+  background-color: #05445E;
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0px
+
+
+  box-sizing: border-box;
+}
+
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    padding-left: 10px;
+    padding-right: 0px
+}
+
+
+/* Estilo de los inputs */
+input {
+  text-align: center;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  font-family: 'Roboto';
+  text-align: center;
+}
+
+/* Contenedor superior */
+.topSection {
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 2px;
+}
+
+/* Título en la sección superior */
+.tituloTop {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+/* Inputs dentro de la sección superior */
+.salarioInput, .ExtrasInput, .sobranteInput, .porPagarInput {
+  margin-top: 0px;
+  width: 115px;
+  height: 24px;
+  border: solid;
+  border-width: 2px;
+  border-color: #189AB4;
+}
+
+/* Separador superior */
+.topDivider {
+    width: 600px;
+    height: 5px;
+    background-color: #189AB4;
+    border: none;
+    border-radius: 5px;
+    margin: 17px auto;
+}
+
+
+
+/* Caja de inputs */
+.inputBoxes {
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+  height: 230px;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  gap: 17px;
+}
+
+/* Divisiones laterales de las cajas */
+.boxesIzquierda, .boxesDerecha {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  gap: 5px;
+}
+
+/* Estilo de las etiquetas */
+.tagName {
+  width: 109px;
+  height: 28px;
+}
+
+/* Estilo de los precios */
+.precio {
+  width: 71px;
+  height: 28px;
+}
+
+/* Estilo de las cantidades */
+.cantidad {
+  width: 29px;
+  height: 28px;
+}
+
+/* Estilo del total de línea */
+.totalLinea {
+  width: 71px;
+  height: 28px;
+}
+
+/* Botón en la sección */
+.botonDeSeccion {
+  background-color: #189AB4;
+  width: 26px;
+  height: 28px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+
+/* Separador del medio */
+.middleDivider {
+  width: 5px;
+  height: 225px;
+  background-color: #189AB4;
+  border: none;
+  border-radius: 5px;
+}
