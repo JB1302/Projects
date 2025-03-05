@@ -9,9 +9,19 @@ public class Vehiculo {
     private int año;
     private String propietario;
     private String historial;
-    
+
+    //Constructor
+
+
+    public Vehiculo(String placa, String modelo, int año, String propietario, String historial) {
+        this.placa = placa;
+        this.modelo = modelo;
+        this.año = año;
+        this.propietario = propietario;
+        this.historial = historial;
+    }
+
     public void registrarVehiculo(){
-        
     }
     
     public void actualizarVehiculo(){
