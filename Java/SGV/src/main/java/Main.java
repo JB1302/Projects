@@ -1,11 +1,12 @@
-import Backend.util.MySQLConnection;
+import Backend.controlador.UsuarioController;
+import Backend.modelo.Usuario.Cliente;
+import Backend.modelo.Usuario.Usuario;
 
 public class Main {
     public static void main(String[] args) {
-        MySQLConnection mySQLConnection = new MySQLConnection();
+        Usuario cliente = new Cliente("Lucy Doe", "Lucy@example.com", "123");
 
-        mySQLConnection.conexion();
-        mySQLConnection.closeConnection();
-
+        UsuarioController usuarioController = new UsuarioController(cliente);
+        usuarioController.insertarObjeto();
     }
 }
