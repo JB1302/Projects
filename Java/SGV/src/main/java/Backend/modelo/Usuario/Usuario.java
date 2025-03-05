@@ -12,6 +12,9 @@ public abstract class Usuario {
         ADMIN, MECANICO, CLIENTE
     }
 
+    public Usuario() {
+    }
+
     //Constructor
     public Usuario(String nombre, String correo, String password, Role role) {
         this.nombre = nombre;
@@ -21,7 +24,7 @@ public abstract class Usuario {
     }
 
     //Metodos
-    public abstract void iniciarSesion();
+    public abstract void iniciarSesion(String correo, String contraseña);
     public abstract void cerrarSesion();
 
     //Getter & Setter

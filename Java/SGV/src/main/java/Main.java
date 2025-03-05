@@ -9,7 +9,7 @@ import Backend.modelo.Vehiculo.Vehiculo;
 public class Main {
     public static void main(String[] args) {
 
-        /* Manejar Ingreso de Datos
+        /* Manejar Ingreso de Usuarios
         Usuario cliente = new Cliente("Trump Doe", "Trump@example.com", "123");
         Usuario Mecanico = new Mecanico("Jonathan", "johnB@gmail.com","123");
         Usuario Admin = new Administrador("Steven", "jstevenbarrantes@gmail.com","Clave");
@@ -21,9 +21,19 @@ public class Main {
         ControllerCliente.insertarObjeto();
         ControllerMecanico.insertarObjeto(); */
 
+        /* Manejar Ingreso de Vehiculos
         Vehiculo vehiculo = new Vehiculo("blk500","spark",2017,"Steven","n/a");
         VehiculoController vehiculoController = new VehiculoController(vehiculo);
 
-        vehiculoController.insertarObjeto();
+        vehiculoController.insertarObjeto(); */
+
+        Administrador administrador = new Administrador();
+        Mecanico mecanico = new Mecanico();
+        Cliente cliente = new Cliente();
+
+        administrador.iniciarSesion("jstevenbarrantes@gmail.com", "Clave");
+        mecanico.iniciarSesion("john@gmail.com", "123");
+        cliente.iniciarSesion("john@example.com", "123");
+
     }
 }

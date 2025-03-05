@@ -1,8 +1,8 @@
 package Backend.util;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import Backend.modelo.Usuario.Usuario;
+
+import java.sql.*;
 
 public class MySQLConnection {
 
@@ -32,6 +32,36 @@ public class MySQLConnection {
         } catch (SQLException e) {
             throw new RuntimeException("Error al cerrar la conexion", e);
         }
+    }
+
+    public static boolean autenticarLogin(String tabla, String correo, String password, Usuario.Role role){
+        boolean autenticado = false;
+        conexion();
+
+        String sql = "SELECT * FROM " + tabla + " WHERE correo = ? AND contrasena = ? AND role =?";
+
+
+        try(PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setString(1, correo);
+            statement.setString(2, password);
+            statement.setString(3, String.valueOf(role));
+
+
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){
+                    System.out.println("Inicio de sesión exitoso");
+                    autenticado = true;
+                }else {
+                    System.out.println("Error: Credenciales Incorrectas");
+                }
+            }
+
+        }catch (SQLException e){
+            System.out.println("No se pudo conectar a SQL");
+            e.printStackTrace();
+        }
+
+        return autenticado;
     }
 
     public static Connection getConnection() {
