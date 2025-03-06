@@ -12,19 +12,20 @@ public class MySQLConnection {
 
     private static Connection connection;
 
-    public static void conexion(){
+    public static void conexion() {
         try {
-            connection = DriverManager.getConnection(getUrl(),getUser(),getPassword());
+            connection = DriverManager.getConnection(getUrl(), getUser(), getPassword());
             System.out.println("Conexion exitosa a base de datos MySQL");
-        } catch(SQLException e){
+        } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos");
             e.printStackTrace();
         }
     }
 
-    public static void closeConnection(){
+
+    public static void closeConnection() {
         try {
-            if (connection != null && !connection.isClosed()){
+            if (connection != null && !connection.isClosed()) {
                 connection.close();
                 System.out.println("Conexión Cerrada");
             }
@@ -34,29 +35,30 @@ public class MySQLConnection {
         }
     }
 
-    public static boolean autenticarLogin(String tabla, String correo, String password, Usuario.Role role){
+
+    public static boolean autenticarLogin(String tabla, String correo, String password, Usuario.Role role) {
         boolean autenticado = false;
         conexion();
 
         String sql = "SELECT * FROM " + tabla + " WHERE correo = ? AND contrasena = ? AND role =?";
 
 
-        try(PreparedStatement statement = connection.prepareStatement(sql)){
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, correo);
             statement.setString(2, password);
             statement.setString(3, String.valueOf(role));
 
 
-            try(ResultSet rs = statement.executeQuery()){
-                if(rs.next()){
+            try (ResultSet rs = statement.executeQuery()) {
+                if (rs.next()) {
                     System.out.println("Inicio de sesión exitoso");
                     autenticado = true;
-                }else {
+                } else {
                     System.out.println("Error: Credenciales Incorrectas");
                 }
             }
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println("No se pudo conectar a SQL");
             e.printStackTrace();
         }

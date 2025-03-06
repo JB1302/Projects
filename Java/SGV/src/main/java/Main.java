@@ -1,10 +1,12 @@
 import Backend.controlador.UsuarioController;
 import Backend.controlador.VehiculoController;
+import Backend.modelo.Inventario.Pieza;
 import Backend.modelo.Usuario.Administrador;
 import Backend.modelo.Usuario.Cliente;
 import Backend.modelo.Usuario.Mecanico;
 import Backend.modelo.Usuario.Usuario;
 import Backend.modelo.Vehiculo.Vehiculo;
+import Backend.modelo.Inventario.Inventario;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,13 +29,28 @@ public class Main {
 
         vehiculoController.insertarObjeto(); */
 
+        /*Iniciar sesión
         Administrador administrador = new Administrador();
         Mecanico mecanico = new Mecanico();
         Cliente cliente = new Cliente();
 
         administrador.iniciarSesion("jstevenbarrantes@gmail.com", "Clave");
         mecanico.iniciarSesion("john@gmail.com", "123");
-        cliente.iniciarSesion("john@example.com", "123");
+        cliente.iniciarSesion("john@example.com", "123");*/
+
+        /*
+        //Insetar Piezas
+        Pieza pieza = new Pieza("Arandela","Arandela Basica",5,70);
+        pieza.insertarObjeto();*/
+
+
+
+        //Manejo Inventario
+        Inventario inventario = new Inventario();
+        //inventario.actualizarCantidad("Tornillo",50);
+        //inventario.revisarDisponibilidad("Tornillo",15);
+        //inventario.buscarPieza("Tornillo");
+        inventario.mostrarInventario();
 
     }
 }
