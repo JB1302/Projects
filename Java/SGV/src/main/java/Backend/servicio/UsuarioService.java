@@ -55,6 +55,27 @@ public class UsuarioService {
     }
 
     public void actualizarCliente(Cliente cliente) {
+        String sql = "UPDATE taller_mecanico.usuarios set nombre = ?, role = ? WHERE correo = ?";
+        conexion();
+
+        try(PreparedStatement statement = getConnection().prepareStatement(sql)){
+            statement.setString(1, cliente.getNombre());
+            statement.setString(2,cliente.getRol().name());
+            statement.setString(3, cliente.getCorreo());
+
+            int filasActualizadas = statement.executeUpdate();
+
+            if(filasActualizadas > 0){
+                System.out.println("Cliente Actualizado correctamente");
+            }else {
+                System.out.println("No se encontro el cliente con el correo" + cliente.getCorreo());
+            }
+
+        }catch (SQLException e){
+            throw new RuntimeException("Error al actualizar el cliente", e);
+        }finally {
+            closeConnection();
+        }
 
     }
 

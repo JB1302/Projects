@@ -9,6 +9,8 @@ import Backend.modelo.Vehiculo.Vehiculo;
 import Backend.modelo.Inventario.Inventario;
 import Backend.servicio.UsuarioService;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -77,8 +79,17 @@ public class Main {
 
          */
 
-
+        /*
         UsuarioService usuarioService = new UsuarioService();
-        usuarioService.buscarCliente("tR");
+        //usuarioService.buscarCliente("tR");
+        //Scanner sb = new Scanner("Ingrese correo a buscar:");
+        // String correo = sb.toString();
+        String correo = "Lucy@example.com";
+        String nombre = "Lucy Doe";
+        String password = "123";
+        Cliente clienteActualizar = new Cliente(nombre,correo,password);
+        usuarioService.actualizarCliente(clienteActualizar);*/
+
+
     }
 }
