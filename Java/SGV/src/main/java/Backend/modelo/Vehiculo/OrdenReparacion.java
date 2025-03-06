@@ -8,15 +8,15 @@ public class OrdenReparacion {
     private String fechaInicio;
     private String mecanicoAsignado;
 
-    private enum estado{
-        PENDIENTE,TRABAJANDO,FINALIZADO
+    private enum estado {
+        PENDIENTE, TRABAJANDO, FINALIZADO
     }
 
-    public void actualizarEstado(){
+    public void actualizarEstado() {
 
     }
 
-    public void asignarMecanico(){
+    public void asignarMecanico() {
 
     }
 

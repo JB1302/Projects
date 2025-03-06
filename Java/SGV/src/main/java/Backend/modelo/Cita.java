@@ -6,19 +6,20 @@ public class Cita {
     private String vehiculo;
     private String fecha;
     private String hora;
-    private enum estado{
-        PROGRAMADA,CANCELADA,COMPLETADA
+
+    private enum estado {
+        PROGRAMADA, CANCELADA, COMPLETADA
     }
 
-    public void agendarCita(){
-
-    }
-
-    public void cancelarCita(){
+    public void agendarCita() {
 
     }
 
-    public void reprogramarCita(){
+    public void cancelarCita() {
+
+    }
+
+    public void reprogramarCita() {
 
     }
 

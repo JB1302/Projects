@@ -21,15 +21,15 @@ public class Vehiculo {
         this.historial = historial;
     }
 
-    public void registrarVehiculo(){
+    public void registrarVehiculo() {
     }
-    
-    public void actualizarVehiculo(){
-        
+
+    public void actualizarVehiculo() {
+
     }
-    
-    public void consultarHistorial(){
-        
+
+    public void consultarHistorial() {
+
     }
 
     //Getters and Setters

@@ -61,7 +61,6 @@ public class Inventario {
         }
     }
 
-
     public void buscarPieza(String nombre) {
 
         MySQLConnection.conexion();

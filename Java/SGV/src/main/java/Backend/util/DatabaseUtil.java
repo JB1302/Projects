@@ -22,14 +22,14 @@ public abstract class DatabaseUtil {
             //Si se ajusto algo
             if (rowsAffected > 0) {
                 System.out.println("Objeto insertado correctamente.");
-            //Si no se ajusto nada
+                //Si no se ajusto nada
             } else {
                 System.out.println("No se pudo insertar el objeto.");
             }
         } catch (SQLException e) {
             System.out.println("No se pudo insertar el objeto");
             e.printStackTrace();
-        //Cerrar conexión
+            //Cerrar conexión
         } finally {
             MySQLConnection.closeConnection();
 

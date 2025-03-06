@@ -25,6 +25,7 @@ public abstract class Usuario {
 
     //Metodos
     public abstract void iniciarSesion(String correo, String contraseña);
+
     public abstract void cerrarSesion();
 
     //Getter & Setter

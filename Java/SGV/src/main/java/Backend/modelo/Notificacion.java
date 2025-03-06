@@ -7,7 +7,7 @@ public class Notificacion {
     private String mensaje;
     private String fechaEnvio;
 
-    private void enviarNotificacion(){
+    private void enviarNotificacion() {
 
     }
 
