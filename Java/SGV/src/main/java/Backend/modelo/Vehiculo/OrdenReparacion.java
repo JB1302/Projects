@@ -1,24 +1,32 @@
 package Backend.modelo.Vehiculo;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class OrdenReparacion {
     private int id;
-    private String vehiculo;
-    private String cliete;
+    private String placa;
+    private String cliente;
     private String descripcionProblema;
-    private String fechaInicio;
-    private String mecanicoAsignado;
+    private int mecanicoAsignado;
+    LocalDateTime fechaInicio = LocalDateTime.now();
 
-    private enum estado {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String fechaFormateada = fechaInicio.format(formatter);
+
+    public enum estado {
         PENDIENTE, TRABAJANDO, FINALIZADO
     }
 
-    public void actualizarEstado() {
-
+    public OrdenReparacion(String placa, String cliente, String descripcionProblema, String fechaFormateada, int mecanicoAsignado) {
+        this.placa = placa;
+        this.cliente = cliente;
+        this.descripcionProblema = descripcionProblema;
+        this.fechaFormateada = fechaFormateada;
+        this.mecanicoAsignado = mecanicoAsignado;
     }
 
-    public void asignarMecanico() {
 
-    }
 
     //Getters and Setters
 
@@ -31,20 +39,20 @@ public class OrdenReparacion {
         this.id = id;
     }
 
-    public String getVehiculo() {
-        return vehiculo;
+    public String getPlaca() {
+        return placa;
     }
 
-    public void setVehiculo(String vehiculo) {
-        this.vehiculo = vehiculo;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
-    public String getCliete() {
-        return cliete;
+    public String getCliente() {
+        return cliente;
     }
 
-    public void setCliete(String cliete) {
-        this.cliete = cliete;
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
     }
 
     public String getDescripcionProblema() {
@@ -55,19 +63,23 @@ public class OrdenReparacion {
         this.descripcionProblema = descripcionProblema;
     }
 
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public String getMecanicoAsignado() {
+    public int getMecanicoAsignado() {
         return mecanicoAsignado;
     }
 
-    public void setMecanicoAsignado(String mecanicoAsignado) {
+    public LocalDateTime getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public String getFechaFormateada() {
+        return fechaFormateada;
+    }
+
+    public void setFechaInicio(LocalDateTime fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public void setMecanicoAsignado(int mecanicoAsignado) {
         this.mecanicoAsignado = mecanicoAsignado;
     }
 }

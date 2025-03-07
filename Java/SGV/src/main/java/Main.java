@@ -1,14 +1,18 @@
-import Backend.controlador.UsuarioController;
-import Backend.controlador.VehiculoController;
+import Backend.controlador.*;
 import Backend.modelo.Inventario.Pieza;
 import Backend.modelo.Usuario.Administrador;
 import Backend.modelo.Usuario.Cliente;
 import Backend.modelo.Usuario.Mecanico;
 import Backend.modelo.Usuario.Usuario;
+import Backend.modelo.Vehiculo.OrdenReparacion;
 import Backend.modelo.Vehiculo.Vehiculo;
 import Backend.modelo.Inventario.Inventario;
 import Backend.servicio.UsuarioService;
+import Backend.controlador.ReparacionController;
+import Backend.controlador.ReparacionController.estado;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -79,17 +83,37 @@ public class Main {
 
          */
 
-        /*
+
         UsuarioService usuarioService = new UsuarioService();
         //usuarioService.buscarCliente("tR");
         //Scanner sb = new Scanner("Ingrese correo a buscar:");
         // String correo = sb.toString();
-        String correo = "Lucy@example.com";
-        String nombre = "Lucy Doe";
-        String password = "123";
-        Cliente clienteActualizar = new Cliente(nombre,correo,password);
-        usuarioService.actualizarCliente(clienteActualizar);*/
+        //String correo = "Lucy@example.com";
+        //String nombre = "Lucy Doe";
+        //String password = "123";
+        //Cliente clienteActualizar = new Cliente(nombre,correo,password);
+       // usuarioService.actualizarCliente(clienteActualizar);
 
+        //usuarioService.mostrarClientes();
+       // usuarioService.eliminarCliente("Trump@example.com");
 
+        //VehiculoController vehiculoController = new VehiculoController();
+
+        //vehiculoController.actualizarVehiculo("BLK500","Revisado");
+        //vehiculoController.consultarHistorial("blk500");
+
+        /*
+        LocalDateTime fechaActual = LocalDateTime.now();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String fechaFormateada = fechaActual.format(formatter);
+
+        OrdenReparacion ordenReparacion = new OrdenReparacion("BLK500","Steven","chillido",fechaFormateada,12);
+        ReparacionController reparacionController = new ReparacionController(ordenReparacion);
+        reparacionController.insertarObjeto(); */
+
+        ReparacionController reparacionController = new ReparacionController();
+      //  reparacionController.actualizarEstado("blk500", estado.TRABAJANDO);
+      //  reparacionController.asignarMecanico("blk500",12);
     }
 }

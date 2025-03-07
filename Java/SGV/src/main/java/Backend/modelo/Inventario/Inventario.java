@@ -19,7 +19,7 @@ public class Inventario {
         imprimirInventario();
     }
 
-    public void preCargarInventario() {
+    private void preCargarInventario() {
 
         String sql = "SELECT nombre,descripcion,cantidad,precio_unitario FROM taller_mecanico.piezas";
 
@@ -45,7 +45,7 @@ public class Inventario {
         setPiezas(piezas);
     }
 
-    public void imprimirInventario() {
+    private void imprimirInventario() {
         List<Pieza> piezas = getPiezas();
         if (piezas == null || piezas.isEmpty()) {
             System.out.println("El inventario esta vacio");
