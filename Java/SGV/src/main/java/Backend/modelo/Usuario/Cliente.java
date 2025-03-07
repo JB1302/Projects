@@ -11,7 +11,7 @@ public class Cliente extends Usuario {
         super(nombre, correo, password, Role.CLIENTE);
     }
 
-    public void iniciarSesion(String correo, String contraseña) {
+    public boolean iniciarSesion(String correo, String contraseña) {
 
         boolean autenticado = MySQLConnection.autenticarLogin("taller_mecanico.usuarios", correo, contraseña, Role.CLIENTE);
 
@@ -22,7 +22,7 @@ public class Cliente extends Usuario {
             System.out.println("Error: Credenciales incorrectas");
         }
         MySQLConnection.closeConnection();
-
+        return autenticado;
     }
 
     public void cerrarSesion() {

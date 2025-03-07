@@ -12,7 +12,7 @@ public class Administrador extends Usuario {
         super(nombre, correo, password, Role.ADMIN);
     }
 
-    public void iniciarSesion(String correo, String contraseña) {
+    public boolean iniciarSesion(String correo, String contraseña) {
 
         boolean autenticado = MySQLConnection.autenticarLogin("taller_mecanico.usuarios", correo, contraseña, Role.ADMIN);
 
@@ -22,7 +22,7 @@ public class Administrador extends Usuario {
             System.out.println("Error: Credenciales incorrectas");
         }
         MySQLConnection.closeConnection();
-
+        return autenticado;
     }
 
     public void cerrarSesion() {
