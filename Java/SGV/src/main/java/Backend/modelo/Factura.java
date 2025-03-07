@@ -12,11 +12,11 @@ public class Factura {
     private double totalPagar;
     private String fecha;
 
-    public void generarFactura() {
+    public void generarFactura(){
 
     }
 
-    public void registrarPago() {
+    public void registrarPago(){
 
     }
 }

@@ -1,5 +1,8 @@
 import Backend.controlador.*;
+import Backend.modelo.Cita;
+import Backend.modelo.Factura;
 import Backend.modelo.Inventario.Pieza;
+import Backend.modelo.Notificacion;
 import Backend.modelo.Usuario.Administrador;
 import Backend.modelo.Usuario.Cliente;
 import Backend.modelo.Usuario.Mecanico;
@@ -13,6 +16,7 @@ import Backend.controlador.ReparacionController.estado;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -84,7 +88,7 @@ public class Main {
          */
 
 
-        UsuarioService usuarioService = new UsuarioService();
+       // UsuarioService usuarioService = new UsuarioService();
         //usuarioService.buscarCliente("tR");
         //Scanner sb = new Scanner("Ingrese correo a buscar:");
         // String correo = sb.toString();
@@ -112,8 +116,23 @@ public class Main {
         ReparacionController reparacionController = new ReparacionController(ordenReparacion);
         reparacionController.insertarObjeto(); */
 
-        ReparacionController reparacionController = new ReparacionController();
+      //  ReparacionController reparacionController = new ReparacionController();
       //  reparacionController.actualizarEstado("blk500", estado.TRABAJANDO);
       //  reparacionController.asignarMecanico("blk500",12);
+
+        //String fechaConvertida = String.valueOf(new Cita().convertirStringADate("6-3-2025"));
+
+        //Cita cita = new Cita("StevenB", "blk500",fechaConvertida,"9:47");
+        //cita.insertarObjeto();
+
+        //Cita cita = new Cita();
+        //cita.cancelarCita("StevenB");
+        //String fechaConvertida = String.valueOf(new Cita().convertirStringADate("9-3-2025"));
+        //cita.reprogramarCita("StevenB",fechaConvertida,"10:15");
+
+
+        Notificacion notificacion = new Notificacion();
+
+        notificacion.enviarNotificacionesOrdenesAbiertas();
     }
 }
