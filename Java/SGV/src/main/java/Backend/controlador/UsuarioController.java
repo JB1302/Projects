@@ -10,6 +10,9 @@ public class UsuarioController extends DatabaseUtil {
     //Usar un objeto ususario
     private Usuario usuario;
 
+    public UsuarioController() {
+    }
+
     //Definine un controlador basado en el objeto usuario
     public UsuarioController(Usuario usuario) {
         this.usuario = usuario;

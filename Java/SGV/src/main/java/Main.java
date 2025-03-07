@@ -23,7 +23,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        /* --Manejo de Usuarios
+        --Manejo de Usuarios
           Crear Usuarios (Clientes, Mecánicos, Administradores)
         Usuario cliente = new Cliente("Trump Doe", "Trump@example.com", "123");
         Usuario Mecanico = new Mecanico("Jonathan", "johnB@gmail.com", "123");
@@ -132,6 +132,11 @@ public class Main {
 
         Notificacion notificacion = new Notificacion();
 
-        notificacion.enviarNotificacionesOrdenesAbiertas();*/
+        notificacion.enviarNotificacionesOrdenesAbiertas();
+
+        Factura factura = new Factura();
+
+       factura.generarFactura("blk500");
+       factura.registrarPago("blk500");
     }
 }
