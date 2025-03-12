@@ -1,9 +1,15 @@
-import Frontend.MainWindow;
+import Frontend.login.Login;
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        MainWindow mainWindow = new MainWindow();
-        mainWindow.setVisible(true);
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Login().setVisible(true);
+            }
+        });
     }
 }
