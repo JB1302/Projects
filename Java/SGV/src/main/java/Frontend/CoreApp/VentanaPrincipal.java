@@ -1,5 +1,6 @@
 package Frontend.CoreApp;
 
+import Frontend.CoreApp.Funciones.Notificaciones;
 import Frontend.CoreApp.Funciones.RegistrarUsuario;
 import Frontend.login.Login;
 
@@ -119,14 +120,16 @@ public class VentanaPrincipal extends JFrame {
 
         //Header de la vista
         JPanel headerDerecho = new JPanel();
+        headerDerecho.add(Box.createRigidArea(new Dimension(0,50)));
         tituloPagina = new JLabel("Titulo de la pagina",SwingConstants.CENTER);
-        tituloPagina.setFont(new Font("Arial", Font.BOLD,28));
+        tituloPagina.setFont(new Font("Arial", Font.BOLD,38));
         tituloPagina.setForeground(Color.decode("#37BEB0"));
 
         headerDerecho.add(tituloPagina);
 
-        vistaPanel = new JPanel();
-        vistaPanel.setPreferredSize(new Dimension(445,244));
+        vistaPanel = new JPanel(new BorderLayout());
+        vistaPanel.setPreferredSize(new Dimension(445,350));
+        vistaPanel.setBackground(Color.WHITE);
 
         panelDerecho.setBackground(Color.white);
         headerDerecho.setBackground(Color.white);
@@ -175,6 +178,7 @@ public class VentanaPrincipal extends JFrame {
             case 5:
                 nuevaVista = new vista5();
                 titulo = "Notificaciones"; // Añade esto
+
                 break;
             case 6:
                 nuevaVista = new vista6();
@@ -184,7 +188,7 @@ public class VentanaPrincipal extends JFrame {
         if (nuevaVista != null) {
             // Actualizar título y vista
             tituloPagina.setText(titulo);
-            vistaPanel.add(nuevaVista);
+            vistaPanel.add(nuevaVista, BorderLayout.CENTER);
             vistaPanel.revalidate(); // Refrescar el layout
             vistaPanel.repaint(); // Redibujar componentes
 
@@ -192,7 +196,7 @@ public class VentanaPrincipal extends JFrame {
         for (int i = 0; i < menuButtons.length; i++) {
             if (i== vistaIndex){
                 //Cambiar el color del boton seleccionado
-                menuButtons[i].setBackground(Color.decode("# "));
+                menuButtons[i].setBackground(Color.decode("#a4e5e0"));
             }else {
                 menuButtons[i].setBackground(Color.decode("#DBF5F0"));
             }
@@ -235,15 +239,15 @@ public class VentanaPrincipal extends JFrame {
 
     public class vista4 extends JPanel{
         public vista4(){
-            setLayout( new BorderLayout());
-            add(new JLabel("Vista 5 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
+
         }
     }
 
     public class vista5 extends JPanel{
         public vista5(){
-            setLayout( new BorderLayout());
-            add(new JLabel("Vista 6 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
+            setLayout(new BorderLayout());
+            Notificaciones notificaciones = new Notificaciones();
+            add(notificaciones);
         }
     }
 
@@ -251,6 +255,7 @@ public class VentanaPrincipal extends JFrame {
         public vista6(){
             setLayout( new BorderLayout());
             add(new JLabel("Vista 7 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
+
         }
     }
 
