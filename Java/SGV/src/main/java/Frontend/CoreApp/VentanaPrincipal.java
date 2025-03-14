@@ -208,9 +208,9 @@ public class VentanaPrincipal extends JFrame {
 
     public class vista0 extends JPanel{
         public vista0(){
+            setLayout(new BorderLayout());
             RegistrarUsuario registrarUsuario = new RegistrarUsuario();
             add(registrarUsuario);
-            add(new JLabel("Vista 1 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
         }
     }
 
