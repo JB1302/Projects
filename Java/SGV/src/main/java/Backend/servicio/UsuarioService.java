@@ -103,9 +103,9 @@ public class UsuarioService {
 
     List<Cliente> clientes = new ArrayList<>();
 
-    public void mostrarClientes() {
+    public String mostrarClientes() {
         preCargarClientes();
-        imprimirClientes();
+        return imprimirClientes();
     }
 
     private void preCargarClientes() {
@@ -131,21 +131,23 @@ public class UsuarioService {
         setClientes(clientes);
     }
 
-    private void imprimirClientes() {
+    private String imprimirClientes() {
         List<Cliente> clientes = getClientes();
+        StringBuilder sb = new StringBuilder();
 
         if (clientes == null || clientes.isEmpty()) {
-            System.out.println("No hay clientes añadidos");
+            sb.append("No hay clientes añadidos");
         } else {
-            System.out.println("Contactos: ");
+            sb.append("Contactos: \n");
 
             for (Cliente cliente : clientes) {
-                System.out.println("--------------------------------");
-                System.out.println("Nombre: " + cliente.getNombre());
-                System.out.println("Correo: " + cliente.getCorreo());
-
+                sb.append("--------------------------------\n");
+                sb.append("Nombre: ").append(cliente.getNombre()).append("\n");
+                sb.append("Correo: ").append(cliente.getCorreo()).append("\n");
             }
         }
+
+        return sb.toString();
     }
 
     public List<Cliente> getClientes() {

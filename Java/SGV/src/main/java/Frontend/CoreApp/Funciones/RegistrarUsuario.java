@@ -1,56 +1,55 @@
 package Frontend.CoreApp.Funciones;
 
+import Backend.controlador.UsuarioController;
+import Backend.modelo.Usuario.Cliente;
+import Backend.servicio.UsuarioService;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RegistrarUsuario extends JPanel {
 
     private JPanel MainPanel;
 
-    public RegistrarUsuario(){
+    public RegistrarUsuario() {
+        this.setLayout(new BorderLayout());
         MainPanel = new JPanel();
+        MainPanel.setLayout(new GridLayout(1, 2));
+        MainPanel.setBackground(Color.white);
 
-        MainPanel.setLayout(new GridLayout(1,2));
-        MainPanel.add(Box.createVerticalGlue());
-
-        //Panel Principal Izquierdo
+        // Panel Principal Izquierdo
         JPanel panelIzquierdo = new JPanel();
         panelIzquierdo.setLayout(new GridBagLayout());
         panelIzquierdo.setBackground(Color.white);
         GridBagConstraints gbc = new GridBagConstraints();
 
-        //Margenes internos
+        // Márgenes internos
         gbc.insets = new Insets(10, 10, 10, 10);
-        //Columna X
         gbc.gridx = 0;
-        //Fila Y
         gbc.gridy = 0;
-
-        //Alineacion del Componente
         gbc.anchor = GridBagConstraints.CENTER;
-        //Establecer donde se estirara
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        //Subtitulo
+        // Subtítulo
         JLabel subtituloIzquierdo = new JLabel("Registrar/Actualizar");
         subtituloIzquierdo.setFont(new Font("ARIAL", Font.BOLD, 28));
         subtituloIzquierdo.setForeground(Color.decode("#0C6170"));
         subtituloIzquierdo.setHorizontalAlignment(SwingConstants.CENTER);
-
         gbc.gridwidth = 2;
         panelIzquierdo.add(subtituloIzquierdo, gbc);
 
         gbc.gridwidth = 1;
         gbc.gridy++;
 
-        //Campos de Texto
+        // Campos de Texto
         JPanel fieldsIzquierdos = new JPanel();
         fieldsIzquierdos.setLayout(new GridBagLayout());
         fieldsIzquierdos.setBackground(Color.white);
 
-        //Constructor de Grid
+        // Constructor de Grid para los campos
         GridBagConstraints fieldsGbc = new GridBagConstraints();
-        //Definir gaps
         fieldsGbc.insets = new Insets(3, 5, 3, 5);
         fieldsGbc.gridx = 0;
         fieldsGbc.gridy = 0;
@@ -107,8 +106,7 @@ public class RegistrarUsuario extends JPanel {
         gbc.gridy++;
         gbc.gridwidth = 2;
 
-
-        //Grid Botones
+        // Grid de Botones
         JPanel gridBotones = new JPanel();
         gridBotones.setLayout(new GridBagLayout());
         gridBotones.setPreferredSize(new Dimension(194, 25));
@@ -130,7 +128,6 @@ public class RegistrarUsuario extends JPanel {
         botonActualizar.setBorder(BorderFactory.createLineBorder(Color.black));
 
         gridBotones.add(botonRegistrar);
-        gridBotones.add(Box.createHorizontalGlue());
         gridBotones.add(Box.createHorizontalStrut(10));
         gridBotones.add(botonActualizar);
 
@@ -138,22 +135,172 @@ public class RegistrarUsuario extends JPanel {
 
         //---------------------------------------
 
+        // Panel Principal Derecho
         JPanel panelDerecho = new JPanel();
-        panelDerecho.setBackground(Color.blue);
+        panelDerecho.setLayout(new GridBagLayout());
+        panelDerecho.setBackground(Color.white);
+
+        GridBagConstraints gbcD = new GridBagConstraints();
+        gbcD.insets = new Insets(10,10,10,10);
+        gbcD.gridx = 0;
+        gbcD.gridy = 0;
+        gbcD.anchor = GridBagConstraints.CENTER;
+        gbcD.fill = GridBagConstraints.HORIZONTAL;
 
         JLabel subtituloDerecho = new JLabel("Operaciones");
         subtituloDerecho.setFont(new Font("ARIAL", Font.BOLD,28));
         subtituloDerecho.setForeground(Color.decode("#0C6170"));
+        subtituloDerecho.setHorizontalAlignment(SwingConstants.CENTER);
+        gbcD.gridwidth = 2; // El subtítulo ocupa dos columnas
+        panelDerecho.add(subtituloDerecho, gbcD);
 
-        panelDerecho.add(subtituloDerecho);
+        // Panel interno con GridBagLayout
+        JPanel fieldsDerechos = new JPanel();
+        fieldsDerechos.setLayout(new GridBagLayout());
+        fieldsDerechos.setBackground(Color.white);
 
-        //---------------------------------
+        GridBagConstraints fieldsgbcD = new GridBagConstraints();
+        fieldsgbcD.insets = new Insets(3,5,3,5);
+        fieldsgbcD.anchor = GridBagConstraints.CENTER;
+        fieldsgbcD.fill = GridBagConstraints.HORIZONTAL;
+
+        // Fila del título (Email)
+        fieldsgbcD.gridx = 0;
+        fieldsgbcD.gridy = 0;
+        fieldsgbcD.gridwidth = 2;
+        JLabel emailOperaciones = new JLabel("Email");
+        emailOperaciones.setForeground(Color.decode("#37BEB0"));
+        emailOperaciones.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsDerechos.add(emailOperaciones, fieldsgbcD);
+
+        // Fila del campo de texto
+        fieldsgbcD.gridy++;
+        JTextField emailTXT = new JTextField();
+        emailTXT.setPreferredSize(new Dimension(200, 26));
+        emailTXT.setBackground(Color.decode("#DBF5F0"));
+        emailTXT.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsDerechos.add(emailTXT, fieldsgbcD);
+
+        // Botón "Buscar Usuario"
+        fieldsgbcD.gridy++;
+        fieldsgbcD.gridwidth = 1;
+        JButton buscarUsuario = new JButton("Buscar Usuario");
+        buscarUsuario.setPreferredSize(new Dimension(150, 25));
+        buscarUsuario.setMaximumSize(new Dimension(150, 25));
+        buscarUsuario.setBackground(Color.decode("#37BEB0"));
+        buscarUsuario.setForeground(Color.white);
+        buscarUsuario.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsDerechos.add(buscarUsuario, fieldsgbcD);
+
+        // Botón "Eliminar Usuario"
+        fieldsgbcD.gridx = 1;
+        JButton eliminarUsuario = new JButton("Eliminar Usuario");
+        eliminarUsuario.setPreferredSize(new Dimension(150, 25));
+        eliminarUsuario.setMaximumSize(new Dimension(150, 25));
+        eliminarUsuario.setBackground(Color.decode("#37BEB0"));
+        eliminarUsuario.setForeground(Color.white);
+        eliminarUsuario.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsDerechos.add(eliminarUsuario, fieldsgbcD);
+
+        // Botón "Mostrar Cliente"
+        fieldsgbcD.gridx = 0;
+        fieldsgbcD.gridy++;
+        fieldsgbcD.gridwidth = 2;
+        JButton mostrarCliente = new JButton("Mostrar Usuarios");
+        mostrarCliente.setPreferredSize(new Dimension(310, 25));
+        mostrarCliente.setBackground(Color.decode("#37BEB0"));
+        mostrarCliente.setForeground(Color.white);
+        mostrarCliente.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsDerechos.add(mostrarCliente, fieldsgbcD);
+
+        // JTextArea y JScrollPane
+        fieldsgbcD.gridy++;
+        fieldsgbcD.weightx = 1.0;
+        fieldsgbcD.weighty = 1.0;
+        fieldsgbcD.fill = GridBagConstraints.BOTH;
+
+        JTextArea outputField = new JTextArea(5, 30);
+        outputField.setBorder(BorderFactory.createLineBorder(Color.black));
+        outputField.setBackground(Color.decode("#DBF5F0"));
+
+        JScrollPane scrollPane = new JScrollPane(outputField);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+        fieldsDerechos.add(scrollPane, fieldsgbcD);
+
+        gbcD.gridy++;
+        gbcD.gridwidth = 2;
+        gbcD.weightx = 1.0;
+        gbcD.weighty = 1.0;
+        gbcD.fill = GridBagConstraints.BOTH;
+
+        panelDerecho.add(fieldsDerechos, gbcD);
+
+        //---------------------------------------
+
+        // Agregar los paneles al MainPanel
         MainPanel.add(panelIzquierdo);
         MainPanel.add(panelDerecho);
 
-        MainPanel.add(Box.createVerticalGlue());
+        this.add(MainPanel, BorderLayout.CENTER);
 
-        this.add(MainPanel);
+        //Panel Izquierdo
+        botonRegistrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String usuario = usuarioCorreo.getText();
+                String email = usuarioCorreo.getText();
+                String pass = usuarioPass.getText();
 
+                Cliente cliente = new Cliente(usuario, email, pass);
+                UsuarioController usuarioController = new UsuarioController(cliente);
+                usuarioController.insertarObjeto();
+            }
+        });
+
+        botonActualizar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String usuario = usuarioCorreo.getText();
+                String email = usuarioCorreo.getText();
+                String pass = usuarioPass.getText();
+
+                Cliente cliente = new Cliente(usuario, email, pass);
+                UsuarioService usuarioService = new UsuarioService();
+                usuarioService.actualizarCliente(cliente);
+            }
+        });
+
+        //Panel Derecho
+        buscarUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String email = emailOperaciones.getText();
+
+                UsuarioService usuarioService = new UsuarioService();
+                usuarioService.buscarCliente(email);
+            }
+        });
+
+        eliminarUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String email = emailOperaciones.getText();
+
+                UsuarioService usuarioService = new UsuarioService();
+                usuarioService.eliminarCliente(email);
+            }
+        });
+
+        mostrarCliente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UsuarioService usuarioService = new UsuarioService();
+                usuarioService.mostrarClientes();
+
+                outputField.setText(usuarioService.mostrarClientes());
+            }
+        });
     }
 }

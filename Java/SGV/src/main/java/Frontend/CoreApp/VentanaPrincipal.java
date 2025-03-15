@@ -5,7 +5,6 @@ import Frontend.CoreApp.Funciones.RegistrarUsuario;
 import Frontend.login.Login;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +17,7 @@ public class VentanaPrincipal extends JFrame {
 
     public VentanaPrincipal(){
         setTitle("FullStack Gestor de Tareas");
-        setSize(850,390);
+        setSize(895,390);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -258,6 +257,7 @@ public class VentanaPrincipal extends JFrame {
 
         }
     }
+
 
 
     // Método principal para ejecutar la aplicación
