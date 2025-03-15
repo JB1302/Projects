@@ -13,26 +13,26 @@ public class RegistrarUsuario extends JPanel {
 
     private JPanel MainPanel;
 
+    // Constructor de la clase
     public RegistrarUsuario() {
+        // Configuración del layout principal del panel
         this.setLayout(new BorderLayout());
         MainPanel = new JPanel();
         MainPanel.setLayout(new GridLayout(1, 2));
         MainPanel.setBackground(Color.white);
 
-        // Panel Principal Izquierdo
+        // Definición y configuración del panel izquierdo
         JPanel panelIzquierdo = new JPanel();
         panelIzquierdo.setLayout(new GridBagLayout());
         panelIzquierdo.setBackground(Color.white);
         GridBagConstraints gbc = new GridBagConstraints();
-
-        // Márgenes internos
-        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.insets = new Insets(10, 10, 10, 10); // Márgenes internos
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Subtítulo
+        // Subtítulo del panel izquierdo
         JLabel subtituloIzquierdo = new JLabel("Registrar/Actualizar");
         subtituloIzquierdo.setFont(new Font("ARIAL", Font.BOLD, 28));
         subtituloIzquierdo.setForeground(Color.decode("#0C6170"));
@@ -43,12 +43,11 @@ public class RegistrarUsuario extends JPanel {
         gbc.gridwidth = 1;
         gbc.gridy++;
 
-        // Campos de Texto
+        // Campos de texto del panel izquierdo
         JPanel fieldsIzquierdos = new JPanel();
         fieldsIzquierdos.setLayout(new GridBagLayout());
         fieldsIzquierdos.setBackground(Color.white);
 
-        // Constructor de Grid para los campos
         GridBagConstraints fieldsGbc = new GridBagConstraints();
         fieldsGbc.insets = new Insets(3, 5, 3, 5);
         fieldsGbc.gridx = 0;
@@ -56,7 +55,7 @@ public class RegistrarUsuario extends JPanel {
         fieldsGbc.anchor = GridBagConstraints.CENTER;
         fieldsGbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Usuario
+        // Campo de texto para "Usuario"
         JLabel usuarioNombre = new JLabel("Usuario");
         usuarioNombre.setForeground(Color.decode("#37BEB0"));
         usuarioNombre.setFont(new Font("ARIAL", Font.BOLD, 12));
@@ -70,7 +69,7 @@ public class RegistrarUsuario extends JPanel {
         usuarioTxt.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         fieldsIzquierdos.add(usuarioTxt, fieldsGbc);
 
-        // Correo
+        // Campo de texto para "Email"
         fieldsGbc.gridy++;
         JLabel usuarioCorreo = new JLabel("Email");
         usuarioCorreo.setForeground(Color.decode("#37BEB0"));
@@ -85,7 +84,7 @@ public class RegistrarUsuario extends JPanel {
         correoTxt.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         fieldsIzquierdos.add(correoTxt, fieldsGbc);
 
-        // Contraseña
+        // Campo de texto para "Contraseña"
         fieldsGbc.gridy++;
         JLabel usuarioPass = new JLabel("Contraseña");
         usuarioPass.setForeground(Color.decode("#37BEB0"));
@@ -106,7 +105,7 @@ public class RegistrarUsuario extends JPanel {
         gbc.gridy++;
         gbc.gridwidth = 2;
 
-        // Grid de Botones
+        // Definición y configuración de los botones del panel izquierdo
         JPanel gridBotones = new JPanel();
         gridBotones.setLayout(new GridBagLayout());
         gridBotones.setPreferredSize(new Dimension(194, 25));
@@ -133,9 +132,7 @@ public class RegistrarUsuario extends JPanel {
 
         panelIzquierdo.add(gridBotones, gbc);
 
-        //---------------------------------------
-
-        // Panel Principal Derecho
+        // Definición y configuración del panel derecho
         JPanel panelDerecho = new JPanel();
         panelDerecho.setLayout(new GridBagLayout());
         panelDerecho.setBackground(Color.white);
@@ -151,10 +148,9 @@ public class RegistrarUsuario extends JPanel {
         subtituloDerecho.setFont(new Font("ARIAL", Font.BOLD,28));
         subtituloDerecho.setForeground(Color.decode("#0C6170"));
         subtituloDerecho.setHorizontalAlignment(SwingConstants.CENTER);
-        gbcD.gridwidth = 2; // El subtítulo ocupa dos columnas
+        gbcD.gridwidth = 2;
         panelDerecho.add(subtituloDerecho, gbcD);
 
-        // Panel interno con GridBagLayout
         JPanel fieldsDerechos = new JPanel();
         fieldsDerechos.setLayout(new GridBagLayout());
         fieldsDerechos.setBackground(Color.white);
@@ -164,7 +160,6 @@ public class RegistrarUsuario extends JPanel {
         fieldsgbcD.anchor = GridBagConstraints.CENTER;
         fieldsgbcD.fill = GridBagConstraints.HORIZONTAL;
 
-        // Fila del título (Email)
         fieldsgbcD.gridx = 0;
         fieldsgbcD.gridy = 0;
         fieldsgbcD.gridwidth = 2;
@@ -173,7 +168,6 @@ public class RegistrarUsuario extends JPanel {
         emailOperaciones.setFont(new Font("ARIAL", Font.BOLD, 12));
         fieldsDerechos.add(emailOperaciones, fieldsgbcD);
 
-        // Fila del campo de texto
         fieldsgbcD.gridy++;
         JTextField emailTXT = new JTextField();
         emailTXT.setPreferredSize(new Dimension(200, 26));
@@ -181,7 +175,7 @@ public class RegistrarUsuario extends JPanel {
         emailTXT.setBorder(BorderFactory.createLineBorder(Color.black));
         fieldsDerechos.add(emailTXT, fieldsgbcD);
 
-        // Botón "Buscar Usuario"
+        // Botones del panel derecho
         fieldsgbcD.gridy++;
         fieldsgbcD.gridwidth = 1;
         JButton buscarUsuario = new JButton("Buscar Usuario");
@@ -192,7 +186,6 @@ public class RegistrarUsuario extends JPanel {
         buscarUsuario.setBorder(BorderFactory.createLineBorder(Color.black));
         fieldsDerechos.add(buscarUsuario, fieldsgbcD);
 
-        // Botón "Eliminar Usuario"
         fieldsgbcD.gridx = 1;
         JButton eliminarUsuario = new JButton("Eliminar Usuario");
         eliminarUsuario.setPreferredSize(new Dimension(150, 25));
@@ -202,7 +195,6 @@ public class RegistrarUsuario extends JPanel {
         eliminarUsuario.setBorder(BorderFactory.createLineBorder(Color.black));
         fieldsDerechos.add(eliminarUsuario, fieldsgbcD);
 
-        // Botón "Mostrar Cliente"
         fieldsgbcD.gridx = 0;
         fieldsgbcD.gridy++;
         fieldsgbcD.gridwidth = 2;
@@ -213,7 +205,7 @@ public class RegistrarUsuario extends JPanel {
         mostrarCliente.setBorder(BorderFactory.createLineBorder(Color.black));
         fieldsDerechos.add(mostrarCliente, fieldsgbcD);
 
-        // JTextArea y JScrollPane
+        // Área de texto para mostrar resultados
         fieldsgbcD.gridy++;
         fieldsgbcD.weightx = 1.0;
         fieldsgbcD.weighty = 1.0;
@@ -237,62 +229,71 @@ public class RegistrarUsuario extends JPanel {
 
         panelDerecho.add(fieldsDerechos, gbcD);
 
-        //---------------------------------------
-
-        // Agregar los paneles al MainPanel
+        // Añadir los paneles principales al MainPanel
         MainPanel.add(panelIzquierdo);
         MainPanel.add(panelDerecho);
 
+        // Añadir el MainPanel al panel principal
         this.add(MainPanel, BorderLayout.CENTER);
 
-        //Panel Izquierdo
+        // Acción del botón "Registrar Nuevo"
         botonRegistrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String usuario = usuarioCorreo.getText();
-                String email = usuarioCorreo.getText();
-                String pass = usuarioPass.getText();
+                String usuario = usuarioTxt.getText();
+                String email = correoTxt.getText();
+                String pass = passTxt.getText();
 
                 Cliente cliente = new Cliente(usuario, email, pass);
                 UsuarioController usuarioController = new UsuarioController(cliente);
                 usuarioController.insertarObjeto();
+                outputField.setText("...");
+                outputField.setText("Usuario Creado");
             }
         });
 
+        // Acción del botón "Update"
         botonActualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String usuario = usuarioCorreo.getText();
-                String email = usuarioCorreo.getText();
-                String pass = usuarioPass.getText();
+                String usuario = usuarioTxt.getText();
+                String email = correoTxt.getText();
+                String pass = passTxt.getText();
 
                 Cliente cliente = new Cliente(usuario, email, pass);
                 UsuarioService usuarioService = new UsuarioService();
                 usuarioService.actualizarCliente(cliente);
+                outputField.setText("...");
+                outputField.setText("Usuario Actualizado");
             }
         });
 
-        //Panel Derecho
+        // Acción del botón "Buscar Usuario"
         buscarUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String email = emailOperaciones.getText();
+                String email = emailTXT.getText();
 
                 UsuarioService usuarioService = new UsuarioService();
-                usuarioService.buscarCliente(email);
+                outputField.setText(usuarioService.buscarCliente(email));
             }
         });
 
+        // Acción del botón "Eliminar Usuario"
         eliminarUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String email = emailOperaciones.getText();
+                String email = emailTXT.getText();
 
                 UsuarioService usuarioService = new UsuarioService();
                 usuarioService.eliminarCliente(email);
+
+                outputField.setText("...");
+                outputField.setText("Usuario Actualizado");
             }
         });
 
+        // Acción del botón "Mostrar Usuarios"
         mostrarCliente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
