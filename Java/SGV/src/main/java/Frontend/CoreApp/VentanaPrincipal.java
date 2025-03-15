@@ -1,8 +1,6 @@
 package Frontend.CoreApp;
 
-import Frontend.CoreApp.Funciones.GestionVehicular;
-import Frontend.CoreApp.Funciones.Notificaciones;
-import Frontend.CoreApp.Funciones.RegistrarUsuario;
+import Frontend.CoreApp.Funciones.*;
 import Frontend.login.Login;
 
 import javax.swing.*;
@@ -216,16 +214,18 @@ public class VentanaPrincipal extends JFrame {
 
     public class vista1 extends JPanel{
         public vista1(){
-            setLayout( new BorderLayout());
-            add(new JLabel("Vista 2 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
+            setLayout(new BorderLayout());
+            GestionVehicular gestionVehicular = new GestionVehicular();
+            add(gestionVehicular);
         }
     }
 
 
     public class vista2 extends JPanel{
         public vista2(){
-            setLayout( new BorderLayout());
-            add(new JLabel("Vista 3 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
+            setLayout(new BorderLayout());
+            GestionReparaciones gestionReparaciones = new GestionReparaciones();
+            add(gestionReparaciones);
         }
     }
 
@@ -254,8 +254,8 @@ public class VentanaPrincipal extends JFrame {
     public class vista6 extends JPanel{
         public vista6(){
             setLayout(new BorderLayout());
-            GestionVehicular gestionVehicular = new GestionVehicular();
-            add(gestionVehicular);
+            Facturas facturas = new Facturas();
+            add(facturas);
         }
     }
 

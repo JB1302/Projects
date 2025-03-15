@@ -22,17 +22,17 @@ public class Factura {
         PROGRAMADA, CANCELADA, COMPLETADA
     }
 
-    public void generarFactura(String Placa) {
+    public String generarFactura(String Placa) {
 
         MySQLConnection.conexion();
-
+        StringBuilder sb = new StringBuilder();
         String sql = "SELECT cliente_id, descripcion_problema, estado, fecha_inicio, mecanico_id, vehiculo_id FROM taller_mecanico.orden_reparacion WHERE vehiculo_id = ?";
 
         try (PreparedStatement statement = MySQLConnection.getConnection().prepareStatement(sql)) {
             statement.setString(1, Placa);
 
             ResultSet resultSet = statement.executeQuery();
-            StringBuilder sb = new StringBuilder();
+
 
             if (resultSet.next()) {
                 sb.append("\n-----------------------------\n");
@@ -62,10 +62,13 @@ public class Factura {
         } finally {
             MySQLConnection.closeConnection();
         }
+        return sb.toString();
     }
 
-    public void registrarPago(String placa) {
+    public String registrarPago(String placa) {
         String sql = "UPDATE taller_mecanico.orden_reparacion SET estado = ? WHERE estado NOT LIKE ? AND vehiculo_id = ?";
+
+        String respuesta = "";
 
         MySQLConnection.conexion();
 
@@ -77,9 +80,9 @@ public class Factura {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                System.out.println("Se ha registrado el pago de la reparación para el vehículo con placa " + placa);
+                respuesta = "Se ha registrado el pago de la reparación para el vehículo con placa " + placa ;
             } else {
-                System.out.println("No se encontró una reparación pendiente para el vehículo con placa " + placa);
+                respuesta = "No se encontró una reparación pendiente para el vehículo con placa " + placa ;
             }
 
         } catch (SQLException e) {
@@ -87,6 +90,7 @@ public class Factura {
         } finally {
             MySQLConnection.closeConnection();
         }
+        return respuesta;
     }
 
 }
