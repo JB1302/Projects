@@ -16,7 +16,7 @@ public class VentanaPrincipal extends JFrame {
 
     public VentanaPrincipal(){
         setTitle("FullStack Gestor de Tareas");
-        setSize(895,390);
+        setSize(895,450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
