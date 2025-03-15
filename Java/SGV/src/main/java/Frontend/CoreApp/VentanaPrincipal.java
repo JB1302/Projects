@@ -1,5 +1,6 @@
 package Frontend.CoreApp;
 
+import Frontend.CoreApp.Funciones.GestionVehicular;
 import Frontend.CoreApp.Funciones.Notificaciones;
 import Frontend.CoreApp.Funciones.RegistrarUsuario;
 import Frontend.login.Login;
@@ -252,9 +253,9 @@ public class VentanaPrincipal extends JFrame {
 
     public class vista6 extends JPanel{
         public vista6(){
-            setLayout( new BorderLayout());
-            add(new JLabel("Vista 7 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
-
+            setLayout(new BorderLayout());
+            GestionVehicular gestionVehicular = new GestionVehicular();
+            add(gestionVehicular);
         }
     }
 

@@ -205,6 +205,8 @@ public class RegistrarUsuario extends JPanel {
         mostrarCliente.setBorder(BorderFactory.createLineBorder(Color.black));
         fieldsDerechos.add(mostrarCliente, fieldsgbcD);
 
+
+
         // Área de texto para mostrar resultados
         fieldsgbcD.gridy++;
         fieldsgbcD.weightx = 1.0;
