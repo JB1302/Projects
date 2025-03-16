@@ -38,11 +38,13 @@ public class Notificaciones extends JPanel {
 
         JButton submittButton = new JButton();
         submittButton.setText("Enviar Notificaciones");
-        submittButton.setMaximumSize(new Dimension(162,19));
+        submittButton.setPreferredSize(new Dimension(200,28));
+        submittButton.setMaximumSize(new Dimension(200,28));
         submittButton.setBackground(Color.decode("#37BEB0"));
         submittButton.setForeground(Color.white);
+        submittButton.setBorder(BorderFactory.createLineBorder(Color.black));
 
-        MainPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        buttonPannel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         buttonPannel.add(submittButton);
         MainPanel.add(buttonPannel);

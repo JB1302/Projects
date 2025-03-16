@@ -41,63 +41,63 @@ public class GestionReparaciones extends JPanel {
         // Conjunto 2
         fieldsGbc2.gridx = 0;
         fieldsGbc2.gridy = 0;
-        JLabel placaLabel2 = new JLabel("Placa");
-        placaLabel2.setForeground(Color.decode("#37BEB0"));
-        placaLabel2.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(placaLabel2, fieldsGbc2);
+        JLabel placalabel = new JLabel("Placa");
+        placalabel.setForeground(Color.decode("#37BEB0"));
+        placalabel.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(placalabel, fieldsGbc2);
 
         fieldsGbc2.gridy = 1;
-        JTextField placaTxt2 = new JTextField();
-        placaTxt2.setPreferredSize(new Dimension(150, 26));
-        placaTxt2.setMaximumSize(new Dimension(150, 26));
-        placaTxt2.setBackground(Color.decode("#DBF5F0"));
-        placaTxt2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(placaTxt2, fieldsGbc2);
+        JTextField placatxt = new JTextField();
+        placatxt.setPreferredSize(new Dimension(150, 26));
+        placatxt.setMaximumSize(new Dimension(150, 26));
+        placatxt.setBackground(Color.decode("#DBF5F0"));
+        placatxt.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(placatxt, fieldsGbc2);
 
         fieldsGbc2.gridx = 1;
         fieldsGbc2.gridy = 0;
-        JLabel placaLabel3 = new JLabel("Placa");
-        placaLabel3.setForeground(Color.decode("#37BEB0"));
-        placaLabel3.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(placaLabel3, fieldsGbc2);
+        JLabel propietarioLBL = new JLabel("Propietario");
+        propietarioLBL.setForeground(Color.decode("#37BEB0"));
+        propietarioLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(propietarioLBL, fieldsGbc2);
 
         fieldsGbc2.gridy = 1;
-        JTextField placaTxt3 = new JTextField();
-        placaTxt3.setPreferredSize(new Dimension(150, 26));
-        placaTxt3.setMaximumSize(new Dimension(150, 26));
-        placaTxt3.setBackground(Color.decode("#DBF5F0"));
-        placaTxt3.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(placaTxt3, fieldsGbc2);
+        JTextField propietarioTXT = new JTextField();
+        propietarioTXT.setPreferredSize(new Dimension(150, 26));
+        propietarioTXT.setMaximumSize(new Dimension(150, 26));
+        propietarioTXT.setBackground(Color.decode("#DBF5F0"));
+        propietarioTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(propietarioTXT, fieldsGbc2);
 
         fieldsGbc2.gridx = 0;
         fieldsGbc2.gridy = 2;
-        JLabel propietarioLabel1 = new JLabel("Propietario");
-        propietarioLabel1.setForeground(Color.decode("#37BEB0"));
-        propietarioLabel1.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(propietarioLabel1, fieldsGbc2);
+        JLabel descripcionLBL = new JLabel("Descripción");
+        descripcionLBL.setForeground(Color.decode("#37BEB0"));
+        descripcionLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(descripcionLBL, fieldsGbc2);
 
         fieldsGbc2.gridy = 3;
-        JTextField propietarioTxt1 = new JTextField();
-        propietarioTxt1.setPreferredSize(new Dimension(150, 26));
-        propietarioTxt1.setMaximumSize(new Dimension(150, 26));
-        propietarioTxt1.setBackground(Color.decode("#DBF5F0"));
-        propietarioTxt1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(propietarioTxt1, fieldsGbc2);
+        JTextField descripcionTXT = new JTextField();
+        descripcionTXT.setPreferredSize(new Dimension(150, 26));
+        descripcionTXT.setMaximumSize(new Dimension(150, 26));
+        descripcionTXT.setBackground(Color.decode("#DBF5F0"));
+        descripcionTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(descripcionTXT, fieldsGbc2);
 
         fieldsGbc2.gridx = 1;
         fieldsGbc2.gridy = 2;
-        JLabel propietarioLabel2 = new JLabel("Propietario");
-        propietarioLabel2.setForeground(Color.decode("#37BEB0"));
-        propietarioLabel2.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(propietarioLabel2, fieldsGbc2);
+        JLabel horasLabel = new JLabel("Horas");
+        horasLabel.setForeground(Color.decode("#37BEB0"));
+        horasLabel.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(horasLabel, fieldsGbc2);
 
         fieldsGbc2.gridy = 3;
-        JTextField propietarioTxt2 = new JTextField();
-        propietarioTxt2.setPreferredSize(new Dimension(150, 26));
-        propietarioTxt2.setMaximumSize(new Dimension(150, 26));
-        propietarioTxt2.setBackground(Color.decode("#DBF5F0"));
-        propietarioTxt2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(propietarioTxt2, fieldsGbc2);
+        JTextField horasTXT = new JTextField();
+        horasTXT.setPreferredSize(new Dimension(150, 26));
+        horasTXT.setMaximumSize(new Dimension(150, 26));
+        horasTXT.setBackground(Color.decode("#DBF5F0"));
+        horasTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(horasTXT, fieldsGbc2);
 
         // Campo de Fecha para "Fecha"
         fieldsGbc2.gridx = 0;
@@ -118,7 +118,7 @@ public class GestionReparaciones extends JPanel {
         fieldsIzquierdos.add(fechaTxt, fieldsGbc2);
 
         fieldsGbc2.gridy = 6;
-        JButton crearReparacion = new JButton("Registrar Nuevo");
+        JButton crearReparacion = new JButton("Crear Reparación");
         crearReparacion.setPreferredSize(new Dimension(310, 25));
         crearReparacion.setMaximumSize(new Dimension(310, 25));
         crearReparacion.setBackground(Color.decode("#37BEB0"));

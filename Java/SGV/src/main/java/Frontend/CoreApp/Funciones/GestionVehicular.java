@@ -23,7 +23,7 @@ public class GestionVehicular extends JPanel {
     gbc.anchor = GridBagConstraints.CENTER;
     gbc.fill = GridBagConstraints.HORIZONTAL;
 
-    JLabel subtituloIzquierdo = new JLabel("Añadir Reparación");
+    JLabel subtituloIzquierdo = new JLabel("Añadir Vehiculo");
         subtituloIzquierdo.setFont(new Font("ARIAL", Font.BOLD, 28));
         subtituloIzquierdo.setForeground(Color.decode("#0C6170"));
         subtituloIzquierdo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -42,63 +42,63 @@ public class GestionVehicular extends JPanel {
     // Conjunto 2
     fieldsGbc2.gridx = 0;
     fieldsGbc2.gridy = 0;
-    JLabel placaLabel2 = new JLabel("Placa");
-        placaLabel2.setForeground(Color.decode("#37BEB0"));
-        placaLabel2.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(placaLabel2, fieldsGbc2);
+    JLabel placaLabel = new JLabel("Placa");
+        placaLabel.setForeground(Color.decode("#37BEB0"));
+        placaLabel.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(placaLabel, fieldsGbc2);
 
     fieldsGbc2.gridy = 1;
-    JTextField placaTxt2 = new JTextField();
-        placaTxt2.setPreferredSize(new Dimension(150, 26));
-        placaTxt2.setMaximumSize(new Dimension(150, 26));
-        placaTxt2.setBackground(Color.decode("#DBF5F0"));
-        placaTxt2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(placaTxt2, fieldsGbc2);
+    JTextField placaTXT = new JTextField();
+        placaTXT.setPreferredSize(new Dimension(150, 26));
+        placaTXT.setMaximumSize(new Dimension(150, 26));
+        placaTXT.setBackground(Color.decode("#DBF5F0"));
+        placaTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(placaTXT, fieldsGbc2);
 
     fieldsGbc2.gridx = 1;
     fieldsGbc2.gridy = 0;
-    JLabel placaLabel3 = new JLabel("Placa");
-        placaLabel3.setForeground(Color.decode("#37BEB0"));
-        placaLabel3.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(placaLabel3, fieldsGbc2);
+    JLabel modeloLBL = new JLabel("Modelo");
+        modeloLBL.setForeground(Color.decode("#37BEB0"));
+        modeloLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(modeloLBL, fieldsGbc2);
 
     fieldsGbc2.gridy = 1;
-    JTextField placaTxt3 = new JTextField();
-        placaTxt3.setPreferredSize(new Dimension(150, 26));
-        placaTxt3.setMaximumSize(new Dimension(150, 26));
-        placaTxt3.setBackground(Color.decode("#DBF5F0"));
-        placaTxt3.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(placaTxt3, fieldsGbc2);
+    JTextField modeloTXT = new JTextField();
+        modeloTXT.setPreferredSize(new Dimension(150, 26));
+        modeloTXT.setMaximumSize(new Dimension(150, 26));
+        modeloTXT.setBackground(Color.decode("#DBF5F0"));
+        modeloTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(modeloTXT, fieldsGbc2);
 
     fieldsGbc2.gridx = 0;
     fieldsGbc2.gridy = 2;
-    JLabel propietarioLabel1 = new JLabel("Propietario");
-        propietarioLabel1.setForeground(Color.decode("#37BEB0"));
-        propietarioLabel1.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(propietarioLabel1, fieldsGbc2);
+    JLabel yearLBL = new JLabel("Año");
+        yearLBL.setForeground(Color.decode("#37BEB0"));
+        yearLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(yearLBL, fieldsGbc2);
 
     fieldsGbc2.gridy = 3;
-    JTextField propietarioTxt1 = new JTextField();
-        propietarioTxt1.setPreferredSize(new Dimension(150, 26));
-        propietarioTxt1.setMaximumSize(new Dimension(150, 26));
-        propietarioTxt1.setBackground(Color.decode("#DBF5F0"));
-        propietarioTxt1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(propietarioTxt1, fieldsGbc2);
+    JTextField yearTXT = new JTextField();
+        yearTXT.setPreferredSize(new Dimension(150, 26));
+        yearTXT.setMaximumSize(new Dimension(150, 26));
+        yearTXT.setBackground(Color.decode("#DBF5F0"));
+        yearTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(yearTXT, fieldsGbc2);
 
     fieldsGbc2.gridx = 1;
     fieldsGbc2.gridy = 2;
-    JLabel propietarioLabel2 = new JLabel("Propietario");
-        propietarioLabel2.setForeground(Color.decode("#37BEB0"));
-        propietarioLabel2.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(propietarioLabel2, fieldsGbc2);
+    JLabel propietarioLBL = new JLabel("Propietario");
+        propietarioLBL.setForeground(Color.decode("#37BEB0"));
+        propietarioLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(propietarioLBL, fieldsGbc2);
 
     fieldsGbc2.gridy = 3;
-    JTextField propietarioTxt2 = new JTextField();
-        propietarioTxt2.setPreferredSize(new Dimension(150, 26));
-        propietarioTxt2.setMaximumSize(new Dimension(150, 26));
-        propietarioTxt2.setBackground(Color.decode("#DBF5F0"));
-        propietarioTxt2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(propietarioTxt2, fieldsGbc2);
+    JTextField propietarioTXT = new JTextField();
+        propietarioTXT.setPreferredSize(new Dimension(150, 26));
+        propietarioTXT.setMaximumSize(new Dimension(150, 26));
+        propietarioTXT.setBackground(Color.decode("#DBF5F0"));
+        propietarioTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(propietarioTXT, fieldsGbc2);
 
     // Campo de Fecha para "Fecha"
     fieldsGbc2.gridx = 0;
@@ -119,7 +119,7 @@ public class GestionVehicular extends JPanel {
         fieldsIzquierdos.add(fechaTxt, fieldsGbc2);
 
     fieldsGbc2.gridy = 6;
-    JButton crearReparacion = new JButton("Registrar Nuevo");
+    JButton crearReparacion = new JButton("Crear Vehiculo");
         crearReparacion.setPreferredSize(new Dimension(310, 25));
         crearReparacion.setMaximumSize(new Dimension(310, 25));
         crearReparacion.setBackground(Color.decode("#37BEB0"));

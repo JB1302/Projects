@@ -16,7 +16,7 @@ public class VentanaPrincipal extends JFrame {
 
     public VentanaPrincipal(){
         setTitle("FullStack Gestor de Tareas");
-        setSize(895,450);
+        setSize(895,485);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -233,13 +233,16 @@ public class VentanaPrincipal extends JFrame {
     public class vista3 extends JPanel{
         public vista3(){
             setLayout( new BorderLayout());
-            add(new JLabel("Vista 4 - Información relevante", SwingConstants.CENTER), BorderLayout.CENTER);
+            GestionCitas gestionCitas = new GestionCitas();
+            add(gestionCitas);
         }
     }
 
     public class vista4 extends JPanel{
         public vista4(){
-
+            setLayout( new BorderLayout());
+            Inventario inventario = new Inventario();
+            add(inventario);
         }
     }
 
