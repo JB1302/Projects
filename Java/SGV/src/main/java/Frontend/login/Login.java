@@ -3,7 +3,6 @@ package Frontend.login;
 import Backend.modelo.Usuario.Administrador;
 import Backend.modelo.Usuario.Cliente;
 import Backend.modelo.Usuario.Mecanico;
-import Backend.modelo.Usuario.Usuario;
 import Frontend.CoreApp.VentanaPrincipal;
 import Frontend.Register.Registrar;
 
@@ -99,61 +98,76 @@ public class Login extends JFrame {
         // Agregar el panel principal al frame
         add(MainPanel, BorderLayout.CENTER);
 
+
+
+        // Acción del botón Login usando un hilo para simular un proceso en segundo plano
         LOGINButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String nombre = LoginUserTxtField.getText();
-                String pass = new String(LoginUserPassField.getPassword());
+                // Se crea un nuevo hilo para el proceso de login
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Obtener las credenciales ingresadas
+                        String nombre = LoginUserTxtField.getText();
+                        String pass = new String(LoginUserPassField.getPassword());
 
-                Cliente cliente = new Cliente();
-                Administrador administrador = new Administrador();
-                Mecanico mecanico = new Mecanico();
+                        System.out.println("Verificando credenciales...");
 
+                        // Simulación de demora en la verificación (por ejemplo, 2 segundos)
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException ex) {
+                            ex.printStackTrace();
+                        }
 
+                        // Creación de instancias para cada tipo de usuario
+                        Cliente cliente = new Cliente();
+                        Administrador administrador = new Administrador();
+                        Mecanico mecanico = new Mecanico();
 
-                if (cliente.iniciarSesion(nombre, pass)) {
-                    System.out.println("Inicio de sesión como Cliente exitoso");
-                    VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-                    ventanaPrincipal.setVisible(true);
-                    dispose();
-                }
-                // Si no fue cliente, intentar iniciar sesión como Administrador
-                else if (administrador.iniciarSesion(nombre, pass)) {
-                    System.out.println("Inicio de sesión como Administrador exitoso");
-                    VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-                    ventanaPrincipal.setVisible(true);
-                    dispose();
-                }
-                // Si no fue ni cliente ni administrador, intentar iniciar sesión como Mecánico
-                else if (mecanico.iniciarSesion(nombre, pass)) {
-                    System.out.println("Inicio de sesión como Mecánico exitoso");
-                    VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-                    ventanaPrincipal.setVisible(true);
-                    dispose();
-                }
-                // Si ninguna de las autenticaciones fue exitosa
-                else {
-                    System.out.println("Credenciales incorrectas para todos los roles");
-                }
+                        // Verificar autenticación en función del rol
+                        if (cliente.iniciarSesion(nombre, pass)) {
+                            System.out.println("Inicio de sesión como Cliente exitoso");
+                            SwingUtilities.invokeLater(() -> {
+                                VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+                                ventanaPrincipal.setVisible(true);
+                            });
+                            dispose();
+                        } else if (administrador.iniciarSesion(nombre, pass)) {
+                            System.out.println("Inicio de sesión como Administrador exitoso");
+                            SwingUtilities.invokeLater(() -> {
+                                VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+                                ventanaPrincipal.setVisible(true);
+                            });
+                            dispose();
+                        } else if (mecanico.iniciarSesion(nombre, pass)) {
+                            System.out.println("Inicio de sesión como Mecánico exitoso");
+                            SwingUtilities.invokeLater(() -> {
+                                VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+                                ventanaPrincipal.setVisible(true);
+                            });
+                            dispose();
+                        } else {
+                            System.out.println("Credenciales incorrectas para todos los roles");
+                        }
+                    }
+                }).start();
             }
-            });
+        });
 
         REGISTRARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Registrar registroVista = new Registrar();
-
                 registroVista.setVisible(true);
-
                 dispose();
             }
         });
-
-        }
+    }
 
     public static void main(String[] args) {
         // Crear e iniciar la interfaz de login
         SwingUtilities.invokeLater(() -> new Login().setVisible(true));
     }
-
 }
