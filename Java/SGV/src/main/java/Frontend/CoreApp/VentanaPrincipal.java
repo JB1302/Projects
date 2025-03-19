@@ -1,4 +1,5 @@
-package Frontend.Cor 
+package Frontend.CoreApp;
+
 import Frontend.CoreApp.Funciones.*;
 import Frontend.login.Login;
 

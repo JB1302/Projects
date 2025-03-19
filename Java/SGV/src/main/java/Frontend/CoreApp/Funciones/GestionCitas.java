@@ -26,6 +26,7 @@ public class GestionCitas extends JPanel {
         subtituloIzquierdo.setFont(new Font("ARIAL", Font.BOLD, 28));
         subtituloIzquierdo.setForeground(Color.decode("#0C6170"));
         subtituloIzquierdo.setHorizontalAlignment(SwingConstants.CENTER);
+        subtituloIzquierdo.setBackground(Color.WHITE);
         gbc.gridwidth = 4;
         panelIzquierdo.add(subtituloIzquierdo, gbc);
 
@@ -34,6 +35,7 @@ public class GestionCitas extends JPanel {
 
         JPanel fieldsIzquierdos = new JPanel();
         fieldsIzquierdos.setLayout(new GridBagLayout());
+        fieldsIzquierdos.setBackground(Color.WHITE);
         GridBagConstraints fieldsGbc2 = new GridBagConstraints();
         fieldsGbc2.insets = new Insets(2, 2, 2, 2); // Márgenes internos reducidos
         fieldsGbc2.anchor = GridBagConstraints.WEST;
@@ -41,10 +43,10 @@ public class GestionCitas extends JPanel {
         // Conjunto 2
         fieldsGbc2.gridx = 0;
         fieldsGbc2.gridy = 0;
-        JLabel clienteLabel = new JLabel("Cliente");
-        clienteLabel.setForeground(Color.decode("#37BEB0"));
-        clienteLabel.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(clienteLabel, fieldsGbc2);
+        JLabel clienteLBL = new JLabel("Cliente");
+        clienteLBL.setForeground(Color.decode("#37BEB0"));
+        clienteLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(clienteLBL, fieldsGbc2);
 
         fieldsGbc2.gridy = 1;
         JTextField clienteTXT = new JTextField();
@@ -102,76 +104,16 @@ public class GestionCitas extends JPanel {
         fieldsGbc2.gridx = 0;
         fieldsGbc2.gridy = 4; // Ajuste de valor de "gridy" para reducir el espacio
         fieldsGbc2.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
-        JButton crearReparacion = new JButton("Crear Cita");
-        crearReparacion.setPreferredSize(new Dimension(310, 25));
-        crearReparacion.setMaximumSize(new Dimension(310, 25));
-        crearReparacion.setBackground(Color.decode("#37BEB0"));
-        crearReparacion.setForeground(Color.white);
-        crearReparacion.setBorder(BorderFactory.createLineBorder(Color.black));
-        fieldsIzquierdos.add(crearReparacion, fieldsGbc2);
+        JButton crearCitaBTN = new JButton("Crear Cita");
+        crearCitaBTN.setPreferredSize(new Dimension(310, 25));
+        crearCitaBTN.setMaximumSize(new Dimension(310, 25));
+        crearCitaBTN.setBackground(Color.decode("#37BEB0"));
+        crearCitaBTN.setForeground(Color.white);
+        crearCitaBTN.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsIzquierdos.add(crearCitaBTN, fieldsGbc2);
 
         panelIzquierdo.add(fieldsIzquierdos, gbc);
 
-        gbc.gridy++;  // Incrementar para el siguiente subtítulo
-
-        JLabel subtituloIzquierdo2 = new JLabel("Revisar Inventario");
-        subtituloIzquierdo2.setFont(new Font("ARIAL", Font.BOLD, 28));
-        subtituloIzquierdo2.setForeground(Color.decode("#0C6170"));
-        subtituloIzquierdo2.setHorizontalAlignment(SwingConstants.CENTER);
-        gbc.gridwidth = 4;
-        panelIzquierdo.add(subtituloIzquierdo2, gbc);
-
-        gbc.gridwidth = 1;
-        gbc.gridy++;  // Incrementar para el siguiente componente
-
-        JPanel fieldsInventario = new JPanel();
-        fieldsInventario.setLayout(new GridBagLayout());
-        GridBagConstraints fieldsGbc3 = new GridBagConstraints();
-        fieldsGbc3.insets = new Insets(2, 2, 2, 2); // Márgenes internos reducidos
-        fieldsGbc3.anchor = GridBagConstraints.WEST;
-
-        fieldsGbc3.gridx = 0;
-        fieldsGbc3.gridy = 0;
-        JLabel nombreLBL = new JLabel("Nombre");
-        nombreLBL.setForeground(Color.decode("#37BEB0"));
-        nombreLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsInventario.add(nombreLBL, fieldsGbc3);
-
-        fieldsGbc3.gridy = 1;
-        JTextField nombreTXT = new JTextField();
-        nombreTXT.setPreferredSize(new Dimension(150, 26));
-        nombreTXT.setMaximumSize(new Dimension(150, 26));
-        nombreTXT.setBackground(Color.decode("#DBF5F0"));
-        nombreTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsInventario.add(nombreTXT, fieldsGbc3);
-
-        fieldsGbc3.gridx = 1;
-        fieldsGbc3.gridy = 0;
-        JLabel necesitadoLBL = new JLabel("Necesitado");
-        necesitadoLBL.setForeground(Color.decode("#37BEB0"));
-        necesitadoLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsInventario.add(necesitadoLBL, fieldsGbc3);
-
-        fieldsGbc3.gridy = 1;
-        JTextField necesitadoTXT = new JTextField();
-        necesitadoTXT.setPreferredSize(new Dimension(150, 26));
-        necesitadoTXT.setMaximumSize(new Dimension(150, 26));
-        necesitadoTXT.setBackground(Color.decode("#DBF5F0"));
-        necesitadoTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsInventario.add(necesitadoTXT, fieldsGbc3);
-
-        fieldsGbc3.gridx = 0;
-        fieldsGbc3.gridy = 2; // Ajuste de valor de "gridy" para reducir el espacio
-        fieldsGbc3.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
-        JButton compararInventarioBTN = new JButton("Comparar Inventario");
-        compararInventarioBTN.setPreferredSize(new Dimension(310, 25));
-        compararInventarioBTN.setMaximumSize(new Dimension(310, 25));
-        compararInventarioBTN.setBackground(Color.decode("#37BEB0"));
-        compararInventarioBTN.setForeground(Color.white);
-        compararInventarioBTN.setBorder(BorderFactory.createLineBorder(Color.black));
-        fieldsInventario.add(compararInventarioBTN, fieldsGbc3);
-
-        panelIzquierdo.add(fieldsInventario, gbc);
 
         JPanel panelDerecho = new JPanel();
         panelDerecho.setLayout(new GridBagLayout());

@@ -140,7 +140,7 @@ public class GestionReparaciones extends JPanel {
         gbcDerecho.anchor = GridBagConstraints.CENTER;
         gbcDerecho.fill = GridBagConstraints.HORIZONTAL;
 
-        JLabel subtituloDerecho = new JLabel("Añadir Reparacion");
+        JLabel subtituloDerecho = new JLabel("Actualizar Reparacion");
         subtituloDerecho.setFont(new Font("ARIAL", Font.BOLD, 28));
         subtituloDerecho.setForeground(Color.decode("#0C6170"));
         subtituloDerecho.setHorizontalAlignment(SwingConstants.CENTER);
@@ -160,10 +160,10 @@ public class GestionReparaciones extends JPanel {
         fieldsGbcDerecho.gridx = 0;
         fieldsGbcDerecho.gridy = 0;
 
-        JLabel nombreLBLDerecho = new JLabel("Nombre");
-        nombreLBLDerecho.setForeground(Color.decode("#37BEB0"));
-        nombreLBLDerecho.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsInventarioDerecho.add(nombreLBLDerecho, fieldsGbcDerecho);
+        JLabel placaDerechaLBL = new JLabel("Placa");
+        placaDerechaLBL.setForeground(Color.decode("#37BEB0"));
+        placaDerechaLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsInventarioDerecho.add(placaDerechaLBL, fieldsGbcDerecho);
 
         fieldsGbcDerecho.gridy = 1;
         JTextField nombreTXTDerecho = new JTextField();
@@ -175,29 +175,30 @@ public class GestionReparaciones extends JPanel {
 
         fieldsGbcDerecho.gridx = 1;
         fieldsGbcDerecho.gridy = 0;
-        JLabel cantidadLBL = new JLabel("Estado");
-        cantidadLBL.setForeground(Color.decode("#37BEB0"));
-        cantidadLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsInventarioDerecho.add(cantidadLBL, fieldsGbcDerecho);
+        JLabel estadoLBL = new JLabel("Estado");
+        estadoLBL.setForeground(Color.decode("#37BEB0"));
+        estadoLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsInventarioDerecho.add(estadoLBL, fieldsGbcDerecho);
 
         fieldsGbcDerecho.gridy = 1;
         JComboBox<String> estadoComboBox = new JComboBox<>(new String[]{"PENDIENTE", "TRABAJANDO", "FINALIZADO"});
         estadoComboBox.setPreferredSize(new Dimension(150, 26));
         estadoComboBox.setMaximumSize(new Dimension(150, 26));
-        estadoComboBox.setBackground(Color.decode("#DBF5F0"));
+        estadoComboBox.setBackground(Color.decode("#37BEB0"));
+        estadoComboBox.setForeground(Color.white);
         estadoComboBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         fieldsInventarioDerecho.add(estadoComboBox, fieldsGbcDerecho);
 
         fieldsGbcDerecho.gridx = 0;
         fieldsGbcDerecho.gridy = 2;
         fieldsGbcDerecho.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
-        JButton addBTN = new JButton("Agregar Inventario");
-        addBTN.setPreferredSize(new Dimension(310, 25));
-        addBTN.setMaximumSize(new Dimension(310, 25));
-        addBTN.setBackground(Color.decode("#37BEB0"));
-        addBTN.setForeground(Color.white);
-        addBTN.setBorder(BorderFactory.createLineBorder(Color.black));
-        fieldsInventarioDerecho.add(addBTN, fieldsGbcDerecho);
+        JButton buscarUsuarioBTN = new JButton("Buscar Usuario");
+        buscarUsuarioBTN.setPreferredSize(new Dimension(310, 25));
+        buscarUsuarioBTN.setMaximumSize(new Dimension(310, 25));
+        buscarUsuarioBTN.setBackground(Color.decode("#37BEB0"));
+        buscarUsuarioBTN.setForeground(Color.white);
+        buscarUsuarioBTN.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsInventarioDerecho.add(buscarUsuarioBTN, fieldsGbcDerecho);
 
         gbcDerecho.gridy++;
         panelDerecho.add(fieldsInventarioDerecho, gbcDerecho);
@@ -223,38 +224,38 @@ public class GestionReparaciones extends JPanel {
 
         fieldsGbcDerecho2.gridx = 0;
         fieldsGbcDerecho2.gridy = 0;
-        JLabel nombreLBLDerecho2 = new JLabel("Nombre");
-        nombreLBLDerecho2.setForeground(Color.decode("#37BEB0"));
-        nombreLBLDerecho2.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsInventarioDerecho2.add(nombreLBLDerecho2, fieldsGbcDerecho2);
+        JLabel placaMecanicoLBL = new JLabel("Placa");
+        placaMecanicoLBL.setForeground(Color.decode("#37BEB0"));
+        placaMecanicoLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsInventarioDerecho2.add(placaMecanicoLBL, fieldsGbcDerecho2);
 
         fieldsGbcDerecho2.gridy = 1;
-        JTextField nombreTXTDerecho2 = new JTextField();
-        nombreTXTDerecho2.setPreferredSize(new Dimension(150, 26));
-        nombreTXTDerecho2.setMaximumSize(new Dimension(150, 26));
-        nombreTXTDerecho2.setBackground(Color.decode("#DBF5F0"));
-        nombreTXTDerecho2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsInventarioDerecho2.add(nombreTXTDerecho2, fieldsGbcDerecho2);
+        JTextField placaMecanicoTXT = new JTextField();
+        placaMecanicoTXT.setPreferredSize(new Dimension(150, 26));
+        placaMecanicoTXT.setMaximumSize(new Dimension(150, 26));
+        placaMecanicoTXT.setBackground(Color.decode("#DBF5F0"));
+        placaMecanicoTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsInventarioDerecho2.add(placaMecanicoTXT, fieldsGbcDerecho2);
 
         fieldsGbcDerecho2.gridx = 1;
         fieldsGbcDerecho2.gridy = 0;
-        JLabel cantidadLBL2 = new JLabel("Cantidad");
-        cantidadLBL2.setForeground(Color.decode("#37BEB0"));
-        cantidadLBL2.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsInventarioDerecho2.add(cantidadLBL2, fieldsGbcDerecho2);
+        JLabel mecanicoLBL = new JLabel("Mecanico");
+        mecanicoLBL.setForeground(Color.decode("#37BEB0"));
+        mecanicoLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsInventarioDerecho2.add(mecanicoLBL, fieldsGbcDerecho2);
 
         fieldsGbcDerecho2.gridy = 1;
-        JTextField cantidadTXT2 = new JTextField();
-        cantidadTXT2.setPreferredSize(new Dimension(150, 26));
-        cantidadTXT2.setMaximumSize(new Dimension(150, 26));
-        cantidadTXT2.setBackground(Color.decode("#DBF5F0"));
-        cantidadTXT2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsInventarioDerecho2.add(cantidadTXT2, fieldsGbcDerecho2);
+        JTextField mecanicoTXT = new JTextField();
+        mecanicoTXT.setPreferredSize(new Dimension(150, 26));
+        mecanicoTXT.setMaximumSize(new Dimension(150, 26));
+        mecanicoTXT.setBackground(Color.decode("#DBF5F0"));
+        mecanicoTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsInventarioDerecho2.add(mecanicoTXT, fieldsGbcDerecho2);
 
         fieldsGbcDerecho2.gridx = 0;
         fieldsGbcDerecho2.gridy = 2;
         fieldsGbcDerecho2.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
-        JButton addBTN2 = new JButton("Agregar Inventario");
+        JButton addBTN2 = new JButton("Buscar Usuario");
         addBTN2.setPreferredSize(new Dimension(310, 25));
         addBTN2.setMaximumSize(new Dimension(310, 25));
         addBTN2.setBackground(Color.decode("#37BEB0"));

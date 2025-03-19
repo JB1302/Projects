@@ -103,20 +103,20 @@ public class GestionVehicular extends JPanel {
 // Campo de Fecha para "Fecha"
         fieldsGbc2.gridx = 0;
         fieldsGbc2.gridy = 4;
-        JLabel fechaLabel = new JLabel("Fecha");
-        fechaLabel.setForeground(Color.decode("#37BEB0"));
-        fechaLabel.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(fechaLabel, fieldsGbc2);
+        JLabel notasLBL = new JLabel("Notas");
+        notasLBL.setForeground(Color.decode("#37BEB0"));
+        notasLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(notasLBL, fieldsGbc2);
 
         fieldsGbc2.gridx = 0;
         fieldsGbc2.gridy = 5;
         fieldsGbc2.gridwidth = 4;
-        JTextField fechaTxt = new JTextField();
-        fechaTxt.setPreferredSize(new Dimension(310, 26));
-        fechaTxt.setMaximumSize(new Dimension(310, 26));
-        fechaTxt.setBackground(Color.decode("#DBF5F0"));
-        fechaTxt.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(fechaTxt, fieldsGbc2);
+        JTextField notasTXT = new JTextField();
+        notasTXT.setPreferredSize(new Dimension(310, 26));
+        notasTXT.setMaximumSize(new Dimension(310, 26));
+        notasTXT.setBackground(Color.decode("#DBF5F0"));
+        notasTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(notasTXT , fieldsGbc2);
 
         fieldsGbc2.gridy = 6;
         JButton crearVehiculo = new JButton("Crear Vehiculo");
@@ -234,20 +234,21 @@ public class GestionVehicular extends JPanel {
         JComboBox<String> estadoComboBox = new JComboBox<>(new String[]{"PENDIENTE", "TRABAJANDO", "FINALIZADO"});
         estadoComboBox.setPreferredSize(new Dimension(150, 26));
         estadoComboBox.setMaximumSize(new Dimension(150, 26));
-        estadoComboBox.setBackground(Color.decode("#DBF5F0"));
+        estadoComboBox.setBackground(Color.decode("#37BEB0"));
+        estadoComboBox.setForeground(Color.white);
         estadoComboBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         fieldsInventarioDerecho.add(estadoComboBox, fieldsGbcDerecho);
 
         fieldsGbcDerecho.gridx = 0;
         fieldsGbcDerecho.gridy = 2;
         fieldsGbcDerecho.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
-        JButton addBTN = new JButton("Agregar Inventario");
-        addBTN.setPreferredSize(new Dimension(310, 25));
-        addBTN.setMaximumSize(new Dimension(310, 25));
-        addBTN.setBackground(Color.decode("#37BEB0"));
-        addBTN.setForeground(Color.white);
-        addBTN.setBorder(BorderFactory.createLineBorder(Color.black));
-        fieldsInventarioDerecho.add(addBTN, fieldsGbcDerecho);
+        JButton actualizarCocheBTN = new JButton("Actualizar Coche");
+        actualizarCocheBTN.setPreferredSize(new Dimension(310, 25));
+        actualizarCocheBTN.setMaximumSize(new Dimension(310, 25));
+        actualizarCocheBTN.setBackground(Color.decode("#37BEB0"));
+        actualizarCocheBTN.setForeground(Color.white);
+        actualizarCocheBTN.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsInventarioDerecho.add(actualizarCocheBTN, fieldsGbcDerecho);
 
         gbcDerecho.gridy++;
         panelDerecho.add(fieldsInventarioDerecho, gbcDerecho);
