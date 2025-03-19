@@ -177,6 +177,121 @@ public class GestionCitas extends JPanel {
         panelDerecho.setLayout(new GridBagLayout());
         panelDerecho.setBackground(Color.white);
 
+        GridBagConstraints gbcDerecho = new GridBagConstraints();
+        gbcDerecho.insets = new Insets(5, 5, 5, 5);
+        gbcDerecho.gridx = 0;
+        gbcDerecho.gridy = 0;
+        gbcDerecho.anchor = GridBagConstraints.CENTER;
+        gbcDerecho.fill = GridBagConstraints.HORIZONTAL;
+
+        JLabel reprogramarCitaSubtitulo = new JLabel("Reprogramar Cita");
+        reprogramarCitaSubtitulo.setFont(new Font("ARIAL", Font.BOLD, 28));
+        reprogramarCitaSubtitulo.setForeground(Color.decode("#0C6170"));
+        reprogramarCitaSubtitulo.setHorizontalAlignment(SwingConstants.CENTER);
+        gbcDerecho.gridwidth = 4;
+        panelDerecho.add(reprogramarCitaSubtitulo, gbcDerecho);
+
+        GridBagConstraints fieldsGbcDerecho = new GridBagConstraints();
+        fieldsGbcDerecho.insets = new Insets(2, 2, 2, 2);
+        fieldsGbcDerecho.anchor = GridBagConstraints.WEST;
+
+        fieldsGbcDerecho.gridx = 0;
+        fieldsGbcDerecho.gridy = 1;
+        JLabel clienteLBLDerechoSuperior = new JLabel("Cliente");
+        clienteLBLDerechoSuperior.setForeground(Color.decode("#37BEB0"));
+        clienteLBLDerechoSuperior.setFont(new Font("ARIAL", Font.BOLD, 12));
+        panelDerecho.add(clienteLBLDerechoSuperior, fieldsGbcDerecho);
+
+        fieldsGbcDerecho.gridy = 2;
+        fieldsGbcDerecho.gridwidth = 4; // Para que el JTextField ocupe todo el ancho del contenedor
+        JTextField clienteTXTDerechoSuperior = new JTextField();
+        clienteTXTDerechoSuperior.setPreferredSize(new Dimension(310, 26));
+        clienteTXTDerechoSuperior.setMaximumSize(new Dimension(310, 26));
+        clienteTXTDerechoSuperior.setBackground(Color.decode("#DBF5F0"));
+        clienteTXTDerechoSuperior.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panelDerecho.add(clienteTXTDerechoSuperior, fieldsGbcDerecho);
+
+        fieldsGbcDerecho.gridx = 0;
+        fieldsGbcDerecho.gridy = 3;
+        fieldsGbcDerecho.gridwidth = 1;
+        JLabel nuevaFechaLBL = new JLabel("Nueva Fecha");
+        nuevaFechaLBL.setForeground(Color.decode("#37BEB0"));
+        nuevaFechaLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        panelDerecho.add(nuevaFechaLBL, fieldsGbcDerecho);
+
+        fieldsGbcDerecho.gridy = 4;
+        JTextField nuevaFechaTXT = new JTextField();
+        nuevaFechaTXT.setPreferredSize(new Dimension(150, 26));
+        nuevaFechaTXT.setMaximumSize(new Dimension(150, 26));
+        nuevaFechaTXT.setBackground(Color.decode("#DBF5F0"));
+        nuevaFechaTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panelDerecho.add(nuevaFechaTXT, fieldsGbcDerecho);
+
+        fieldsGbcDerecho.gridx = 1;
+        fieldsGbcDerecho.gridy = 3;
+        JLabel nuevaHoraLBL = new JLabel("Nueva Hora");
+        nuevaHoraLBL.setForeground(Color.decode("#37BEB0"));
+        nuevaHoraLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        panelDerecho.add(nuevaHoraLBL, fieldsGbcDerecho);
+
+        fieldsGbcDerecho.gridy = 4;
+        JTextField nuevaHoraReprogramarTXT = new JTextField();
+        nuevaHoraReprogramarTXT.setPreferredSize(new Dimension(150, 26));
+        nuevaHoraReprogramarTXT.setMaximumSize(new Dimension(150, 26));
+        nuevaHoraReprogramarTXT.setBackground(Color.decode("#DBF5F0"));
+        nuevaHoraReprogramarTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panelDerecho.add(nuevaHoraReprogramarTXT, fieldsGbcDerecho);
+
+        fieldsGbcDerecho.gridx = 0;
+        fieldsGbcDerecho.gridy = 5;
+        fieldsGbcDerecho.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
+        JButton reprogramarBTN = new JButton("Reprogramar");
+        reprogramarBTN.setPreferredSize(new Dimension(310, 25));
+        reprogramarBTN.setMaximumSize(new Dimension(310, 25));
+        reprogramarBTN.setBackground(Color.decode("#37BEB0"));
+        reprogramarBTN.setForeground(Color.white);
+        reprogramarBTN.setBorder(BorderFactory.createLineBorder(Color.black));
+        panelDerecho.add(reprogramarBTN, fieldsGbcDerecho);
+
+        gbcDerecho.gridy = 6;
+        gbcDerecho.gridwidth = 4;
+        JLabel subtituloBuscar = new JLabel("Cancelar Cita");
+        subtituloBuscar.setFont(new Font("ARIAL", Font.BOLD, 28));
+        subtituloBuscar.setForeground(Color.decode("#0C6170"));
+        subtituloBuscar.setHorizontalAlignment(SwingConstants.CENTER);
+        panelDerecho.add(subtituloBuscar, gbcDerecho);
+
+        GridBagConstraints fieldsGbcBuscarDerecho = new GridBagConstraints();
+        fieldsGbcBuscarDerecho.insets = new Insets(2, 2, 2, 2);
+        fieldsGbcBuscarDerecho.anchor = GridBagConstraints.WEST;
+
+        fieldsGbcBuscarDerecho.gridx = 0;
+        fieldsGbcBuscarDerecho.gridy = 7;
+        JLabel clienteLBLDerecho = new JLabel("Cliente");
+        clienteLBLDerecho.setForeground(Color.decode("#37BEB0"));
+        clienteLBLDerecho.setFont(new Font("ARIAL", Font.BOLD, 12));
+        panelDerecho.add(clienteLBLDerecho, fieldsGbcBuscarDerecho);
+
+        fieldsGbcBuscarDerecho.gridy = 8;
+        fieldsGbcBuscarDerecho.gridwidth = 4; // Para que el JTextField ocupe todo el ancho del contenedor
+        JTextField clienteTXTDerecho = new JTextField();
+        clienteTXTDerecho.setPreferredSize(new Dimension(310, 26));
+        clienteTXTDerecho.setMaximumSize(new Dimension(310, 26));
+        clienteTXTDerecho.setBackground(Color.decode("#DBF5F0"));
+        clienteTXTDerecho.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panelDerecho.add(clienteTXTDerecho, fieldsGbcBuscarDerecho);
+
+        fieldsGbcBuscarDerecho.gridx = 0;
+        fieldsGbcBuscarDerecho.gridy = 9;
+        fieldsGbcBuscarDerecho.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
+        JButton cancelarDerechoBTN = new JButton("Cancelar");
+        cancelarDerechoBTN.setPreferredSize(new Dimension(310, 25));
+        cancelarDerechoBTN.setMaximumSize(new Dimension(310, 25));
+        cancelarDerechoBTN.setBackground(Color.decode("#37BEB0"));
+        cancelarDerechoBTN.setForeground(Color.white);
+        cancelarDerechoBTN.setBorder(BorderFactory.createLineBorder(Color.black));
+        panelDerecho.add(cancelarDerechoBTN, fieldsGbcBuscarDerecho);
+
         MainPanel.add(panelIzquierdo);
         MainPanel.add(panelDerecho);
 

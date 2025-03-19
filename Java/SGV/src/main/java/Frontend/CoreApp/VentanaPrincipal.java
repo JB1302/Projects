@@ -1,5 +1,4 @@
-package Frontend.CoreApp;
-
+package Frontend.Cor 
 import Frontend.CoreApp.Funciones.*;
 import Frontend.login.Login;
 
@@ -16,7 +15,7 @@ public class VentanaPrincipal extends JFrame {
 
     public VentanaPrincipal(){
         setTitle("FullStack Gestor de Tareas");
-        setSize(895,485);
+        setSize(905,485);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
