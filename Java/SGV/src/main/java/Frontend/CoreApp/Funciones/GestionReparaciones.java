@@ -1,7 +1,16 @@
 package Frontend.CoreApp.Funciones;
 
+import Backend.controlador.ReparacionController;
+import Backend.modelo.Vehiculo.OrdenReparacion;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class GestionReparaciones extends JPanel {
 
@@ -87,18 +96,18 @@ public class GestionReparaciones extends JPanel {
 
         fieldsGbc2.gridx = 1;
         fieldsGbc2.gridy = 2;
-        JLabel horasLabel = new JLabel("Horas");
-        horasLabel.setForeground(Color.decode("#37BEB0"));
-        horasLabel.setFont(new Font("ARIAL", Font.BOLD, 12));
-        fieldsIzquierdos.add(horasLabel, fieldsGbc2);
+        JLabel mecanicoReparacionLBL = new JLabel("Mecanico");
+        mecanicoReparacionLBL.setForeground(Color.decode("#37BEB0"));
+        mecanicoReparacionLBL.setFont(new Font("ARIAL", Font.BOLD, 12));
+        fieldsIzquierdos.add(mecanicoReparacionLBL, fieldsGbc2);
 
         fieldsGbc2.gridy = 3;
-        JTextField horasTXT = new JTextField();
-        horasTXT.setPreferredSize(new Dimension(150, 26));
-        horasTXT.setMaximumSize(new Dimension(150, 26));
-        horasTXT.setBackground(Color.decode("#DBF5F0"));
-        horasTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(horasTXT, fieldsGbc2);
+        JTextField mecanicoIDReparaicontxt = new JTextField();
+        mecanicoIDReparaicontxt.setPreferredSize(new Dimension(150, 26));
+        mecanicoIDReparaicontxt.setMaximumSize(new Dimension(150, 26));
+        mecanicoIDReparaicontxt.setBackground(Color.decode("#DBF5F0"));
+        mecanicoIDReparaicontxt.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(mecanicoIDReparaicontxt, fieldsGbc2);
 
         // Campo de Fecha para "Fecha"
         fieldsGbc2.gridx = 0;
@@ -166,12 +175,12 @@ public class GestionReparaciones extends JPanel {
         fieldsInventarioDerecho.add(placaDerechaLBL, fieldsGbcDerecho);
 
         fieldsGbcDerecho.gridy = 1;
-        JTextField nombreTXTDerecho = new JTextField();
-        nombreTXTDerecho.setPreferredSize(new Dimension(150, 26));
-        nombreTXTDerecho.setMaximumSize(new Dimension(150, 26));
-        nombreTXTDerecho.setBackground(Color.decode("#DBF5F0"));
-        nombreTXTDerecho.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsInventarioDerecho.add(nombreTXTDerecho, fieldsGbcDerecho);
+        JTextField placaReparacion = new JTextField();
+        placaReparacion.setPreferredSize(new Dimension(150, 26));
+        placaReparacion.setMaximumSize(new Dimension(150, 26));
+        placaReparacion.setBackground(Color.decode("#DBF5F0"));
+        placaReparacion.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsInventarioDerecho.add(placaReparacion, fieldsGbcDerecho);
 
         fieldsGbcDerecho.gridx = 1;
         fieldsGbcDerecho.gridy = 0;
@@ -181,7 +190,7 @@ public class GestionReparaciones extends JPanel {
         fieldsInventarioDerecho.add(estadoLBL, fieldsGbcDerecho);
 
         fieldsGbcDerecho.gridy = 1;
-        JComboBox<String> estadoComboBox = new JComboBox<>(new String[]{"PENDIENTE", "TRABAJANDO", "FINALIZADO"});
+        JComboBox<String> estadoComboBox = new JComboBox<>(new String[]{"PROGRAMADA", "CANCELADA"});
         estadoComboBox.setPreferredSize(new Dimension(150, 26));
         estadoComboBox.setMaximumSize(new Dimension(150, 26));
         estadoComboBox.setBackground(Color.decode("#37BEB0"));
@@ -192,13 +201,13 @@ public class GestionReparaciones extends JPanel {
         fieldsGbcDerecho.gridx = 0;
         fieldsGbcDerecho.gridy = 2;
         fieldsGbcDerecho.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
-        JButton buscarUsuarioBTN = new JButton("Buscar Usuario");
-        buscarUsuarioBTN.setPreferredSize(new Dimension(310, 25));
-        buscarUsuarioBTN.setMaximumSize(new Dimension(310, 25));
-        buscarUsuarioBTN.setBackground(Color.decode("#37BEB0"));
-        buscarUsuarioBTN.setForeground(Color.white);
-        buscarUsuarioBTN.setBorder(BorderFactory.createLineBorder(Color.black));
-        fieldsInventarioDerecho.add(buscarUsuarioBTN, fieldsGbcDerecho);
+        JButton actualizarEstadoBTN = new JButton("Actualizar Orden");
+        actualizarEstadoBTN.setPreferredSize(new Dimension(310, 25));
+        actualizarEstadoBTN.setMaximumSize(new Dimension(310, 25));
+        actualizarEstadoBTN.setBackground(Color.decode("#37BEB0"));
+        actualizarEstadoBTN.setForeground(Color.white);
+        actualizarEstadoBTN.setBorder(BorderFactory.createLineBorder(Color.black));
+        fieldsInventarioDerecho.add(actualizarEstadoBTN, fieldsGbcDerecho);
 
         gbcDerecho.gridy++;
         panelDerecho.add(fieldsInventarioDerecho, gbcDerecho);
@@ -255,7 +264,8 @@ public class GestionReparaciones extends JPanel {
         fieldsGbcDerecho2.gridx = 0;
         fieldsGbcDerecho2.gridy = 2;
         fieldsGbcDerecho2.gridwidth = 2; // Para que el botón ocupe el ancho de los dos campos anteriores
-        JButton addBTN2 = new JButton("Buscar Usuario");
+
+        JButton addBTN2 = new JButton("Actualizar Mecanico");
         addBTN2.setPreferredSize(new Dimension(310, 25));
         addBTN2.setMaximumSize(new Dimension(310, 25));
         addBTN2.setBackground(Color.decode("#37BEB0"));
@@ -291,5 +301,80 @@ public class GestionReparaciones extends JPanel {
 
         this.setLayout(new BorderLayout());
         this.add(MainPanel, BorderLayout.CENTER);
+
+        crearReparacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String placa = placatxt.getText();
+                    String propietario = propietarioTXT.getText();
+                    String descripcion = descripcionTXT.getText();
+                    String fechaSTR = fechaTxt.getText();
+                    int mecanico = Integer.parseInt(mecanicoIDReparaicontxt.getText());
+
+                    // Usar un formato más flexible para la fecha
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-M-yyyy");
+                    LocalDate fechaDate = LocalDate.parse(fechaSTR, formatter);
+                    LocalDateTime fecha = fechaDate.atTime(0, 0);
+
+                    String fechaConvertida = fecha.toString();
+
+                    OrdenReparacion ordenReparacion = new OrdenReparacion(placa, propietario, descripcion, fechaConvertida, mecanico);
+                    ReparacionController reparacionController = new ReparacionController(ordenReparacion);
+
+                    reparacionController.insertarObjeto();
+
+                    // Mostrar mensaje de confirmación
+                    JOptionPane.showMessageDialog(null, "Reparación creada correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+                    // Limpiar campos
+                    placatxt.setText("");
+                    propietarioTXT.setText("");
+                    descripcionTXT.setText("");
+                    fechaTxt.setText("");
+                    mecanicoIDReparaicontxt.setText("");
+
+                    outputField.setText("Reparacion creada");
+
+                } catch (Exception ex) {
+                    outputField.setText("Error creando Reparacion");
+
+                }
+            }
+        });
+
+        addBTN2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String placa = placaMecanicoTXT.getText();
+                int mecanico = Integer.parseInt(mecanicoTXT.getText());
+
+                ReparacionController reparacionController = new ReparacionController();
+                reparacionController.asignarMecanico(placa, mecanico);
+
+                outputField.setText("Mecanico Actualizado");
+            }
+        });
+
+
+        actualizarEstadoBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String placa = placaReparacion.getText();
+
+                // Obtener el valor seleccionado como String
+                String estadoStr = (String) estadoComboBox.getSelectedItem();
+
+                // Convertir el String al enum correspondiente
+                ReparacionController.Estado estadoSeleccionado = ReparacionController.Estado.valueOf(estadoStr);
+
+                // Crear el controlador y actualizar el estado
+                ReparacionController reparacionController = new ReparacionController();
+                reparacionController.actualizarEstado(placa, estadoSeleccionado);
+
+                outputField.setText("Estado Actualizado");
+            }
+        });
     }
 }

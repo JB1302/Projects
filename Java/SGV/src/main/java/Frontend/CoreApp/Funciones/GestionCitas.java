@@ -1,7 +1,11 @@
 package Frontend.CoreApp.Funciones;
 
+import Backend.modelo.Cita;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GestionCitas extends JPanel {
 
@@ -239,5 +243,70 @@ public class GestionCitas extends JPanel {
 
         this.setLayout(new BorderLayout());
         this.add(MainPanel, BorderLayout.CENTER);
+
+        crearCitaBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String cliente = clienteTXT.getText();
+                    String placa = placaTXT.getText();
+                    String fecha = fechaTXT.getText();
+                    String hora = horaTXT.getText();
+
+
+                    Cita cita = new Cita(cliente,placa,fecha,hora);
+                    cita.insertarObjeto();
+
+                    JOptionPane.showMessageDialog(null,"Cita creada");
+
+
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null,"Error al crear Cita");
+
+                }
+
+            }
+        });
+
+        reprogramarBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String cliente = clienteTXTDerechoSuperior.getText();
+                    String nuevaFecha = nuevaFechaTXT.getText();
+                    String nuevaHora = nuevaHoraReprogramarTXT.getText();
+
+                    Cita cita = new Cita();
+                    cita.reprogramarCita(cliente,nuevaFecha, nuevaHora);
+
+                    JOptionPane.showMessageDialog(null,"Cita Reprogramada");
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null,"Error al reprogramar cita");
+
+                }
+
+            }
+        });
+
+        cancelarDerechoBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+
+                String cliente = clienteTXTDerecho.getText();
+
+                Cita cita = new Cita();
+                cita.cancelarCita(cliente);
+
+                JOptionPane.showMessageDialog(null,"Cita cancelada");
+
+            }catch (Exception ex){
+                JOptionPane.showMessageDialog(null,"Error al reprogramar cita");
+
+            }
+
+            }
+        });
     }
 }
