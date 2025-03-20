@@ -98,12 +98,12 @@ public class GestionVehicular extends JPanel {
         fieldsIzquierdos.add(propietarioLBL, fieldsGbc2);
 
         fieldsGbc2.gridy = 3;
-        JTextField propietarioTXT = new JTextField();
-        propietarioTXT.setPreferredSize(new Dimension(150, 26));
-        propietarioTXT.setMaximumSize(new Dimension(150, 26));
-        propietarioTXT.setBackground(Color.decode("#DBF5F0"));
-        propietarioTXT.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fieldsIzquierdos.add(propietarioTXT, fieldsGbc2);
+        JTextField propietarioTEXTO = new JTextField();
+        propietarioTEXTO.setPreferredSize(new Dimension(150, 26));
+        propietarioTEXTO.setMaximumSize(new Dimension(150, 26));
+        propietarioTEXTO.setBackground(Color.decode("#DBF5F0"));
+        propietarioTEXTO.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        fieldsIzquierdos.add(propietarioTEXTO, fieldsGbc2);
 
 // Campo de Fecha para "Fecha"
         fieldsGbc2.gridx = 0;
@@ -166,7 +166,7 @@ public class GestionVehicular extends JPanel {
         fieldsGbcBuscarDerecho.gridx = 0;
         fieldsGbcBuscarDerecho.gridy = 0;
 
-        JLabel emailLBLBuscar = new JLabel("Email");
+        JLabel emailLBLBuscar = new JLabel("Placa");
         emailLBLBuscar.setForeground(Color.decode("#37BEB0"));
         emailLBLBuscar.setFont(new Font("ARIAL", Font.BOLD, 12));
         fieldsBuscarDerecho.add(emailLBLBuscar, fieldsGbcBuscarDerecho);
@@ -215,7 +215,7 @@ public class GestionVehicular extends JPanel {
         fieldsGbcDerecho.gridx = 0;
         fieldsGbcDerecho.gridy = 0;
 
-        JLabel nombreLBLDerecho = new JLabel("Nombre");
+        JLabel nombreLBLDerecho = new JLabel("Placa");
         nombreLBLDerecho.setForeground(Color.decode("#37BEB0"));
         nombreLBLDerecho.setFont(new Font("ARIAL", Font.BOLD, 12));
         fieldsInventarioDerecho.add(nombreLBLDerecho, fieldsGbcDerecho);
@@ -291,11 +291,12 @@ public class GestionVehicular extends JPanel {
                 String modelo = modeloTXT.getText();
                 int año = Integer.parseInt(yearTXT.getText());
                 String historial = notasTXT.getText();
-                String propietario = propietarioTXT.getText();
+                String propietario = propietarioTEXTO.getText();
 
                 Vehiculo vehiculo = new Vehiculo(placa,modelo,año,propietario,historial);
                 VehiculoController vehiculoController = new VehiculoController(vehiculo);
                 vehiculoController.insertarObjeto();
+                outputField.setText("Vehiculo creado");
             }
         });
 
