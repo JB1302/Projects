@@ -1,7 +1,12 @@
 package Frontend.CoreApp.Funciones;
 
+import Backend.controlador.VehiculoController;
+import Backend.modelo.Vehiculo.Vehiculo;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GestionVehicular extends JPanel {
 
@@ -277,5 +282,43 @@ public class GestionVehicular extends JPanel {
 
         this.setLayout(new BorderLayout());
         this.add(MainPanel, BorderLayout.CENTER);
+
+        crearVehiculo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String placa = placaTXT.getText();
+                String modelo = modeloTXT.getText();
+                int año = Integer.parseInt(yearTXT.getText());
+                String historial = notasTXT.getText();
+                String propietario = propietarioTXT.getText();
+
+                Vehiculo vehiculo = new Vehiculo(placa,modelo,año,propietario,historial);
+                VehiculoController vehiculoController = new VehiculoController(vehiculo);
+                vehiculoController.insertarObjeto();
+            }
+        });
+
+        buscarBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String placa = emailTXTBuscar.getText();
+
+                VehiculoController vehiculoController = new VehiculoController();
+                outputField.setText(vehiculoController.consultarHistorial(placa));
+            }
+        });
+
+        actualizarCocheBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String placa = nombreTXTDerecho.getText();
+                String estado = (String) estadoComboBox.getSelectedItem();
+
+                VehiculoController vehiculoController = new VehiculoController();
+                vehiculoController.actualizarVehiculo(placa,estado);
+                outputField.setText("Coche Actualizado");
+            }
+        });
     }
 }

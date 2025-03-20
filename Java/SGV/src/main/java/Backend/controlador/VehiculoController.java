@@ -61,11 +61,13 @@ public class VehiculoController extends DatabaseUtil{
         }
     }
 
-    public void consultarHistorial(String Placa) {
+    public String consultarHistorial(String Placa) {
 
         conexion();
 
         String sql = "SELECT historial from Taller_mecanico.vehiculos WHERE placa = ?";
+
+        String response = "";
 
         try(PreparedStatement statement = getConnection().prepareStatement(sql)){
             statement.setString(1, Placa);
@@ -73,7 +75,7 @@ public class VehiculoController extends DatabaseUtil{
             try(ResultSet resultSet = statement.executeQuery()){
                 if (resultSet.next()){
                     String historial = resultSet.getString("historial");
-                    System.out.println("La ultima revision fue: " + historial);
+                    response = "La ultima revision fue: " + historial;
                 }
 
             }catch (SQLException e){
@@ -85,5 +87,6 @@ public class VehiculoController extends DatabaseUtil{
         }finally {
             closeConnection();
         }
+        return  response;
     }
 }
