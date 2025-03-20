@@ -14,9 +14,9 @@ import static Backend.util.MySQLConnection.getConnection;
 public class Inventario {
     List<Pieza> piezas = new ArrayList<>();
 
-    public void mostrarInventario() {
+    public String mostrarInventario() {
         preCargarInventario();
-        imprimirInventario();
+       return imprimirInventario();
     }
 
     private void preCargarInventario() {
@@ -45,27 +45,30 @@ public class Inventario {
         setPiezas(piezas);
     }
 
-    private void imprimirInventario() {
+    private String imprimirInventario() {
         List<Pieza> piezas = getPiezas();
+        StringBuilder inventario = new StringBuilder();
         if (piezas == null || piezas.isEmpty()) {
-            System.out.println("El inventario esta vacio");
+            inventario.append("El inventario está vacío");
         } else {
-            System.out.println("Inventario de Piezas");
+            inventario.append("Inventario de Piezas\n");
             for (Pieza pieza : piezas) {
-                System.out.println("--------------------------------");
-                System.out.println("Nombre: " + pieza.getNombre());
-                System.out.println("Descripcion: " + pieza.getDescripcion());
-                System.out.println("Cantidad: " + pieza.getCantidad());
-                System.out.println("Precio:  ₡" + pieza.getPrecioUnitario());
+                inventario.append("--------------------------------\n");
+                inventario.append("Nombre: ").append(pieza.getNombre()).append("\n");
+                inventario.append("Descripción: ").append(pieza.getDescripcion()).append("\n");
+                inventario.append("Cantidad: ").append(pieza.getCantidad()).append("\n");
+                inventario.append("Precio: ₡").append(pieza.getPrecioUnitario()).append("\n");
             }
         }
+        return inventario.toString();
     }
 
-    public void buscarPieza(String nombre) {
+    public String buscarPieza(String nombre) {
 
         MySQLConnection.conexion();
         String sql = "SELECT nombre,descripcion,cantidad,precio_unitario FROM taller_mecanico.piezas where nombre = ?";
 
+        StringBuilder sb = new StringBuilder();
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, nombre);
 
@@ -76,7 +79,7 @@ public class Inventario {
                     int cantidad = resultSet.getInt("cantidad");
                     double precio = resultSet.getDouble("precio_unitario");
 
-                    StringBuilder sb = new StringBuilder();
+
 
                     sb.append("--------------------------------").append("\n");
                     sb.append("Detalles de la pieza: \n").append("\n");
@@ -98,12 +101,13 @@ public class Inventario {
         } finally {
             closeConnection();
         }
+        return sb.toString();
     }
 
-    public void actualizarCantidad(String nombre, int cantidad) {
+    public String actualizarCantidad(String nombre, int cantidad) {
 
         MySQLConnection.conexion();
-        String sql = "UPDATE taller_mecanico.piezas SET cantidad = ? WHERE nombre = ?";
+        String sql = "UPDATE taller_mecanico.piezas SET cantidad = cantidad + ? WHERE nombre = ?";
 
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, cantidad);
@@ -112,9 +116,9 @@ public class Inventario {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                System.out.println("Se ha actualizado la cantidad de inventario de " + nombre);
+                return "Se ha actualizado la cantidad de inventario de " + nombre;
             } else {
-                System.out.println("Error, no se encontro una pieza con ese nombre");
+                return "Error, no se encontró una pieza con ese nombre";
             }
         } catch (SQLException e) {
             throw new RuntimeException("Error al actualizar cantidad", e);
@@ -123,11 +127,12 @@ public class Inventario {
         }
     }
 
-    public void revisarDisponibilidad(String nombre, int cantidadNecesitada) {
+    public String revisarDisponibilidad(String nombre, int cantidadNecesitada) {
         MySQLConnection.conexion();
 
         String sql = "SELECT CANTIDAD FROM taller_mecanico.piezas WHERE nombre = ? and cantidad >= ?";
 
+        StringBuilder sb = new StringBuilder();
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, nombre);
             statement.setInt(2, cantidadNecesitada);
@@ -137,7 +142,7 @@ public class Inventario {
                     int cantidad = resultSet.getInt("cantidad");
                     int sobrante = cantidad - cantidadNecesitada;
 
-                    StringBuilder sb = new StringBuilder();
+
                     sb.append("\nActualmente hay " + cantidad + " " + nombre + " en inventario");
                     sb.append("\nSobrarian " + sobrante + " " + nombre + "\n");
 
@@ -152,7 +157,7 @@ public class Inventario {
         } finally {
             MySQLConnection.closeConnection();
         }
-
+        return sb.toString();
     }
 
     public List<Pieza> getPiezas() {

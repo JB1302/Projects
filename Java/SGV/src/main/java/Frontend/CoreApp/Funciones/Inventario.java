@@ -1,7 +1,11 @@
 package Frontend.CoreApp.Funciones;
 
+import Backend.modelo.Inventario.Pieza;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Inventario extends JPanel {
     JPanel MainPanel;
@@ -314,5 +318,64 @@ public class Inventario extends JPanel {
 
         this.setLayout(new BorderLayout());
         this.add(MainPanel, BorderLayout.CENTER);
+
+        crearPiezaBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nombre = nombreTXT.getText();
+                String descripcion = descripcionTXT.getText();
+                int cantidad = Integer.parseInt(cantidadTXT.getText());
+                int precioUnitario = Integer.parseInt(costoTXT.getText());
+
+                Pieza pieza = new Pieza(nombre,descripcion,cantidad,precioUnitario);
+                pieza.insertarObjeto();
+
+                outputField.setText("Pieza creada");
+            }
+        });
+
+        compararInventarioBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String nombre = nombreInventarioTXT.getText();
+                int necesitado = Integer.parseInt(necesitadoTXT.getText());
+
+                Backend.modelo.Inventario.Inventario inventario = new Backend.modelo.Inventario.Inventario();
+                outputField.setText(inventario.revisarDisponibilidad(nombre, necesitado));
+            }
+        });
+
+        addBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nombre = nombreTXTDerecho.getText();
+                int cantidadAñadir = Integer.parseInt(cantidadTXTDerecha.getText());
+
+              Backend.modelo.Inventario.Inventario inventario = new Backend.modelo.Inventario.Inventario();
+              inventario.actualizarCantidad(nombre,cantidadAñadir);
+
+                outputField.setText("Stock Añadido");
+            }
+        }); //AÑADIR STOCK
+
+        buscarPiezaBTN.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nombre = nombrePiezaTXT.getText();
+
+                if(!nombre.isEmpty()) {
+                    Backend.modelo.Inventario.Inventario inventario = new Backend.modelo.Inventario.Inventario();
+                    outputField.setText(inventario.buscarPieza(nombre));
+                }else {
+                    Backend.modelo.Inventario.Inventario inventario = new Backend.modelo.Inventario.Inventario();
+                    outputField.setText(inventario.mostrarInventario());
+                }
+
+            }
+        });
+
+
     }
+
 }
