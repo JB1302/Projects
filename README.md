@@ -1,24 +1,31 @@
-💻 Hola, soy Steven!
-🚀 Sobre mí
+# 💻 Welcome to My Projects Page
 
-Soy un apasionado por la tecnología y el desarrollo de software. Actualmente, estoy explorando Spring Boot, MySQL, y el desarrollo de aplicaciones de escritorio en Java. También tengo experiencia con Swing, HTML y CSS.
+## 🚀 About Me
+Hi, I'm **Steven**, a passionate software developer exploring **Spring Boot**, **MySQL**, and **desktop application development in Java**. I also have experience with **Swing, HTML, and CSS**.
 
-Me interesa especialmente el desarrollo backend y la optimización de sistemas. Estoy construyendo proyectos como:
+My main interests lie in backend development and system optimization. Some of my projects include:
+- 📊 **A management system for an auto repair shop**
 
-    📊 Un sistema de gestión para un taller mecánico
+## 🛠️ Technologies & Tools
+💻 **Backend:** Java, Spring Boot, MySQL, SQL Server  
+🎨 **Frontend:** Swing, HTML, CSS, React  
+📊 **Data & BI:** Power BI, Power Query, DAX, Python, Pandas  
+🔧 **Others:** Power Automate, Snowflake  
 
+---
+## 📫 Contact Me
+📧 **Email:** [jstevenbarrantes@gmail.com](mailto:jstevenbarrantes@gmail.com)  
+🔗 **LinkedIn:** [Jonathan Barrantes](https://www.linkedin.com/in/jonathanbj/)  
 
-🛠️ Tecnologías y herramientas
+Thanks for visiting my project page! ✨
 
-    Backend: Java, Spring Boot, MySQL, SQL Server
-    Frontend: Swing, HTML, CSS, React
-    Data & BI: Power BI, Power Query, DAX, Python, Pandas
-    Otros: Power Automate, Snowflake
-
-📫 Contáctame
-
-📧 Email: [jstevenbarrantes@gmail.com]
-🔗 LinkedIn: (https://www.linkedin.com/in/jonathanbj/)
-
-Gracias por visitar mi perfil! ✨
+---
+## 📊 Most Used Languages
+```yaml
+Java: 83.7%
+HTML: 6.5%
+JavaScript: 4.5%
+Python: 4.0%
+CSS: 1.3%
+```
 
