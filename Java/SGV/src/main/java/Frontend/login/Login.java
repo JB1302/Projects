@@ -112,7 +112,7 @@ public class Login extends JFrame {
                         String nombre = LoginUserTxtField.getText();
                         String pass = new String(LoginUserPassField.getPassword());
 
-                        System.out.println("Verificando credenciales...");
+                        JOptionPane.showMessageDialog(null,"Verificando Credenciales...");
 
                         // Simulación de demora en la verificación (por ejemplo, 2 segundos)
                         try {
@@ -149,7 +149,7 @@ public class Login extends JFrame {
                             });
                             dispose();
                         } else {
-                            System.out.println("Credenciales incorrectas para todos los roles");
+                           JOptionPane.showMessageDialog(null,"Credenciales incorrectas");
                         }
                     }
                 }).start();
