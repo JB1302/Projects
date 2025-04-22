@@ -29,6 +29,8 @@ header {
   margin-right: auto;
   color: white;
   margin: 0;
+
+  margin-bottom: 10px;
 }
 
 
@@ -75,7 +77,7 @@ aside {
   grid-area: aside;
   padding: 10px;
   width: 200px;
-  background-color: #2c3e50;
+  background-color: #189ab4;
   color: white;
   transition: all 0.3s ease;
   overflow: hidden;
@@ -84,6 +86,7 @@ aside {
   
   padding-top: 40%;
 }
+
 
 aside.colapsed{ 
   width: 0;
@@ -100,7 +103,7 @@ aside.colapsed nav{
   display: none;
 }
 
-#toggle-btn{
+#toggle-btn, button{
   background-color: #189ab4;
 
   border: solid;
@@ -144,22 +147,25 @@ nav a{
   color: white;
   text-decoration: none;
   display: block;
-  margin-bottom: 35px;
+
 }
 
 main {
-  background-color: #d4f1f4;
+
   grid-area: main;
   padding: 10px;
 
-  border: solid;
   border-width: 1px;
   overflow: auto;
   box-sizing: border-box;
   margin: 0;
 
   margin-right: 5px;
+  height: 99%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 aside.colapsed nav a span{
@@ -183,4 +189,88 @@ footer {
   height: 100vh;
   width: 100%;
   gap: 5px;
+}
+
+.MainContainer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  grid-template-rows: auto auto;  /* Dos filas */
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+#sideMainPanel {
+  grid-column: 1; /* El aside ocupa la primera columna */
+  grid-row: 1 / span 2; /* Ocupa dos filas */
+  background-color: #86f5eaa1;
+  padding: 20px;
+  border-radius: 26px;
+  width: auto;
+  }
+
+
+
+#Section1 {
+  grid-column: 2; /* Section 1 ocupa la segunda columna */
+  background-color: #d4f1f4;
+  padding: 20px;
+  border-radius: 26px;
+
+  margin: 0;
+}
+
+#Section2 {
+  grid-column: 2; /* Section 2 ocupa también la segunda columna */
+  padding: 20px;
+  background-color: #d4f1f4;
+  border-radius: 26px;
+}
+
+
+.mainPanel{
+
+  height: 100%;
+
+  background-color: #fffffff6;
+  color: black;
+  border-radius: 16px;
+  text-align: center;
+
+  padding-left: 50px;
+  padding-right: 50px;
+
+}
+
+.mainSection{
+  height: 100%;
+  background-color: #fffffff6;
+  border-radius: 16px;
+  text-align: left;
+
+  padding-left: 50px;
+  padding-right: 50px;
+
+}
+
+
+h1{
+  padding-top: 15px;
+}
+
+.secondarySection{
+  height: 100%;
+  background-color: #fffffff6;
+  border-radius: 16px;
+  text-align: left;
+
+  padding-left: 50px;
+}
+
+
+h3{
+  text-align: left;
+  margin-left: 35px;
 }
