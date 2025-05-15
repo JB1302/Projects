@@ -1,13 +1,5 @@
-array = [1,2,3,4,5,6,7,8]
+def is_triangle(a, b, c):
+    
+    return True if a + b > c else False
 
-def first_non_consecutive(arr):
-   
-  for i in range(len(arr) -1):
-       if (int(arr[i]) + 1 ) == int(arr[i+1]):
-            pass
-       else:
-           return int(arr[i+1])
-      
-
-
-print(first_non_consecutive(array))
+print(is_triangle(1,2,2))
