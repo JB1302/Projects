@@ -30,6 +30,14 @@ footer {
   background-color: #1e1e2f;
 }
 
+
+
+.card{
+  max-width: 320px;
+  margin: auto;
+}
+
+
 .card:hover{
   transform: translateY(-5px);
   transition: all 0.3s ease-in-out;
