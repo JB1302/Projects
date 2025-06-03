@@ -97,3 +97,44 @@ footer {
   transition: 0.2s;
   font-weight: bold;
 }
+
+
+
+.techstack {
+  background-color: #1e1e2f;
+}
+
+.projects {
+  background-color: #171717;
+}
+
+.techstack h2, .projects h2{
+  color: #21B6A8;
+}
+
+.tech-icons-bar {
+  display: flex;
+  flex-wrap: wrap; /* ✅ permite que bajen de línea en pantallas pequeñas */
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+
+.tech-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  padding: 4px;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%) brightness(1.2);
+}
+
+
+.tech-icon:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
