@@ -1,0 +1,28 @@
+.navbar{
+  background: #111116;
+}
+
+.hero {
+  background: #151517;
+  height: 88vh;
+  overflow: hidden;
+}
+
+
+.btn{
+  background: #127A99;
+  color: white;
+}
+
+.userTitle{
+  color: #21B6A8;
+}
+
+p{
+  color: white;
+}
+
+footer {
+  font-size: 0.9rem;
+  background-color: #1e1e2f;
+}
