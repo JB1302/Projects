@@ -15,9 +15,10 @@ public class ArbolController {
     private ArbolService arbolService;
 
     @GetMapping("/")
-    public String index(Model model) {
-        var arboles = arbolService.getArboles();
-        model.addAttribute("arboles", arboles);
+    public String home(Model model) {
+        model.addAttribute("arboles", arbolService.getArboles());
+        model.addAttribute("arbol", new Arbol());
+
         return "index";
     }
 
@@ -25,6 +26,12 @@ public class ArbolController {
     public String guardar(Arbol arbol) {
         arbolService.save(arbol);
         //Un redirect para recargar la DB
+        return "redirect:/";
+    }
+
+    @PostMapping("/actualizar")
+    public String actualizar(Arbol arbol) {
+        arbolService.save(arbol);
         return "redirect:/";
     }
 
