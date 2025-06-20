@@ -1,0 +1,40 @@
+html {
+    --sz: 20px;
+    --c1: #dae4e3;
+    --c2: #96b1bb;
+    --c3: #b1c5cb;
+    --c4: #8aa4ae;
+    --c5: #c4dbe1;
+    --ts: 50% / calc(var(--sz) * 10) calc(var(--sz) * 10);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: 
+    	conic-gradient(from 145deg at 50% 66.6%, var(--c3) 0 35deg, var(--c2) 0 70deg, #fff0 0 100%)  var(--ts),    
+    	conic-gradient(from -35deg at 50% 33.6%, var(--c2) 0 35deg, var(--c3) 0 70deg, #fff0 0 100%)  var(--ts), 
+			conic-gradient(from -145deg at 24% 50%, var(--c3) 0 110deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from 35deg at 76% 50%, var(--c2) 0 110deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from -111deg at 50% 66%, var(--c4) 0 40deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from 71deg at 50% 66%, var(--c4) 0 40deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from -80deg at 100% 85%, var(--c5) 0 10deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from 70deg at 0% 85%, var(--c5) 0 10deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from 110deg at 50% 66.6%, var(--c1) 0 140deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from -70deg at 50% 33.6%, var(--c4) 0 140deg, #fff0 0 100%)  var(--ts),
+			conic-gradient(from -80deg at 50% 34%, var(--c5) 0 160deg, #fff0 0 100%)  var(--ts),
+			linear-gradient(180deg, var(--c1) 0 50%, var(--c4) 0 100%)  var(--ts);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: inherit;
+}
+
+
+/* Forzar el color de stripe personalizado */
+.table-striped.table-striped-custom > tbody > tr:nth-of-type(odd) {
+    background-color: #323ec7 !important;
+    color: white; /* Opcional, si el fondo es muy oscuro */
+}

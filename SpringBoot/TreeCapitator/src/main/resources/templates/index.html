@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns ="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="~{layout/plantilla :: head}"/>
+    <body class="container mt-4">
+        <h1 class="h1 text-white bg-dark p-2 text-center">Arboles Registrados</h1>
+        
+        <section th:replace="~{arbol/fragmentos :: agregarArbol}"/>
+        <table th:replace="~{arbol/fragmentos :: tabla}"/>
+        
+    </body>
+</html>
