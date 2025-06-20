@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html xmlns ="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-    <head th:replace="~{layout/plantilla :: head}"/>
-    <body class="container mt-4">
-        <h1 class="h1 text-white bg-dark p-2 text-center">Arboles Registrados</h1>
-        
-        <section th:replace="~{arbol/fragmentos :: agregarArbol}"/>
-        <table th:replace="~{arbol/fragmentos :: tabla}"/>
-        
+    <head th:replace="~{layout/plantilla :: head}"></head>
+
+    <body class="d-flex flex-column min-vh-100"
+          th:style="|background-image: url('@{/img/forest.jpg}'); background-size: cover; background-position: center;|">
+
+        <!-- Navbar -->
+        <nav th:replace="~{layout/plantilla :: header}"></nav>
+
+        <!-- Contenido principal que “crece” -->
+        <main class="flex-grow-1">
+            <section th:replace="~{arbol/fragmentos :: agregarArbol}"></section>
+            <div class="container mt-4">
+                <h1 class="h1 text-white bg-success bg-gradient p-2 text-center">Árboles Registrados</h1>
+                <div th:replace="~{arbol/fragmentos :: tabla}"></div>
+            </div>
+        </main>
+
+        <!-- Footer siempre al fondo -->
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+
     </body>
 </html>

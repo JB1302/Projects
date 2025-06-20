@@ -1,82 +1,110 @@
 <html xmlns ="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-<!-- Fragmento de tabla -->
-<table th:fragment="tabla" class="table table-striped table-striped-custom table-hover table-bordered align-middle text-center shadow-sm rounded bg-white">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Edad</th>
-            <th>Nombre Comun 1</th>
-            <th>Nombre Comun 2</th>
-            <th>Nombre Cientifico 1</th>
-            <th>Nombre Cientifico 2</th>
-            <th>Imagen</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="arbol : ${arboles}">
-            <td th:text="${arbol.id_especie}"></td>
-            <td th:text="${arbol.edad}"></td>
-            <td th:text="${arbol.nombre_comun1}"></td>
-            <td th:text="${arbol.nombre_comun2}"></td>
-            <td th:text="${arbol.nombre_cientifico1}"></td>
-            <td th:text="${arbol.nombre_cientifico2}"></td>
-            <td>
-                <img th:src="${arbol.ruta_imagen}" alt="imagen" width="100" class="img-thumbnail"/>
-            </td>
-            <td>
-                <form th:action="@{/eliminar}" method="post">
-                    <input type="hidden" name="id_especie" th:value="${arbol.id_especie}" />
-                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                </form>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <!-- Fragmento de tabla -->
+    <table th:fragment="tabla" class="table table-striped table-striped-custom table-hover table-bordered align-middle text-center shadow-sm rounded bg-white">
+        <thead class="bg-primary text-white">
+            <tr class="custom-thead">
+                <th>ID</th>
+                <th>Edad</th>
+                <th>Nombre Comun 1</th>
+                <th>Nombre Comun 2</th>
+                <th>Nombre Cientifico 1</th>
+                <th>Nombre Cientifico 2</th>
+                <th>Imagen</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
 
-<!-- Fragmento para agregar arbol -->
+        <tbody>
+            <tr th:each="arbol : ${arboles}">
+                <td th:text="${arbol.id_especie}"></td>
+                <td th:text="${arbol.edad}"></td>
+                <td th:text="${arbol.nombre_comun1}"></td>
+                <td th:text="${arbol.nombre_comun2}"></td>
+                <td th:text="${arbol.nombre_cientifico1}"></td>
+                <td th:text="${arbol.nombre_cientifico2}"></td>
+                <td>
+                    <img th:src="${arbol.ruta_imagen}" alt="imagen" width="100" class="img-thumbnail"/>
+                </td>
+                <td>
+                    <form th:action="@{/eliminar}" method="post">
+                        <input type="hidden" name="id_especie" th:value="${arbol.id_especie}" />
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Fragmento completo “Agregar Árbol” centrado -->
 <section th:fragment="agregarArbol">
-    <div class="row py-4 mb-2 bg-light">
-        <div class="col-md-1"></div>
-        <div class="col-md-3">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarArbol">
-                <i class="fa-solid fa-plus"></i> Agregar Árbol
-            </button>
-        </div>
+  <div class="row justify-content-center pt-2 pb-2 mb-1">
+    <div class="col-auto">
+      <button type="button"
+              class="btn bg-dark bg-gradient text-white"
+              data-bs-toggle="modal"
+              data-bs-target="#modalAgregarArbol">
+        <i class="fa-solid fa-plus"></i> Agregar Árbol
+      </button>
     </div>
+  </div>
 
-    <div class="modal fade" id="modalAgregarArbol" tabindex="-1" aria-labelledby="modalAgregarArbolLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-success text-white">
-                    <h1 class="modal-title fs-5" id="modalAgregarArbolLabel">
-                        <i class="fa-solid fa-tree"></i> Agregar Árbol
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
+  <!-- Modal -->
+  <div class="modal fade" id="modalAgregarArbol" tabindex="-1" aria-labelledby="modalAgregarArbolLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h1 class="modal-title fs-5" id="modalAgregarArbolLabel">
+            <i class="fa-solid fa-tree"></i> Agregar Árbol
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
 
-                <form th:action="@{/guardar}" method="post" th:object="${arbol}" enctype="multipart/form-data" class="was-validated">
-                    <div class="modal-body">
-                        <div class="row g-3">
-                            <div class="col-md-6"><label>Edad</label><input type="number" name="edad" class="form-control" required/></div>
-                            <div class="col-md-6"><label>Nombre Común 1</label><input type="text" name="nombre_comun1" class="form-control" required/></div>
-                            <div class="col-md-6"><label>Nombre Común 2</label><input type="text" name="nombre_comun2" class="form-control"/></div>
-                            <div class="col-md-6"><label>Nombre Científico 1</label><input type="text" name="nombre_cientifico1" class="form-control" required/></div>
-                            <div class="col-md-6"><label>Nombre Científico 2</label><input type="text" name="nombre_cientifico2" class="form-control"/></div>
-                            <div class="col-md-12"><label>Ruta de Imagen</label><input type="text" name="ruta_imagen" class="form-control" required/></div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Cerrar</button>
-                        <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
-                    </div>
-                </form>
+        <form th:action="@{/guardar}" method="post" th:object="${arbol}"
+              enctype="multipart/form-data" class="was-validated">
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label>Edad</label>
+                <input type="number" name="edad" class="form-control" required/>
+              </div>
+              <div class="col-md-6">
+                <label>Nombre Común 1</label>
+                <input type="text" name="nombre_comun1" class="form-control" required/>
+              </div>
+              <div class="col-md-6">
+                <label>Nombre Común 2</label>
+                <input type="text" name="nombre_comun2" class="form-control"/>
+              </div>
+              <div class="col-md-6">
+                <label>Nombre Científico 1</label>
+                <input type="text" name="nombre_cientifico1" class="form-control" required/>
+              </div>
+              <div class="col-md-6">
+                <label>Nombre Científico 2</label>
+                <input type="text" name="nombre_cientifico2" class="form-control"/>
+              </div>
+              <div class="col-12">
+                <label>Ruta de Imagen</label>
+                <input type="text" name="ruta_imagen" class="form-control" required/>
+              </div>
             </div>
-        </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              <i class="fa-solid fa-xmark"></i> Cerrar
+            </button>
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-floppy-disk"></i> Guardar
+            </button>
+          </div>
+        </form>
+
+      </div>
     </div>
+  </div>
 </section>
 
 </html>
