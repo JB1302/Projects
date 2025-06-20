@@ -2,109 +2,221 @@
       xmlns:th="http://www.thymeleaf.org">
 
     <!-- Fragmento de tabla -->
-    <table th:fragment="tabla" class="table table-striped table-striped-custom table-hover table-bordered align-middle text-center shadow-sm rounded bg-white">
-        <thead class="bg-primary text-white">
-            <tr class="custom-thead">
-                <th>ID</th>
-                <th>Edad</th>
-                <th>Nombre Comun 1</th>
-                <th>Nombre Comun 2</th>
-                <th>Nombre Cientifico 1</th>
-                <th>Nombre Cientifico 2</th>
-                <th>Imagen</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
+    <div th:fragment="tabla">
+        <table class="table table-striped table-hover table-bordered
+               align-middle text-center shadow-sm rounded bg-white">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th>ID</th>
+                    <th>Edad</th>
+                    <th>Nombre Común 1</th>
+                    <th>Nombre Común 2</th>
+                    <th>Nombre Científico 1</th>
+                    <th>Nombre Científico 2</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="arbol : ${arboles}">
+                    <td th:text="${arbol.id_especie}"></td>
+                    <td th:text="${arbol.edad}"></td>
+                    <td th:text="${arbol.nombre_comun1}"></td>
+                    <td th:text="${arbol.nombre_comun2}"></td>
+                    <td th:text="${arbol.nombre_cientifico1}"></td>
+                    <td th:text="${arbol.nombre_cientifico2}"></td>
+                    <td>
+                        <img th:src="${arbol.ruta_imagen}"
+                             alt="imagen"
+                             width="100"
+                             class="img-thumbnail"/>
+                    </td>
+                    <td>
+                        <!-- Botón Editar: abre el modal correspondiente -->
+                        <button type="button"
+                                class="btn btn-warning btn-sm me-1"
+                                data-bs-toggle="modal"
+                                th:data-bs-target="'#modalEditarArbol' + ${arbol.id_especie}">
+                            <i class="fa-solid fa-edit"></i>
+                        </button>
 
-        <tbody>
-            <tr th:each="arbol : ${arboles}">
-                <td th:text="${arbol.id_especie}"></td>
-                <td th:text="${arbol.edad}"></td>
-                <td th:text="${arbol.nombre_comun1}"></td>
-                <td th:text="${arbol.nombre_comun2}"></td>
-                <td th:text="${arbol.nombre_cientifico1}"></td>
-                <td th:text="${arbol.nombre_cientifico2}"></td>
-                <td>
-                    <img th:src="${arbol.ruta_imagen}" alt="imagen" width="100" class="img-thumbnail"/>
-                </td>
-                <td>
-                    <form th:action="@{/eliminar}" method="post">
-                        <input type="hidden" name="id_especie" th:value="${arbol.id_especie}" />
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                        <!-- Formulario Eliminar -->
+                        <form th:action="@{/eliminar}" method="post" class="d-inline">
+                            <input type="hidden" name="id_especie" th:value="${arbol.id_especie}"/>
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
 
-    <!-- Fragmento completo “Agregar Árbol” centrado -->
-<section th:fragment="agregarArbol">
-  <div class="row justify-content-center pt-2 pb-2 mb-1">
-    <div class="col-auto">
-      <button type="button"
-              class="btn bg-dark bg-gradient text-white"
-              data-bs-toggle="modal"
-              data-bs-target="#modalAgregarArbol">
-        <i class="fa-solid fa-plus"></i> Agregar Árbol
-      </button>
+                        <!-- Modal de Edición -->
+                        <div class="modal fade"
+                             th:id="'modalEditarArbol' + ${arbol.id_especie}"
+                             tabindex="-1"
+                             aria-labelledby="modalEditarArbolLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-warning text-dark">
+                                        <h5 class="modal-title" id="modalEditarArbolLabel">
+                                            <i class="fa-solid fa-edit"></i> Editar Árbol
+                                        </h5>
+                                        <button type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Cerrar"></button>
+                                    </div>
+
+                                    <!-- Aquí ya NO usamos th:object ni th:field -->
+                                    <form th:action="@{/actualizar}" method="post">
+                                        <div class="modal-body">
+                                            <!-- ID oculto para no perder la referencia -->
+                                            <input type="hidden"
+                                                   name="id_especie"
+                                                   th:value="${arbol.id_especie}"/>
+
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label>Edad</label>
+                                                    <input type="number"
+                                                           name="edad"
+                                                           class="form-control"
+                                                           th:value="${arbol.edad}"
+                                                           required/>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Nombre Común 1</label>
+                                                    <input type="text"
+                                                           name="nombre_comun1"
+                                                           class="form-control"
+                                                           th:value="${arbol.nombre_comun1}"
+                                                           required/>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Nombre Común 2</label>
+                                                    <input type="text"
+                                                           name="nombre_comun2"
+                                                           class="form-control"
+                                                           th:value="${arbol.nombre_comun2}"/>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Nombre Científico 1</label>
+                                                    <input type="text"
+                                                           name="nombre_cientifico1"
+                                                           class="form-control"
+                                                           th:value="${arbol.nombre_cientifico1}"
+                                                           required/>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Nombre Científico 2</label>
+                                                    <input type="text"
+                                                           name="nombre_cientifico2"
+                                                           class="form-control"
+                                                           th:value="${arbol.nombre_cientifico2}"/>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label>Ruta de Imagen</label>
+                                                    <input type="text"
+                                                           name="ruta_imagen"
+                                                           class="form-control"
+                                                           th:value="${arbol.ruta_imagen}"
+                                                           required/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button"
+                                                    class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">
+                                                <i class="fa-solid fa-xmark"></i> Cerrar
+                                            </button>
+                                            <button type="submit"
+                                                    class="btn btn-warning">
+                                                <i class="fa-solid fa-save"></i> Actualizar
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="modalAgregarArbol" tabindex="-1" aria-labelledby="modalAgregarArbolLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header bg-success text-white">
-          <h1 class="modal-title fs-5" id="modalAgregarArbolLabel">
-            <i class="fa-solid fa-tree"></i> Agregar Árbol
-          </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    <!-- Fragmento completo “Agregar Árbol” -->
+    <section th:fragment="agregarArbol">
+        <div class="row justify-content-center pt-2 pb-2 mb-1">
+            <div class="col-auto">
+                <button type="button"
+                        class="btn bg-dark bg-gradient text-white"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalAgregarArbol">
+                    <i class="fa-solid fa-plus"></i> Agregar Árbol
+                </button>
+            </div>
         </div>
 
-        <form th:action="@{/guardar}" method="post" th:object="${arbol}"
-              enctype="multipart/form-data" class="was-validated">
-          <div class="modal-body">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label>Edad</label>
-                <input type="number" name="edad" class="form-control" required/>
-              </div>
-              <div class="col-md-6">
-                <label>Nombre Común 1</label>
-                <input type="text" name="nombre_comun1" class="form-control" required/>
-              </div>
-              <div class="col-md-6">
-                <label>Nombre Común 2</label>
-                <input type="text" name="nombre_comun2" class="form-control"/>
-              </div>
-              <div class="col-md-6">
-                <label>Nombre Científico 1</label>
-                <input type="text" name="nombre_cientifico1" class="form-control" required/>
-              </div>
-              <div class="col-md-6">
-                <label>Nombre Científico 2</label>
-                <input type="text" name="nombre_cientifico2" class="form-control"/>
-              </div>
-              <div class="col-12">
-                <label>Ruta de Imagen</label>
-                <input type="text" name="ruta_imagen" class="form-control" required/>
-              </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalAgregarArbol" tabindex="-1" aria-labelledby="modalAgregarArbolLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h1 class="modal-title fs-5" id="modalAgregarArbolLabel">
+                            <i class="fa-solid fa-tree"></i> Agregar Árbol
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+
+                    <form th:action="@{/guardar}" method="post" th:object="${arbol}"
+                          enctype="multipart/form-data" class="was-validated">
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label>Edad</label>
+                                    <input type="number" name="edad" class="form-control" required/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Nombre Común 1</label>
+                                    <input type="text" name="nombre_comun1" class="form-control" required/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Nombre Común 2</label>
+                                    <input type="text" name="nombre_comun2" class="form-control"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Nombre Científico 1</label>
+                                    <input type="text" name="nombre_cientifico1" class="form-control" required/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Nombre Científico 2</label>
+                                    <input type="text" name="nombre_cientifico2" class="form-control" required/>
+                                </div>
+                                <div class="col-12">
+                                    <label>Ruta de Imagen</label>
+                                    <input type="text" name="ruta_imagen" class="form-control" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                <i class="fa-solid fa-xmark"></i> Cerrar
+                            </button>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa-solid fa-floppy-disk"></i> Guardar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-          </div>
+        </div>
+    </section>
 
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-              <i class="fa-solid fa-xmark"></i> Cerrar
-            </button>
-            <button type="submit" class="btn btn-success">
-              <i class="fa-solid fa-floppy-disk"></i> Guardar
-            </button>
-          </div>
-        </form>
+    <!-- Fragmento para editar “Árbol” -->
 
-      </div>
-    </div>
-  </div>
-</section>
 
 </html>
