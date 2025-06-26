@@ -1,0 +1,85 @@
+
+    <section th:fragment="listado">
+        <div class="container py-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>[[#{producto.listado}]]</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>[[#{producto.detalle}]]</th>
+                                <th>[[#{producto.fecha_vence}]]</th>
+                                <th>[[#{producto.cantidad}]]</th>
+                                <th>[[#{producto.imagen}]]</th>
+                                <th>[[#{accion.acciones}]]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="p : ${productos}">
+                                <td>[[${p.id_producto}]]</td>
+                                <td>[[${p.detalle}]]</td>
+                                <td>[[${p.fecha_vence}]]</td>
+                                <td>[[${p.cantidad}]]</td>
+                                <td>
+                                    <img th:src="@{${p.imagen_producto}}" alt="Sin imagen" height="60">
+                                </td>
+                                <td>
+                                    <!-- Botón Eliminar -->
+                                    <button type="button"
+                                            class="btn btn-danger btn-sm"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#confirmModal"
+                                            th:data-bs-id="${p.id_producto}"
+                                            th:data-bs-descripcion="${p.detalle}">
+                                        <i class="fa-solid fa-trash"></i> [[#{accion.eliminar}]]
+                                    </button>
+                                    <!-- Botón Editar -->
+                                    <a class="btn btn-success btn-sm"
+                                       th:href="@{/producto/modificar/{id}(id=${p.id_producto})}">
+                                        <i class="fa-solid fa-pencil"></i> [[#{accion.actualizar}]]
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div th:if="${productos == null or productos.empty}" class="text-center p-2">
+                        [[#{lista.vacia}]]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section th:fragment="confirmarRegistro">
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <form th:action="@{/producto/eliminar}" method="post">
+                        <input type="hidden" name="id_producto" id="modalId"/>
+                        <div class="modal-header bg-danger text-white">
+                            <h5 class="modal-title" id="modalLabel">
+                                <i class="fa-solid fa-circle-exclamation"></i> [[#{accion.confirmar}]]
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                [[#{accion.confirmar.texto1}]] <span id="modalDescripcion" class="fw-bold"></span>?
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i> [[#{accion.eliminar}]]
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

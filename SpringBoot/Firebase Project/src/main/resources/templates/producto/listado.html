@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+    <head th:replace="~{layout/plantilla :: head}"/>
+    <body>
+        <nav th:replace="~{layout/plantilla :: nav}"/>
+
+        <div th:replace="~{producto/fragmentos :: listado}"></div>
+
+        <div th:replace="~{producto/fragmentos :: confirmarRegistro}"></div>
+
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+    </body>
+</html>
