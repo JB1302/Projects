@@ -3,9 +3,9 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
-    <head th:replace="~{layout/plantilla :: head}"/>
+    <head th:replace="~{layout/plantilla :: head}"></head>
     <body>
-        <nav th:replace="~{layout/plantilla :: nav}"/>
+        <nav th:replace="~{layout/plantilla :: nav}"></nav>
 
         <div th:replace="~{producto/fragmentos :: listado}"></div>
 
@@ -13,4 +13,5 @@
 
         <footer th:replace="~{layout/plantilla :: footer}"></footer>
     </body>
+
 </html>

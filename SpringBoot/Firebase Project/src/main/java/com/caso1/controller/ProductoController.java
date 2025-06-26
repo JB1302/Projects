@@ -81,10 +81,13 @@ public class ProductoController {
         return "redirect:/producto/listado";
     }
 
-    @PostMapping("/modificar")
-    public String modificar(Producto producto, Model model) {
-        producto = productoService.getProducto(producto);
-        model.addAttribute("producto", producto);
-        return "producto/modifica"; 
-    }
+@PostMapping("/modificar")
+public String modificar(Producto producto, Model model) {
+    producto = productoService.getProducto(producto);
+    model.addAttribute("producto", producto);
+    return "producto/modifica"; 
+}
+
+    
+    
 }
