@@ -10,18 +10,17 @@ This section showcases a range of applications—from desktop GUIs and backend A
 | Project | Description |
 |---------|-------------|
 | [WeatherApp](./WeatherApp) | Desktop app displaying live weather for any location using APIs. |
-| [Banking Management System](./BankingManagementSystem) | Modular banking system with queue management, real-time stats, and TXT-based persistence. |
-| [Employee Credential & Update Automation System](./EmployeeCredentialAutomation) | Automates employee credential generation and secure database updates. |
-| [Employee Management System](./EmployeeManagementSystem) | Desktop app for registering employees, salary calculations, and reporting. |
-| [Spring Boot User Management API](./SpringBootUserManagementAPI) | Backend REST API for user management with JPA and MySQL. |
-| [Java Swing Login System](./JavaSwingLoginSystem) | Minimal login interface with extendable logic. |
-| [JavaFX + HTML Resource Manager App](./ResourceManagerApp) | Hybrid desktop app with JavaFX and responsive HTML/CSS UI. |
-| [Art Gallery & Artist Management System](./ArtGalleryManager) | Artist/gallery management with a socket-based featured artwork system. |
-| [Auto Repair Shop Management System](./AutoRepairShopManager) | Full-featured app for managing users, vehicles, inventory, and invoices. |
-| [Financial Management System](./FinancialManagementSystem) | Console app for recording and reporting income/expenses. |
-| [PC Manager](./PCManager) | Console app for simulating hardware/software/user management. |
-| [Basic Calculator](./BasicCalculator) | Simple Java Swing calculator for basic operations. |
-| [Rock Paper Scissors](./RockPaperScissors) | Simple web-based game using JavaScript (included for completeness). |
+| [Banking Management System](./BankManager) | Modular banking system with queue management, real-time stats, and TXT-based persistence. |
+| [Employee Credential & Update Automation System](./EmailMaster) | Automates employee credential generation and secure database updates. |
+| [Employee Management System](./employeeManager) | Desktop app for registering employees, salary calculations, and reporting. |
+| [Spring Boot User Management API](./FullStackApp) | Backend REST API for user management with JPA and MySQL. |
+| [Java Swing Login System](./InterfazPrueba) | Minimal login interface with extendable logic. |
+| [JavaFX + HTML Resource Manager App](./JAVAFX+HTML) | Hybrid desktop app with JavaFX and responsive HTML/CSS UI. |
+| [Art Gallery & Artist Management System](./SGA) | Artist/gallery management with a socket-based featured artwork system. |
+| [Auto Repair Shop Management System](./SGV) | Full-featured app for managing users, vehicles, inventory, and invoices. |
+| [Financial Management System](./SistemaGestionTransacciones) | Console app for recording and reporting income/expenses. |
+| [PC Manager](./Software-Hierarchy-Test) | Console app for simulating hardware/software/user management. |
+| [Basic Calculator](./Calculadora) | Simple Java Swing calculator for basic operations. |
 
 ---
 
