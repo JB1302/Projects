@@ -41,16 +41,17 @@ Software Engineer
 
 ## 📂 Repository Sections
 
-Jump to a section:  
-- [Spring Boot](#-spring-boot-project-section)
-- [React](#-react-project-section)
-- [Python](#-python-project-section)
-- [JavaScript](#-javascript-project-section)
-- [Java](#-java-project-section)
-- [Bootstrap](#-bootstrap-project-section)
-- [Documentos & Otros](#️-documentos--otros)
+Jump directly to the **folders** of each stack:
 
-Each section contains detailed project tables, code samples, and setup instructions.
+- [Spring Boot](./SpringBoot/)
+- [React](./React/)
+- [Python](./Python/)
+- [JavaScript](./JavaScript/)
+- [Java](./Java/)
+- [Bootstrap](./BootStrap/)
+- [Documentos & Otros](./Documentos/)
+
+Each folder contains detailed project tables, code samples, and setup instructions.
 
 ---
 
@@ -61,8 +62,8 @@ Expect clean CRUD apps, responsive UIs, image upload support, and robust multi-l
 
 | Project | Description |
 |---------|-------------|
-| [TreeCapitator](./SpringBoot/TreeCapitator) – [See section](#-spring-boot-project-section) | CRUD system for tree species: add, edit, delete, image, and full MySQL persistence. |
-| [Product Manager CRUD](./SpringBoot/Firebase-Project) – [See section](#-spring-boot-project-section) | Product inventory app: create, update, delete, upload images (Firebase Storage), multilingual UI. |
+| [TreeCapitator](./SpringBoot/TreeCapitator) | CRUD system for tree species: add, edit, delete, image, and full MySQL persistence. |
+| [Product Manager CRUD](./SpringBoot/Firebase-Project) | Product inventory app: create, update, delete, upload images (Firebase Storage), multilingual UI. |
 
 ---
 
@@ -73,8 +74,8 @@ Built with best practices, reusable components, Material UI, and a focus on adap
 
 | Project | Description |
 |---------|-------------|
-| [Food Delivery Landing Page](./React/SimpleLanding) – [See section](#-react-project-section) | Responsive food delivery/business landing built with React & Material UI. |
-| [Minimal Landing Page](./React/LandingHero) – [See section](#-react-project-section) | Simple, clean React starter for portfolios or products. |
+| [Food Delivery Landing Page](./React/SimpleLanding) | Responsive food delivery/business landing built with React & Material UI. |
+| [Minimal Landing Page](./React/LandingHero) | Simple, clean React starter for portfolios or products. |
 
 ---
 
@@ -85,9 +86,9 @@ Solutions here leverage Python's versatility for data engineering, BI, and pract
 
 | Project | Description |
 |---------|-------------|
-| [Financial Transaction Manager](./Python/Transaction-Manager) – [See section](#-python-project-section) | Cross-platform desktop app to track income and expenses with a modern UI. |
-| [HR Analytics ETL](./Python/SQL-ETL) – [See section](#-python-project-section) | Complete ETL pipeline: Excel → JSON → MySQL, with PowerBI integration. |
-| [Address Search Automation](./Python/Pandas-WeBrowser) – [See section](#-python-project-section) | Automates Google Maps address validation from Excel via CLI or Tkinter. |
+| [Financial Transaction Manager](./Python/Transaction-Manager) | Cross-platform desktop app to track income and expenses with a modern UI. |
+| [HR Analytics ETL](./Python/SQL-ETL) | Complete ETL pipeline: Excel → JSON → MySQL, with PowerBI integration. |
+| [Address Search Automation](./Python/Pandas-WeBrowser) | Automates Google Maps address validation from Excel via CLI or Tkinter. |
 
 ---
 
@@ -98,9 +99,9 @@ Great for showing core front-end skills and rapid UI prototyping.
 
 | Project | Description |
 |---------|-------------|
-| [Web Hero](./JavaScript/Web-Hero) – [See section](#-javascript-project-section) | Grid-based landing page with an animated collapsible sidebar. Great for portfolios/SaaS. |
-| [Collapsible Side Panel](./JavaScript/Acordion) – [See section](#-javascript-project-section) | Minimalist, responsive UI with a toggleable side navigation—ideal for dashboards. |
-| [Rock Paper Scissors](./JavaScript/Rock-Paper-Scissors) – [See section](#-javascript-project-section) | Classic browser game against the computer with a clean UI and responsive design. |
+| [Web Hero](./JavaScript/Web-Hero) | Grid-based landing page with an animated collapsible sidebar. Great for portfolios/SaaS. |
+| [Collapsible Side Panel](./JavaScript/Acordion) | Minimalist, responsive UI with a toggleable side navigation—ideal for dashboards. |
+| [Rock Paper Scissors](./JavaScript/Rock-Paper-Scissors) | Classic browser game against the computer with a clean UI and responsive design. |
 
 ---
 
@@ -111,9 +112,9 @@ Demonstrates OOP, data structures, JavaFX/Swing, and real-world integrations.
 
 | Project | Description |
 |---------|-------------|
-| [WeatherApp](./Java/WeatherApp) – [See section](#-java-project-section) | Desktop app displaying live weather for any location using APIs. |
-| [Banking Management System](./Java/BankManager) – [See section](#-java-project-section) | Modular banking system with queue management, real-time stats, and TXT-based persistence. |
-| [Art Gallery System](./Java/SGA) – [See section](#-java-project-section) | Artist/gallery management with a socket-based featured artwork system. |
+| [WeatherApp](./Java/WeatherApp) | Desktop app displaying live weather for any location using APIs. |
+| [Banking Management System](./Java/BankManager) | Modular banking system with queue management, real-time stats, and TXT-based persistence. |
+| [Art Gallery System](./Java/SGA) | Artist/gallery management with a socket-based featured artwork system. |
 
 ---
 
@@ -122,11 +123,14 @@ Demonstrates OOP, data structures, JavaFX/Swing, and real-world integrations.
 Responsive web interfaces, dashboards, and components built with Bootstrap 5, HTML, and CSS.  
 Perfect for UI prototyping, data visualization, and modern web styling.
 
+See the [BootStrap](./BootStrap/) folder for demos and templates.
+
 ---
 
 ## 🗃️ Documentos & Otros
 
-Supporting files, notes, and miscellaneous utilities for various projects and coursework.
+Supporting files, notes, and miscellaneous utilities for various projects and coursework.  
+Find them in the [Documentos](./Documentos/) folder.
 
 ---
 
