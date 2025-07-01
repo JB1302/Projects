@@ -11,7 +11,6 @@ This section highlights modern, modular web apps and landing pages—demonstrati
 |---------------------------------------------|---------------------------------------------------------------------|
 | [Food Delivery Landing Page](./SimpleLanding)  | Responsive food delivery/business landing built with React & Material UI. |
 | [Minimal Landing Page](./LandingHero)       | Simple, clean React starter for portfolios or products.             |
-| *(Add more as your portfolio grows!)*                |                                                                     |
 
 ---
 
