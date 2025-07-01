@@ -1,4 +1,4 @@
-# Bootstrap Projects
+# Bootstrap Project Section
 
 Welcome to my Bootstrap project gallery!  
 This section features a collection of responsive web interfaces and components designed with **Bootstrap 5**, enhanced with custom HTML, CSS, and JavaScript.  
