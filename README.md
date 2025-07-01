@@ -24,7 +24,7 @@ Here you'll find a curated selection of my work, organized by technology and rea
 ## 🧑‍💻 About Me
 
 **Jonathan Barrantes**  
-Ingeniero en Sistemas  
+Software Engineer 
 📧 Email: jstevenbarrantes@gmail.com  
 🔗 [LinkedIn: Jonathan Barrantes](https://www.linkedin.com/in/jonathan-barrantes/)  
 
