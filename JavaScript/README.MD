@@ -1,4 +1,4 @@
-# JavaScript Project Portfolio
+# JavaScript Project Section
 
 Welcome to my JavaScript project collection!  
 This section brings together a variety of front-end web applications and UI demos, each built with **vanilla JavaScript**, **HTML5**, and **CSS3**—no frameworks, no build tools, just pure, modern web.

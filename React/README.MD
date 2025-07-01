@@ -1,4 +1,4 @@
-# React Project Portfolio ⚛️✨
+# React Project Section ⚛️✨
 
 Welcome to my collection of React projects!  
 This section highlights modern, modular web apps and landing pages—demonstrating component-based design, responsive UIs, and real-world interactivity.

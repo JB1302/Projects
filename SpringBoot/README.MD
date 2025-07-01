@@ -1,4 +1,4 @@
-# 🌿 Spring Boot Section
+# 🌿 Spring Boot Project Section
 
 This section presents my Spring Boot projects, each demonstrating practical full-stack web development using Java, Spring Boot, MySQL, JPA, Thymeleaf, and Bootstrap.  
 You’ll find modern CRUD applications with clean architectures, responsive frontends, and features like image upload and internationalization.
