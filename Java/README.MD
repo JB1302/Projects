@@ -1,4 +1,4 @@
-# Java Project Section
+# ☕ Java Project Section
 
 Welcome to my collection of Java projects!  
 This section showcases a range of applications—from desktop GUIs and backend APIs to networking and automation tools—all demonstrating practical, modern Java development.

@@ -1,4 +1,4 @@
-# Python Project Section
+# 🐍 Python Project Section
 
 Welcome to my collection of Python projects!  
 This section features robust automations, ETL pipelines, desktop apps, and practical data tools—all leveraging Python’s versatility for real-world solutions in analytics, automation, and finance.
