@@ -9,9 +9,9 @@ This section brings together a variety of front-end web applications and UI demo
 
 | Project                                  | Description                                                                              |
 |-------------------------------------------|------------------------------------------------------------------------------------------|
-| [Web Hero](./web-hero)                    | Grid-based landing page with an animated collapsible sidebar. Great for portfolios/SaaS.  |
-| [Collapsible Side Panel](./side-panel)    | Minimalist, responsive UI with a toggleable side navigation—ideal for dashboards.         |
-| [Rock Paper Scissors](./rock-paper-scissors) | Classic browser game against the computer with a clean UI and responsive design.         |
+| [Web Hero](./Web-Hero)                    | Grid-based landing page with an animated collapsible sidebar. Great for portfolios/SaaS.  |
+| [Collapsible Side Panel](./Acordion)    | Minimalist, responsive UI with a toggleable side navigation—ideal for dashboards.         |
+| [Rock Paper Scissors](./Rock-Paper-Scissors) | Classic browser game against the computer with a clean UI and responsive design.         |
 
 ---
 
