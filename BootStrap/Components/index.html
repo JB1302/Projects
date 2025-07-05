@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elementos</title>
+  <!--Boostrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <!--FavIcon-->
+  <link rel="icon" type="image/svg+xml" href="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg">
+  <!--FontAwesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!--CSS-->
+  <link rel="stylesheet" href="static/css/styles.css">
+
+  <!--Funcionalidad de Scripts-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!--Navbar Principal-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!--Marca o Titulo-->
+      <a class="navbar-brand text-white" href="#">TituloNav</a>
+      <!--Boton para menu colapsable-->
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!--Icono de hamburguesa-->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--Elementos del menu navegación-->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!--Iniciar Lista-->
+        <ul class="navbar-nav">
+          <!--Elemento #1-->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Boton1</a>
+          </li>
+          <!--Elemento #2-->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Boton2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <!--Body Principal-->
+  <main class="container my-5">
+
+    <!--Elemento #1-->
+
+    <!--Vista multiple en una linea-->
+    <section class="row">
+      <!--Elemento #1-->
+      <div class="col-md-8 bg-info">
+        <h2>Contenido principal</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <!--Elemento #1-->
+      <div class="col-md-4 bg-success">
+        <h4>Sidebar</h4>
+        <p>Más info...</p>
+      </div>
+    </section>
+
+    <!--Vista Individuales-->
+
+    <!--Elemento #2-->
+    <section class="row my-2">
+      <div class="col-12 bg-secondary">Hola 1</div>
+    </section>
+
+    <!--Elemento #3-->
+    <section class="row my-2">
+      <div class="col-12 text-white bg-dark">Hola 2</div>
+    </section>
+
+    <!--Elemento #4-->
+    <section class="row my-2">
+      <div class="col-12 bg-secondary">Hola 3</div>
+    </section>
+
+
+    <!--Carrousel Principal-->
+    <section class="row my-2">
+      <!--Definir el fondo y el Fade-->
+      <div id="carrouselIterador" class="carousel slide carousel-fade col-12 bg-dark" data-bs-ride="carousel">
+
+        <!--Indicadores-->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrouselIterador" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carrouselIterador" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carrouselIterador" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!--Elementos del carrousel-->
+        <div class="carousel-inner">
+          <!--Elemento Inicial-->
+          <div class="carousel-item active">
+            <!--Definir ratio y ocultar los bordes-->
+            <div class="ratio ratio-16x9 overflow-hidden">
+              <!--Fuente, dimensiones y object Fit-->
+              <img
+                src="https://media.cnn.com/api/v1/images/stellar/prod/cnne-1721873-copia-de-foto-para-wp-2024-07-16t082810-699.jpg?c=16x9&q=h_833,w_1480,c_fill"
+                class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Avion">
+            </div>
+            <!--Texto de la imagen-->
+            <div class="carousel-caption bg-dark bg-opacity-50 p-2 rounded">
+              <h5 class="fs-6">First slide label</h5>
+              <p class="fs-6">Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="ratio ratio-16x9 overflow-hidden">
+              <img src="https://s1.elespanol.com/2023/12/28/motor/820678108_238749262_1024x576.jpg"
+                class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Coche">
+            </div>
+            <div class="carousel-caption bg-dark bg-opacity-50 p-2 rounded">
+              <h5 class="fs-6">Second slide label</h5>
+              <p class="fs-6">Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="ratio ratio-16x9 overflow-hidden">
+              <img
+                src="https://media.cnn.com/api/v1/images/stellar/prod/cnne-1480454-231019093315-01-three-year-cruise-more-obstacles.jpg?c=16x9&q=w_800,c_fill"
+                class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Barco">
+            </div>
+            <div class="carousel-caption bg-dark bg-opacity-50 p-2 rounded">
+              <h5 class="fs-6">Third slide label</h5>
+              <p class="fs-6">Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+        </div>
+
+        <!--Boton Anterior-->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrouselIterador" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <!--Boton Siguiente-->
+        <button class="carousel-control-next" type="button" data-bs-target="#carrouselIterador" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+
+
+
+
+  <!-- Footer Principal -->
+  <footer class="bg-secondary text-center">
+    <!--Barra espaciadora-->
+    <div class="container pt-3"></div>
+    <!--Elementos internos-->
+    <div class="bg-dark text-center p-3 text-white">
+      <i class="fa-solid fa-copyright"></i> 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
