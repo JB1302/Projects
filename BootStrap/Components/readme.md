@@ -1,29 +1,29 @@
-# Elementos – Ejemplo de Página con Bootstrap 5
+# Elementos – Example Page with Bootstrap 5
 
-## 🚀 Descripción
+## 🚀 Description
 
-**Elementos** es una plantilla básica en HTML5 que utiliza Bootstrap 5 para mostrar una estructura moderna de página web, lista para personalizar y reutilizar. Incluye:
+**Elementos** is a basic HTML5 template using Bootstrap 5 to showcase a modern web page structure, ready to customize and reuse. Includes:
 
-- Navbar responsivo
-- Distribución principal de contenido y sidebar
-- Carrusel de imágenes funcional
-- Footer elegante
+- Responsive navbar  
+- Main content and sidebar layout  
+- Functional image carousel  
+- Sleek footer  
 
-Perfecto para aprender Bootstrap, prototipar sitios, o simplemente presumirle a tu profe que sí sabes hacer layouts bonitos.
+Perfect for learning Bootstrap, prototyping sites, or just showing your teacher you actually know how to build clean layouts.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Technologies Used
 
 - **HTML5**
 - **Bootstrap 5.3.7** (CDN)
-- **Font Awesome 6** (íconos)
-- **CSS personalizado** (`static/css/styles.css`)
-- **(Opcional) JavaScript de Bootstrap** (para interactividad del navbar y carrousel)
+- **Font Awesome 6** (icons)
+- **Custom CSS** (`static/css/styles.css`)
+- **(Optional) Bootstrap JavaScript** (for navbar and carousel interactivity)
 
 ---
 
-## 📁 Estructura del Documento
+## 📁 Document Structure
 
 index.html
 └── static/
@@ -31,65 +31,65 @@ index.html
 └── styles.css
 
 
-- **Navbar**: Barra de navegación responsiva, adaptable a mobile y desktop.
-- **Main**: Contenido central con grid de Bootstrap:
-  - Vista principal (contenido vs sidebar)
-  - Secciones individuales (cards)
-  - Carrusel de imágenes full-width y responsivo
-- **Footer**: Pie de página minimalista.
+- **Navbar**: Responsive navigation bar, adapts to mobile and desktop.
+- **Main**: Central content area using Bootstrap grid:
+  - Main view (content vs. sidebar)
+  - Individual sections (cards)
+  - Full-width, responsive image carousel
+- **Footer**: Minimalist footer section.
 
 ---
 
-## 📦 Instalación y Uso
+## 📦 Installation & Usage
 
-1. **Descarga o clona** este repositorio.
-2. Asegúrate de tener la siguiente estructura:
+1. **Download or clone** this repository.
+2. Make sure you have the following structure:
     ```
-    proyecto/
+    project/
     ├── index.html
     └── static/
         └── css/
             └── styles.css
     ```
-3. **Abre `index.html` en tu navegador**.  
-   ¡No necesitas backend ni frameworks adicionales!
+3. **Open `index.html` in your browser.**  
+   No backend, no frameworks required!
 
 ---
 
-## ✏️ Personalización
+## ✏️ Customization
 
-- Cambia los textos, imágenes y colores desde el HTML o `static/css/styles.css`.
-- Puedes modificar el carrusel para agregar más slides, o cambiar los íconos con Font Awesome.
-- Los enlaces del navbar y el footer pueden llevar a tus propias páginas o recursos.
-
----
-
-## 🧐 ¿Por qué usar esto?
-
-- **Prototipado rápido:** Monta una web básica en minutos.
-- **Reutilizable:** Base para dashboards, landings o sistemas internos.
-- **100% responsivo:** Se ve bien en desktop y mobile, sin pelearte con media queries.
+- Change the texts, images, and colors in the HTML or `static/css/styles.css`.
+- Edit the carousel to add more slides, or swap icons using Font Awesome.
+- Navbar and footer links can point to your own pages or resources.
 
 ---
 
-## ⚡ Preguntas Frecuentes
+## 🧐 Why Use This?
 
-**¿Puedo agregar más secciones?**  
-Sí, usa el grid de Bootstrap como te dé la gana. Esto es solo la base.
-
-**¿Se puede cambiar el tema de colores?**  
-Sí, edita las clases de Bootstrap o el CSS personalizado. O hazte un café y juégale al diseñador.
+- **Rapid prototyping:** Spin up a basic web page in minutes.
+- **Reusable:** Use as a base for dashboards, landings, or internal tools.
+- **100% responsive:** Looks good on desktop and mobile, without fighting media queries.
 
 ---
 
-## 📝 Créditos
+## ⚡ FAQ
 
-Hecho como ejemplo práctico de Bootstrap 5.  
-Imágenes de prueba tomadas de CNN, El Español y recursos públicos.
+**Can I add more sections?**  
+Absolutely, use the Bootstrap grid however you like. This is just a starting point.
+
+**Can I change the color theme?**  
+Of course. Edit the Bootstrap classes or your own CSS. Or just grab a coffee and channel your inner designer.
 
 ---
 
-## 🪧 Licencia
+## 📝 Credits
 
-Uso libre para proyectos personales, educativos y demos.  
-Si lo usas para algo ilegal… bueno, es tu problema, no el mío. 😏
+Created as a practical Bootstrap 5 example.  
+Sample images from CNN, El Español, and public resources.
+
+---
+
+## 🪧 License
+
+Free to use for personal, educational, and demo projects.  
+If you use it for something shady… hey, that's on you, not me. 😏
