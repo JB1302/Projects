@@ -40,14 +40,6 @@ index.html
 
 ---
 
-## 🖥️ Vista Previa
-
-> Ejemplo visual, tu contenido puede variar según imágenes y colores
-
-![Preview](https://i.imgur.com/7n7Iu9M.png)
-
----
-
 ## 📦 Instalación y Uso
 
 1. **Descarga o clona** este repositorio.
