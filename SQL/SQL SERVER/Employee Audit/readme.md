@@ -1,4 +1,4 @@
-# db_tarea_04 – SQL Server Demo: Employees & Auditing
+# SQL Server Demo: Employees & Auditing
 
 This project demonstrates the creation and management of an employee database using SQL Server, including audit tracking and a filtered view for high salaries.
 
