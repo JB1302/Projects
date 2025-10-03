@@ -1,0 +1,305 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  color: #FFCF40;
+}
+
+h3 {
+  margin: 0 0 1rem 0;
+  color: #E8E1D5;
+}
+
+#webTitle {
+  color: #FFCF40;
+  margin: 0;
+}
+
+
+/* Botones */
+button {
+  background: #FFCF40;
+  color: #20130A;
+  border: none;
+  padding: .6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: .5rem;
+}
+
+button:hover {
+  background: #B22222;
+  color: #FFFFFF;
+}
+
+header {
+  background: #20130A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid rgba(230, 192, 74, .55);
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+nav a {
+  color: #F6F1E7;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: .95;
+}
+
+nav a:hover {
+  color: #FFCF40;
+}
+
+/* Contenedor Principal */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='122.75' height='125.8' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(28,16%,12%,1)'/><path d='M33.13 0l14.12 28.5L61.37 0zm28.24 0L75.5 28.5 89.63 0zM0 .06V28.5h14.06zM14.06 28.5h28.25L28.19.06zM94.56.06L80.44 28.5h28.19zm14.07 28.44h28.25L122.75.06zM61.37 10l-9.18 18.5h18.37zM0 34.44v28.5l14.06-28.5zm14.06 0l14.13 28.5 14.12-28.5zm14.13 28.5H0l14.06 28.43zm19.06-28.5l-14.12 28.5h28.24zm14.12 28.5h28.26L75.5 34.44zm0 0L47.25 91.37H75.5zM75.5 91.37h28.2L89.64 62.94zm-28.25 0L33.13 62.94 19 91.37zm4.94-56.93L61.37 53l9.2-18.56zm28.25 0l14.06 28.5 14.13-28.5zm28.19 0l14.12 28.5 14.13-28.5zm14.12 28.5H94.5l14.13 28.43zM0 72.87v18.5h9.19zm122.75 0l-9.19 18.5h18.38zM0 97.31v18.57l9.19-18.57zm14.06 0L0 125.81h28.19zm4.94 0l14.13 28.5 14.12-28.5zm28.25 0l14.12 28.5 14.13-28.5zm28.25 0l14.13 28.5 14.06-28.5zm33.13 0l-14.07 28.5h28.19zm4.93 0l9.19 18.57 9.19-18.57z'  stroke-width='1' stroke='none' fill='hsla(47,80.9%,61%,1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+/* HERO */
+.hero {
+  min-height: 50vh;
+  background:
+    linear-gradient(rgba(26, 19, 12, .50), rgba(26, 19, 12, .50)),
+    url("../static/golden.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CTA {
+  width: 25rem;
+  height: 15rem;
+  background: rgba(26, 19, 12, .45);
+  border: 1px solid #FFCF40;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .75rem;
+}
+
+button a {
+  color: #20130A;
+  text-decoration: none;
+}
+
+button a:hover {
+  color: #FFFFFF;
+}
+
+/* Reservaciones  y Contacto */
+.reserva-form {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 1rem 1.25rem;
+  background: #20130A;
+  border: 1px solid #FFCF40;
+  border-radius: 10px;
+  color: #F6F1E7;
+}
+
+/* Texto de horario */
+.reserva-form .form-info {
+  margin-bottom: 1rem;
+  padding: .5rem .75rem;
+  background: #2A1C12;
+  color: #D8D3C6;
+  border: 1px solid rgba(230, 192, 74, .35);
+  border-radius: 8px;
+  font-size: .9rem;
+}
+
+
+/* Responsive*/
+
+.grupo {
+  display: grid;
+  margin-bottom: 1rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 680px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.reserva-form label {
+  display: block;
+  font-size: .95rem;
+}
+
+.reserva-form input,
+.reserva-form select,
+.reserva-form textarea {
+  width: 87%;
+  margin-top: .35rem;
+  padding: .6rem .7rem;
+  border: 1px solid #E6C04A;
+  border-radius: 6px;
+  background: #20130A;
+  color: #F6F1E7;
+}
+
+.reserva-form button+button {
+  margin-left: .5rem;
+}
+
+.reserva-form button:hover {
+  background: #B22222;
+  color: #FFFFFF;
+}
+
+/* Menu */
+.menu {
+  background: url("../static/menu.jpg") center/cover no-repeat;
+}
+
+.menu-wrapper {
+  display: grid;
+  /* Alinear elementos en el grid*/
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.carta-card {
+  width: 35rem;
+  border: 2px solid #FFCF40;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  background: rgba(26, 19, 12, .88);
+  overflow: auto;
+}
+
+.carta-card h1 {
+  color: #FFCF40;
+  margin-bottom: .75rem;
+}
+
+.menu-section+.menu-section {
+  margin-top: 1rem;
+}
+
+.menu-section h2 {
+  color: #B22222;
+  margin: .25rem 0 .5rem;
+}
+
+.menu-item {
+  padding: .6rem 0;
+  border-bottom: 1px solid rgba(230, 192, 74, .28);
+}
+
+.item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.menu-item h3 {
+  color: #F6F1E7;
+  font-weight: 700;
+  margin: 0;
+}
+
+.menu-item .price {
+  color: #E6C04A;
+  font-weight: 700;
+}
+
+.menu-item .desc {
+  margin: .25rem 0 0;
+  color: #D8D3C6;
+  font-size: .95rem;
+}
+
+/* Seccion de Footer */
+footer {
+  background: #20130A;
+  color: #E8E1D5;
+  border-top: 1px solid rgba(230, 192, 74, .45);
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+}
+
+.footerIzquierdo ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.footerIzquierdo a,
+.footerDerecho a {
+  color: #FFCF40;
+  text-decoration: none;
+}
+
+.footerIzquierdo a:hover,
+.footerDerecho a:hover {
+  color: #B22222;
+}
+
+.footerDerecho p {
+  margin: .15rem 0;
+  color: #E8E1D5;
+}
+
+.footerCopyright {
+  margin-top: .75rem;
+  font-size: .9rem;
+  color: #C9C2B5;
+  opacity: .95;
+}

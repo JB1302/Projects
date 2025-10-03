@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+
+  <title>Luz de Luna</title>
+</head>
+
+<body>
+
+  <header>
+    <h1 id="webTitle">Luz de Luna</h1>
+    <nav>
+      <ul>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#reservaciones">Reservaciones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <section class="CTA">
+        <h1>Sabores a media luz</h1>
+        <h3>Recetas cuidadas, presentación impecable y servicio atento.</h3>
+        <section class="heroBotones">
+          <button><a href="#reservaciones">Reservá ahora</a></button>
+          <button><a href="#menu">Explorar carta</a></button>
+        </section>
+      </section>
+    </section>
+
+    <section id="reservaciones" class="reservaciones">
+      <form class="reserva-form">
+        <p class="form-info">
+          Horario de reservas: lun a sáb 12:00 a 22:30 · dom 10:00 a 16:00. Última reserva 21:30. Anticipación mínima 2
+          h. Cancelaciones hasta 24 h.
+        </p>
+
+        <div class="grupo grid-2">
+          <label for="nombre">Nombre
+            <input id="nombre" type="text" />
+          </label>
+          <label for="apellido">Apellido
+            <input id="apellido" type="text" />
+          </label>
+        </div>
+
+        <div class="grupo grid-3">
+          <label for="personas">Personas
+            <input id="personas" type="number" min="1" max="6" />
+          </label>
+          <label for="fecha">Fecha
+            <input id="fecha" type="date" />
+          </label>
+          <label for="hora">Hora
+            <input id="hora" type="time" step="900" />
+          </label>
+        </div>
+
+        <div class="grupo grid-2">
+          <label for="telefono">Teléfono
+            <input id="telefono" type="tel" placeholder="+506 2222 2222" />
+          </label>
+          <label for="correo">Correo
+            <input id="correo" type="email" placeholder="tu@correo.com" />
+          </label>
+        </div>
+
+        <div class="grupo">
+          <label for="notas">Notas
+            <textarea id="notas" rows="3" placeholder="Alergias, ocasión, preferencia de mesa..."></textarea>
+          </label>
+        </div>
+
+        <button type="submit">Reservar</button>
+        <button type="reset">Limpiar</button>
+      </form>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="menu-wrapper">
+        <article class="carta-card">
+          <h1>Menú</h1>
+
+          <section class="menu-section">
+            <h2>Entradas</h2>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Bruschetta de tomate</h3><span class="price">₡4 500</span>
+              </div>
+              <p class="desc">Pan artesanal, tomate, albahaca y aceite de oliva.</p>
+            </article>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Carpaccio de res</h3><span class="price">₡8 900</span>
+              </div>
+              <p class="desc">Láminas de res con parmesano y arúgula.</p>
+            </article>
+          </section>
+
+          <section class="menu-section">
+            <h2>Platos fuertes</h2>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Salmón a la plancha</h3><span class="price">₡12 900</span>
+              </div>
+              <p class="desc">Emulsión de limón, puré de papa y espárragos.</p>
+            </article>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Risotto de hongos</h3><span class="price">₡10 500</span>
+              </div>
+              <p class="desc">Arborio cremoso con portobello y parmesano.</p>
+            </article>
+          </section>
+
+          <section class="menu-section">
+            <h2>Postres</h2>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Cheesecake de frutos rojos</h3><span class="price">₡4 900</span>
+              </div>
+              <p class="desc">Base de galleta y coulis de frutos rojos.</p>
+            </article>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Mousse de chocolate</h3><span class="price">₡4 700</span>
+              </div>
+              <p class="desc">Cacao intenso con crema batida.</p>
+            </article>
+          </section>
+
+          <section class="menu-section">
+            <h2>Bebidas</h2>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Latte</h3><span class="price">₡2 200</span>
+              </div>
+              <p class="desc">Espresso doble con leche vaporizada.</p>
+            </article>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Espresso</h3><span class="price">₡1 600</span>
+              </div>
+              <p class="desc">Corto e intenso.</p>
+            </article>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Copa de vino tinto</h3><span class="price">₡3 900</span>
+              </div>
+              <p class="desc">Selección de la casa.</p>
+            </article>
+            <article class="menu-item">
+              <div class="item-head">
+                <h3>Cóctel de la casa</h3><span class="price">₡4 800</span>
+              </div>
+              <p class="desc">Notas cítricas y toque floral.</p>
+            </article>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <form class="reserva-form">
+        <h1>Contacto</h1>
+
+        <div class="grupo grid-2">
+          <label for="c-nombre">Nombre
+            <input id="c-nombre" type="text" />
+          </label>
+          <label for="c-apellido">Apellido
+            <input id="c-apellido" type="text" />
+          </label>
+        </div>
+
+        <div class="grupo grid-2">
+          <label for="c-email">Correo
+            <input id="c-email" type="email" placeholder="tu@correo.com" />
+          </label>
+          <label for="c-telefono">Teléfono
+            <input id="c-telefono" type="tel" placeholder="+506 2222 2222" />
+          </label>
+        </div>
+
+        <div class="grupo">
+          <label for="c-mensaje">Mensaje
+            <textarea id="c-mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?"></textarea>
+          </label>
+        </div>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <section class="footerIzquierdo">
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#reservaciones">Reservaciones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <p class="footerCopyright">© 2025 Luz de Luna. Todos los derechos reservados.</p>
+    </section>
+
+    <section class="footerDerecho">
+      <p>📍 San José, Costa Rica</p>
+      <p>📞 +506 2222-2222</p>
+      <p>✉️ contacto@luzdeluna.com</p>
+    </section>
+  </footer>
+
+</body>
+
+</html>
