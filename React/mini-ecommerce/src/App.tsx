@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import Carrito from "./pages/CartPage";
+import Login from "./pages/Login";
+import CheckoutPage from "./pages/CheckoutPage";
 
 import "./App.css";
 
@@ -23,6 +25,8 @@ function App() {
 				<Route path="productos" index element={<ProductPage />} />
 				<Route path="productos/:id" element={<ProductDetailPage />} />
 				<Route path="carrito" element={<Carrito />} />
+				<Route path="login" element={<Login />} />
+				<Route path="checkout" element={<CheckoutPage />} />
 			</Route>
 		</Routes>
 	);
