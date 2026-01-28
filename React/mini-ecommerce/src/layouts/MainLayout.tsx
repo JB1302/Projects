@@ -14,8 +14,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
 				minHeight: "100vh",
 				display: "flex",
 				flexDirection: "column",
-				background:
-					"radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
 			}}
 		>
 			<Header></Header>

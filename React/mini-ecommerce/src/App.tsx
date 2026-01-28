@@ -3,6 +3,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import Carrito from "./pages/CartPage";
 
 import "./App.css";
@@ -20,7 +21,8 @@ function App() {
 			>
 				<Route index element={<HomePage />} />
 				<Route path="productos" index element={<ProductPage />} />
-				<Route path="carrito" index element={<Carrito />} />
+				<Route path="productos/:id" element={<ProductDetailPage />} />
+				<Route path="carrito" element={<Carrito />} />
 			</Route>
 		</Routes>
 	);
