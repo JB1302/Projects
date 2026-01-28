@@ -1,7 +1,12 @@
 import NavItem from "./NavItems";
 import NavButton from "./NavButtons";
+import { useCart } from "../context/useCart";
 
 export default function Header() {
+	const { state } = useCart();
+
+	const totalItems = state.items.reduce((acc, item) => acc + item.quantity, 0);
+
 	return (
 		<nav
 			style={{ backgroundColor: "#01011c" }}
@@ -32,14 +37,22 @@ export default function Header() {
 				<div className="collapse navbar-collapse" id="nav_lc">
 					<ul className="navbar-nav my-3 my-lg-0 ms-lg-3 me-auto">
 						<NavItem to="/">Inicio</NavItem>
-
 						<NavItem to="/productos">Productos</NavItem>
 					</ul>
 
 					<div className="d-flex align-items-center gap-2">
-						<NavButton to="/carrito" variant="outline-light">
-							🛒 Carrito
-						</NavButton>
+						{/* BOTÓN CARRITO CON BADGE */}
+						<div className="position-relative">
+							<NavButton to="/carrito" variant="outline-light">
+								🛒 Carrito
+							</NavButton>
+
+							{totalItems > 0 && (
+								<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+									{totalItems}
+								</span>
+							)}
+						</div>
 
 						<NavButton to="/login" variant="primary">
 							Iniciar sesión

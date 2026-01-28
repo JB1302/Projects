@@ -5,6 +5,8 @@ type CardProps = {
 	stock: number;
 	brand: string;
 	imageUrl?: string;
+	onAdd?: () => void;
+	onDetails?: () => void;
 };
 
 export default function Card({
@@ -14,6 +16,8 @@ export default function Card({
 	stock,
 	brand,
 	imageUrl,
+	onDetails,
+	onAdd,
 }: CardProps) {
 	return (
 		<div className="card h-100">
@@ -33,8 +37,22 @@ export default function Card({
 				</div>
 
 				<div className="mt-auto mb-3 d-flex gap-2 justify-content-center">
-					<button className="btn btn-sm btn-outline-primary">Detalles</button>
-					<button className="btn btn-sm btn-success">Agregar</button>
+					<button
+						type="button"
+						className="btn btn-sm btn-outline-primary"
+						onClick={onDetails}
+					>
+						Detalles
+					</button>
+
+					<button
+						type="button"
+						className="btn btn-sm btn-success"
+						onClick={onAdd}
+						disabled={stock === 0}
+					>
+						Agregar
+					</button>
 				</div>
 
 				<div className="small d-flex justify-content-center gap-2 flex-wrap">

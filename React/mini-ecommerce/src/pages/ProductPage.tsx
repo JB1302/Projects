@@ -1,10 +1,13 @@
 import { useEffect, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
 import { products } from "../data/Products";
 import Card from "../components/Card";
 import FilterBar from "../components/FilterBar";
 import Pagination from "../components/Pagination";
-import { Link } from "react-router-dom";
+//Para el Carrito
+import { useCart } from "../context/useCart";
+
+//Navegacion
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export default function ProductPage() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -89,6 +92,10 @@ export default function ProductPage() {
 		setSearchParams({ page: "1", cat: "Todas", q: "" });
 	};
 
+	//Definir usarCarrito
+	const { dispatch } = useCart();
+	const navigate = useNavigate();
+
 	return (
 		<div>
 			<h1 className="text-center text-white">Productos</h1>
@@ -105,19 +112,22 @@ export default function ProductPage() {
 			<div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3">
 				{productosPaginados.map((product) => (
 					<div key={product.id} className="col">
-						<Link
-							to={`/productos/${product.id}`}
-							className="text-decoration-none text-dark"
-						>
-							<Card
-								name={product.name}
-								category={product.category}
-								price={product.price}
-								stock={product.stock}
-								brand={product.brand}
-								imageUrl={product.imageUrl}
-							/>
-						</Link>
+						<Card
+							name={product.name}
+							category={product.category}
+							price={product.price}
+							stock={product.stock}
+							brand={product.brand}
+							imageUrl={product.imageUrl}
+							onAdd={() =>
+								dispatch({
+									type: "ADD_ITEM",
+									product: product,
+									quantity: 1,
+								})
+							}
+							onDetails={() => navigate(`/productos/${product.id}`)}
+						/>
 					</div>
 				))}
 			</div>
