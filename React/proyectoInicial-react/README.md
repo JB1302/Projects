@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# Proyecto Inicial — React + TypeScript Starter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![React%20Router](https://img.shields.io/badge/React%20Router-CA4245?logo=reactrouter&logoColor=white)
 
-Currently, two official plugins are available:
+A compact React + TypeScript project that demonstrates routing, layout composition, and API data fetching.
+This starter is ideal for practicing page structure, shared layouts, and component-driven UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧭 Pages & Routes
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+| Route | Page | Highlights |
+| --- | --- | --- |
+| `/` | Home | Local state example with a reusable Card component. |
+| `/api` | API | Fetches users from JSONPlaceholder with loading/error states. |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Key Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Shared Layout** using a main layout wrapper for consistent structure.
+- **React Router** setup with nested routes and an `Outlet` for child views.
+- **API Integration** using `fetch` and typed DTOs for user data.
+- **Reusable UI Components** such as cards for consistent presentation.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── pages/
+│   │   ├── HomePage.tsx
+│   │   └── ApiPage.tsx
+│   └── Card.tsx
+├── layouts/
+│   └── MainLayout.tsx
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm install
+npm run dev
 ```
+
+The app will be available at `http://localhost:5173` by default.
+
+---
+
+## 🧩 Ideas to Extend
+
+- Add a profile details page using a dynamic route like `/users/:id`.
+- Introduce a global theme or layout variant per route group.
+- Swap JSONPlaceholder for a local API to practice backend integration.
+
+---
+
+**Clean, focused, and practical—perfect for practicing React Router, layouts, and data fetching.**

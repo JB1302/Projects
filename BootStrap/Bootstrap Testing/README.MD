@@ -1,92 +1,77 @@
 # Data Engineer Portfolio Landing Page
 
-A modern, responsive personal portfolio website built with **Bootstrap 5**, **HTML5**, **CSS3**, and a touch of JavaScript.  
-This landing page showcases projects, technical skills, and contact information in a clean and interactive format—perfect for data engineers, backend developers, or tech professionals who want to stand out.
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
+
+A modern, responsive personal portfolio website built with **Bootstrap 5**, **HTML5**, **CSS3**, and a touch of JavaScript. This landing page showcases projects, technical skills, and contact information in a clean and interactive format—perfect for data engineers, backend developers, or tech professionals who want to stand out.
 
 ---
 
 ## 🚀 Features
 
-- **Responsive Design:**  
-  Adapts seamlessly to desktops, tablets, and mobile devices.
-- **Animated Hero Section:**  
-  Quick introduction, professional title, and call-to-action.
-- **Dynamic Projects Section:**  
-  Carousel for desktop and scrollable cards for mobile. Each project card highlights key skills and technologies.
-- **Custom Navbar:**  
-  Sticky navigation with smooth collapse on mobile.
-- **Tech Stack Gallery:**  
-  Showcase of major tools and languages (Java, Python, Spring Boot, MySQL, Snowflake, Power BI, React, Bootstrap).
-- **Consistent Branding:**  
-  Includes favicon, logo, and custom theme colors.
-- **Clean, maintainable code:**  
-  Well-organized HTML, modular CSS, and minimal JS for UI enhancements.
-- **Ready to extend:**  
-  Easily add more sections, such as blog, testimonials, or downloadable resume.
+- **Responsive Design:** Adapts seamlessly to desktops, tablets, and mobile devices.
+- **Hero Section:** Quick introduction, professional title, and CTA.
+- **Dynamic Projects Section:** Carousel for desktop and scrollable cards for mobile.
+- **Custom Navbar:** Sticky navigation with a mobile-friendly collapse.
+- **Tech Stack Gallery:** Highlight key tools and languages with icons.
+- **Consistent Branding:** Favicon, logo, and custom theme colors.
+- **Clean, Maintainable Code:** Organized HTML, modular CSS, minimal JS.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:**  
-  - HTML5 & CSS3  
-  - [Bootstrap 5](https://getbootstrap.com/)  
-  - Vanilla JavaScript
-
-- **Design:**  
-  - Responsive layout  
-  - Google Fonts  
-  - SVG/PNG assets for icons and logos
+- **Frontend:** HTML5, CSS3, Bootstrap 5, Vanilla JavaScript
+- **Design:** Google Fonts, SVG/PNG assets
 
 ---
 
 ## 📁 Project Structure
 
+```
 /
-├── index.html # Main landing page
-├── styles.css # Custom styles
+├── index.html
+├── styles.css
 ├── js/
-│ └── script.js # Custom JS for effects
+│   └── script.js
 ├── static/
-│ ├── icon/ # Favicon and logos
-│ ├── pics/ # Images (e.g., hero banner)
-│ └── Project-*.svg # Project thumbnails
+│   ├── icon/
+│   ├── pics/
+│   └── Project-*.svg
 └── README.md
-
+```
 
 ---
 
 ## ⚡ How It Works
 
-- **Navigation:**  
-  The navbar provides smooth navigation to each section (Home, Contact, Projects).
-- **Hero:**  
-  Engaging introduction with your name, role, and a contact button.
-- **Projects:**  
-  - Desktop: Carousel view for easy project browsing.
-  - Mobile: Horizontal scroll with snap points for touch navigation.
-  - Each project includes a title, description, and tech summary.
-- **Tech Stack:**  
-  Clean row of clickable or hoverable tech icons.
-- **Footer:**  
-  Simple, copyright-protected.
+- **Navigation:** Smooth jumps to Home, Projects, and Contact.
+- **Hero:** Professional headline with CTA.
+- **Projects:** Carousel for desktop, snap scrolling for mobile.
+- **Tech Stack:** Icon row showcasing core tools.
+- **Footer:** Clean and minimal.
 
 ---
 
 ## 🌟 Quick Start
 
-1. **Clone the repository**
-   git clone https://github.com/yourusername/your-portfolio-landing.git
+```sh
+git clone https://github.com/yourusername/your-portfolio-landing.git
+```
 
-2. **Open index.html in your browser**
-(No build step required! Pure HTML/CSS/JS.)
+Open `index.html` directly in your browser. No build step required.
 
-3. **Customize:**
+---
 
-    Update project cards in the HTML.
+## 🎨 Customization Ideas
 
-    Replace images/icons in the /static/ folder.
+- Replace project cards and text in `index.html`.
+- Swap icons and images in `/static/`.
+- Adjust colors and spacing in `styles.css`.
+- Add new sections (Resume, Testimonials, Blog).
 
-    Edit styles.css for custom colors or animations.
+---
 
-    Optionally, add more JS in /js/script.js.
+**A clean, flexible landing page template to showcase your engineering profile.**

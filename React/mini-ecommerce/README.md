@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# Mini E-commerce — React + TypeScript Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
+![React%20Router](https://img.shields.io/badge/React%20Router-CA4245?logo=reactrouter&logoColor=white)
 
-Currently, two official plugins are available:
+A modern, single-page e-commerce prototype featuring a filterable catalog, product detail view, cart management, and a checkout flow. Built to demonstrate routing, state management, and UI composition in React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧭 Pages & Routes
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+| Route | Page | Description |
+| --- | --- | --- |
+| `/` | Home | Hero + feature highlights with quick access to catalog and cart. |
+| `/productos` | Product Listing | Search, category filtering, and pagination with URL-synced state. |
+| `/productos/:id` | Product Detail | Detailed product view with add-to-cart action. |
+| `/carrito` | Cart | Quantity controls, subtotal summary, and checkout link. |
+| `/login` | Login | Login UI flow (UI placeholder for auth). |
+| `/checkout` | Checkout | Summary and form layout for purchase flow. |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Key Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **URL-driven state** for filters and pagination using query params.
+- **Cart context** with add, remove, clear, and quantity updates.
+- **Product API layer** abstracted into a dedicated module.
+- **Responsive UI** with Bootstrap-based layout and card components.
+- **Reusable components** for filtering, pagination, and product cards.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
+
+```
+src/
+├── api/
+├── components/
+├── context/
+├── layouts/
+├── pages/
+├── types/
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm install
+npm run dev
 ```
+
+The app will be available at `http://localhost:5173` by default.
+
+---
+
+## 🧩 Suggested Enhancements
+
+- Connect to a real backend for products and checkout.
+- Add authentication and user profiles.
+- Persist cart state in localStorage.
+- Improve category loading with dedicated API endpoints.
+
+---
+
+**A clean, portfolio-ready storefront prototype that showcases routing, filters, and cart logic.**

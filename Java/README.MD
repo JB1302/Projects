@@ -3,19 +3,19 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-FF7800?logo=java&logoColor=white)
+![OOP](https://img.shields.io/badge/OOP-Object%20Oriented-334155?logo=code&logoColor=white)
 
-A broad collection of Java applications: desktop GUIs, APIs, networking, and console utilities.
-Projects demonstrate OOP design, data structures, and real-world integrations.
+A broad collection of Java applications: desktop GUIs, APIs, networking, and console utilities. These projects highlight object-oriented design, data structures, and practical integrations.
 
 ---
 
 ## ✨ Highlights
 
-- **Desktop GUIs:** Swing/JavaFX apps with practical workflows.
+- **Desktop GUIs:** Swing/JavaFX apps with real workflows.
 - **Backend APIs:** REST-style patterns with Spring Boot.
 - **Networking:** Socket-based communication examples.
-- **Persistence:** File-based and database integrations.
-- **Practical Focus:** Each app targets a real use case.
+- **Persistence:** File-based and database-backed utilities.
+- **Practical Focus:** Each app solves a real-world problem.
 
 ---
 
@@ -37,4 +37,12 @@ Projects demonstrate OOP design, data structures, and real-world integrations.
 
 ## ▶️ How to Run
 
-Open each project in your IDE and follow any local README instructions.
+Open each project in your IDE and follow any local README instructions. For Maven projects, you can typically use:
+
+```sh
+./mvnw spring-boot:run
+```
+
+---
+
+If you’d like refactors, tests, or packaging instructions, I can add them.

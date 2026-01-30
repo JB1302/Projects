@@ -1,10 +1,10 @@
-# 🎨 Otros / UI-UX
+# 🎨 UI/UX & Design Assets
 
 ![Design](https://img.shields.io/badge/Design-EC4899?logo=figma&logoColor=white)
 ![Penpot](https://img.shields.io/badge/Penpot-000000?logo=penpot&logoColor=white)
+![Prototyping](https://img.shields.io/badge/Prototyping-7C3AED?logo=adobe&logoColor=white)
 
-Design assets and UI/UX mockups created for prototyping and visual exploration.
-Includes Penpot files and layout experiments.
+This folder contains design resources, UI/UX explorations, and prototyping files used to plan and visualize interfaces before development.
 
 ---
 
@@ -12,10 +12,15 @@ Includes Penpot files and layout experiments.
 
 | Folder | Description |
 | --- | --- |
-| [UI-UX Designs](./UI-UX%20Designs) | Penpot design files and UI explorations. |
+| [UI-UX Designs](./UI-UX%20Designs) | Penpot files and interface explorations. |
 
 ---
 
-## ▶️ How to Use
+## 🧭 How to Use
 
-Open `.penpot` files in Penpot to view or edit.
+- Open `.penpot` files in **Penpot** to view or edit.
+- Use the assets as references for color, layout, and interaction ideas.
+
+---
+
+If you’d like export-ready assets (PNG/SVG) or a full design system, let me know.
