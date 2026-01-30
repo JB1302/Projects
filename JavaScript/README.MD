@@ -1,56 +1,26 @@
-# 🟨 JavaScript Project Section
+# 🟨 JavaScript Projects
 
-Welcome to my JavaScript project collection!  
-This section brings together a variety of front-end web applications and UI demos, each built with **vanilla JavaScript**, **HTML5**, and **CSS3**—no frameworks, no build tools, just pure, modern web.
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 
----
-
-## 🗂️ Project Index
-
-| Project                                  | Description                                                                              |
-|-------------------------------------------|------------------------------------------------------------------------------------------|
-| [Web Hero](./Web-Hero)                    | Grid-based landing page with an animated collapsible sidebar. Great for portfolios/SaaS.  |
-| [Collapsible Side Panel](./Acordion)    | Minimalist, responsive UI with a toggleable side navigation—ideal for dashboards.         |
-| [Rock Paper Scissors](./Rock-Paper-Scissors) | Classic browser game against the computer with a clean UI and responsive design.         |
+Colección de proyectos en JavaScript puro: juegos, UI demos y ejercicios de front-end sin frameworks.  
+Ideales para repasar lógica, interacción con el DOM y layouts responsivos.
 
 ---
 
-## 🏆 Highlights
+## 📌 Proyectos
 
-- **Responsive Layouts:** Modern CSS Grid and Flexbox ensure full adaptability on any device.
-- **Accessible, Clean UIs:** Hamburger menus, ARIA labels, and modular navigation.
-- **100% Vanilla JS:** No frameworks or external dependencies—great for learning and full control.
-- **Games & Demos:** Interactive logic for classic games and UI patterns.
-- **Starter Templates:** Easily adaptable for your own portfolio, dashboard, or mini-app.
-
----
-
-## 🔧 Technologies Used
-
-- HTML5
-- CSS3 (Flexbox, Grid, media queries)
-- JavaScript (ES6+)
+| Proyecto | Descripción |
+| --- | --- |
+| [Web Hero](./Web-Hero) | Landing con grid y sidebar colapsable animado. |
+| [Collapsible Side Panel](./Acordion) | Menú lateral responsive para dashboards. |
+| [Rock Paper Scissors](./Rock-Paper-Scissors) | Juego clásico contra la computadora. |
+| [Student Evaluator](./StudentEvaluator) | Evaluador de notas con UI sencilla. |
+| [Caso de Estudio #1](./Caso%20de%20Estudio%20%231%20-%20Ambiente%20Web%20Cliente%20Servidor) | Caso de estudio de ambiente web cliente-servidor. |
 
 ---
 
-## 📚 How to Use
+## ▶️ Cómo usar
 
-Each subfolder contains:
-- Its own `README.md` with setup and usage notes
-- Source code, CSS, and example HTML
-
-**To try a project:**  
-Open the folder, launch `index.html` in your browser. No build or server required.
-
----
-
-## 🚀 Why This Section?
-
-- **Foundational web skills:** Showcases practical, modern JavaScript and UI techniques.
-- **Ready to customize:** All projects serve as starters for more complex front-end work.
-- **Lightweight & fast:** Loads instantly, works offline, easy to extend for your needs.
-
----
-
-*Explore each project, adapt them to your style, and use as building blocks for your own portfolio or client work!*
-
+Abre el `index.html` de cada proyecto en tu navegador (no requiere build).

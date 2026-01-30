@@ -1,63 +1,25 @@
-# 🐍 Python Project Section
+# 🐍 Python Projects
 
-Welcome to my collection of Python projects!  
-This section features robust automations, ETL pipelines, desktop apps, and practical data tools—all leveraging Python’s versatility for real-world solutions in analytics, automation, and finance.
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
 
----
-
-## 🗂️ Project Index
-
-| Project                                               | Description                                                              |
-|-------------------------------------------------------|--------------------------------------------------------------------------|
-| [Financial Transaction Manager](./Transaction-Manager)   | Cross-platform desktop app to track income and expenses with a modern UI.|
-| [HR Analytics ETL System](./SQL-ETL)                   | Complete ETL pipeline: Excel → JSON → MySQL, with PowerBI integration.   |
-| [Address Search Automation](./Pandas-WeBrowser)          | Automates Google Maps address validation from Excel via CLI or Tkinter.  |
+Automatización, ETL, apps de escritorio y utilidades de datos con Python.  
+En cada carpeta hay scripts, datos de ejemplo y guías de ejecución.
 
 ---
 
-## 🏆 Highlights
+## 📌 Proyectos
 
-- **Desktop Applications**  
-  Native desktop UIs with PyWebView, HTML/JS/CSS, and Tkinter.
-- **ETL & Data Pipelines**  
-  Automated data cleaning, validation, and database loading for analytics and BI.
-- **Automation Tools**  
-  Batch address search and data cleansing with integrated browser and error handling.
-- **Data Visualization Ready**  
-  Built for direct integration with Power BI and other visualization tools.
-- **Production-Ready Patterns**  
-  Modular code, transactional data safety, extensible architectures.
+| Proyecto | Descripción |
+| --- | --- |
+| [Financial Transaction Manager](./Transaction-Manager) | App de escritorio para ingresos/gastos con UI moderna. |
+| [HR Analytics ETL](./SQL-ETL) | Pipeline ETL: Excel → JSON → MySQL + Power BI. |
+| [Address Search Automation](./Pandas-WeBrowser) | Validación de direcciones en Google Maps desde Excel. |
+| [Weather App (Python)](./Weather%20App%20-%20Python) | Ejercicios de consumo de API y dashboard básico. |
 
 ---
 
-## 🔧 Technologies Used
+## ▶️ Cómo usar
 
-- **Core:** Python 3.x
-- **Data/ETL:** Pandas, SQLAlchemy, MySQL, Excel, JSON
-- **Desktop UI:** PyWebView, Tkinter, HTML5/CSS3/JS
-- **Visualization:** PowerBI, MySQL connector
-- **Automation:** webbrowser, urllib, openpyxl
-
----
-
-## 📚 How to Use
-
-Each subfolder contains:
-- A dedicated `README.md` with setup and usage instructions
-- Source code and sample data where applicable
-
-**To run a project:**  
-Open the project folder, follow its `README.md`, and launch from your Python environment or IDE.
-
----
-
-## 🚀 Why This Section?
-
-- **Practical Automation:** Streamline repetitive business processes and data validation.
-- **Modern Data Engineering:** Real ETL pipelines, database integrations, and analytics-ready datasets.
-- **Adaptable & Extensible:** Every project is ready to scale for real-world scenarios.
-- **Pythonic Solutions:** Leverages best practices and libraries for maintainable, efficient code.
-
----
-
-*Explore, contribute, or adapt any project—Python is for problem solvers!*
+Revisa el `README.md` de cada proyecto y ejecuta desde tu entorno Python.
