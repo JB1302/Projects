@@ -1,62 +1,39 @@
-# 🌿 Spring Boot Project Section
+# 🌿 Spring Boot Projects
 
-This section presents my Spring Boot projects, each demonstrating practical full-stack web development using Java, Spring Boot, MySQL, JPA, Thymeleaf, and Bootstrap.  
-You’ll find modern CRUD applications with clean architectures, responsive frontends, and features like image upload and internationalization.
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?logo=thymeleaf&logoColor=white)
 
----
-
-## 🗂️ Project Index
-
-| Project                        | Description                                                           |
-|--------------------------------|-----------------------------------------------------------------------|
-| [TreeCapitator](./TreeCapitator)    | CRUD system for tree species: add, edit, delete, image, and full MySQL persistence. |
-| [Product Manager CRUD](./Firebase-Project) | Product inventory app: create, update, delete, upload images (Firebase Storage), multilingual UI. |
+A set of full-stack web applications built with Spring Boot, featuring layered architecture, CRUD workflows, and database integrations.
+Expect clean separation of controllers/services/repositories, responsive UIs, and production-style configuration.
 
 ---
 
-## 🏆 Highlights
+## ✨ Highlights
 
-- **Clean layered architecture:** Controller, service, repository, and domain separation for maintainability.
-- **Full CRUD flows:** Add, edit, delete, and view entities in a modern web UI.
-- **MySQL + JPA integration:** Fast, reliable data persistence.
-- **Thymeleaf + Bootstrap 5:** Responsive UIs with reusable templates and components.
-- **Image upload:** Firebase Storage support in the Product Manager.
-- **Internationalization:** All UI texts managed in `messages.properties` for easy localization.
-- **Production config:** Centralized settings in `application.properties`.
-
----
-
-## 🔧 Technologies Used
-
-- Java 17+
-- Spring Boot, Spring Data JPA
-- MySQL
-- Thymeleaf, Bootstrap 5, FontAwesome
-- Firebase Storage (for images)
-- Maven, application.properties, messages.properties
+- **Layered Architecture:** Controllers, services, repositories, and domain models.
+- **Full CRUD Flows:** Create, read, update, and delete with validation.
+- **Database Integration:** JPA + MySQL persistence.
+- **Templated UIs:** Thymeleaf + Bootstrap for clean interfaces.
+- **Media Support:** Image upload flows (Firebase Storage).
+- **Config Management:** Centralized settings in `application.properties`.
 
 ---
 
-## 📚 How to Use
+## 📌 Project Index
 
-Each project folder includes:
-- Its own `README.md` with setup, usage, and DB scripts
-- All code ready to run or extend
-- SQL for quick local database bootstrap
-
-**To run:**  
-1. Clone the repository  
-2. Follow project setup instructions  
-3. Launch with Maven or your favorite IDE
+| Project | Description |
+| --- | --- |
+| [TreeCapitator](./TreeCapitator) | Tree species management with images and MySQL persistence. |
+| [Product Manager CRUD](./Firebase-Project) | Product inventory with Firebase Storage, multilingual UI, and CRUD. |
+| [Firebase Project (Legacy)](./Firebase%20Project) | Earlier Firebase-based CRUD iteration. |
+| [Caso 2](./caso2) | Coursework case study covering Spring Boot/MVC basics. |
 
 ---
 
-## 🚀 Why This Section?
+## ▶️ How to Run
 
-- **Modern, professional stack:** Realistic Spring Boot web apps, easily extensible.
-- **Breadth of patterns:** Demonstrates service layers, JPA, custom repositories, form validation, and UI best practices.
-- **Ready to adapt:** Perfect starting point for real projects, coursework, or job interviews.
-
----
-
-*Explore each project folder for detailed instructions, code samples, and SQL scripts. Fork and make it your own!*
+1. Enter a project folder.
+2. Follow its `README.md` for setup (DB scripts, configs).
+3. Run with Maven or your IDE.

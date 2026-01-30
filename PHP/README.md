@@ -1,0 +1,25 @@
+# 🐘 PHP Projects
+
+![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+
+Backend exercises and CRUD-style apps built with PHP.
+These projects focus on forms, database operations, and classic MVC patterns.
+
+---
+
+## 📌 Project Index
+
+| Project | Description |
+| --- | --- |
+| [Barberia](./Barberia) | Appointment and services management for a barber shop. |
+| [Employee Audit](./Employee%20Audit) | Audit workflows with forms and data validation. |
+| [Gasolinera](./Gasolinera) | Gas station management and reporting features. |
+| [Universidad](./Universidad) | Academic management flows and CRUD examples. |
+| [Login](./Login) | Authentication/login practice with PHP sessions. |
+
+---
+
+## ▶️ How to Run
+
+Use a local PHP server (XAMPP/WAMP/Laragon) and configure your DB if needed.
