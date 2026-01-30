@@ -1,56 +1,35 @@
-# 🟨 JavaScript Project Section
+# 🟨 JavaScript Projects
 
-Welcome to my JavaScript project collection!  
-This section brings together a variety of front-end web applications and UI demos, each built with **vanilla JavaScript**, **HTML5**, and **CSS3**—no frameworks, no build tools, just pure, modern web.
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 
----
-
-## 🗂️ Project Index
-
-| Project                                  | Description                                                                              |
-|-------------------------------------------|------------------------------------------------------------------------------------------|
-| [Web Hero](./Web-Hero)                    | Grid-based landing page with an animated collapsible sidebar. Great for portfolios/SaaS.  |
-| [Collapsible Side Panel](./Acordion)    | Minimalist, responsive UI with a toggleable side navigation—ideal for dashboards.         |
-| [Rock Paper Scissors](./Rock-Paper-Scissors) | Classic browser game against the computer with a clean UI and responsive design.         |
+A set of vanilla JavaScript projects focused on DOM interaction, UI behavior, and responsive layouts.
+Great for showcasing front-end fundamentals without frameworks.
 
 ---
 
-## 🏆 Highlights
+## ✨ Highlights
 
-- **Responsive Layouts:** Modern CSS Grid and Flexbox ensure full adaptability on any device.
-- **Accessible, Clean UIs:** Hamburger menus, ARIA labels, and modular navigation.
-- **100% Vanilla JS:** No frameworks or external dependencies—great for learning and full control.
-- **Games & Demos:** Interactive logic for classic games and UI patterns.
-- **Starter Templates:** Easily adaptable for your own portfolio, dashboard, or mini-app.
-
----
-
-## 🔧 Technologies Used
-
-- HTML5
-- CSS3 (Flexbox, Grid, media queries)
-- JavaScript (ES6+)
+- **Framework-Free:** Pure JS + HTML/CSS.
+- **Interactive UIs:** Menus, games, and dynamic state updates.
+- **Responsive Design:** Flexbox/Grid layouts with clean styling.
+- **Easy to Run:** Open `index.html` directly.
 
 ---
 
-## 📚 How to Use
+## 📌 Project Index
 
-Each subfolder contains:
-- Its own `README.md` with setup and usage notes
-- Source code, CSS, and example HTML
-
-**To try a project:**  
-Open the folder, launch `index.html` in your browser. No build or server required.
-
----
-
-## 🚀 Why This Section?
-
-- **Foundational web skills:** Showcases practical, modern JavaScript and UI techniques.
-- **Ready to customize:** All projects serve as starters for more complex front-end work.
-- **Lightweight & fast:** Loads instantly, works offline, easy to extend for your needs.
+| Project | Description |
+| --- | --- |
+| [Web Hero](./Web-Hero) | Grid-based landing page with a collapsible sidebar. |
+| [Collapsible Side Panel](./Acordion) | Minimalist toggleable sidebar for dashboards. |
+| [Rock Paper Scissors](./Rock-Paper-Scissors) | Classic browser game vs. computer logic. |
+| [Student Evaluator](./StudentEvaluator) | Grade calculator UI for academic scoring. |
+| [Caso de Estudio #1](./Caso%20de%20Estudio%20%231%20-%20Ambiente%20Web%20Cliente%20Servidor) | Study case covering client-server web basics. |
 
 ---
 
-*Explore each project, adapt them to your style, and use as building blocks for your own portfolio or client work!*
+## ▶️ How to Run
 
+Open each folder and launch `index.html` in your browser.
