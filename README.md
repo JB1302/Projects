@@ -1,6 +1,7 @@
 # Jonathan Barrantes – Project Portfolio
 
 Welcome to my developer portfolio!  
+
 This repository is a curated collection of projects grouped by technology—from backend systems and automation tools to full-stack web apps, UI prototypes, and data/SQL work.
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
@@ -12,6 +13,7 @@ This repository is a curated collection of projects grouped by technology—from
 ![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)
 
+---
 ---
 
 ## 🛠️ Skills & Tools
@@ -156,6 +158,7 @@ Full details live in the [C# README](./Csharp/README.md).
 | [Lec02](./Csharp/Lec02) | Introductory C# labs and exercises. |
 | [MiPrimerLaboratorio](./Csharp/MiPrimerLaboratorio) | First lab work and fundamentals. |
 | [FullStackProject](./Csharp/FullStackProject) | Placeholder for future full-stack work. |
+
 
 ---
 
