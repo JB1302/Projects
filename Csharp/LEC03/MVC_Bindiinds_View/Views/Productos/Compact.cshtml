@@ -1,0 +1,12 @@
+﻿
+@model MVC_Bindiinds_View.Models.Producto
+
+@{
+    Layout = null;
+}
+
+// Vista compacta para mostrar un producto
+<div class="d-flex align-items-center gap-3">
+    <span class="fw-bold">@Model.Nombre</span>
+    <span class="badge bg-success">@Model.precio.ToString("C")</span>
+</div>

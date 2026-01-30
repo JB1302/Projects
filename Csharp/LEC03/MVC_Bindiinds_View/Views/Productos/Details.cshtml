@@ -1,0 +1,42 @@
+﻿@model MVC_Bindiinds_View.Models.Producto
+
+
+@{
+    ViewBag.Title = "Detalle de producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0"><i class="bi bi-box-seam"></i> @Model.Nombre</h4>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-borderless mb-0">
+            <tbody>
+                <tr>
+                    <th style="width: 150px;">ID:</th>
+                    <td>@Model.id</td>
+                </tr>
+                <tr>
+                    <th>Nombre:</th>
+                    <td>@Model.Nombre</td>
+                </tr>
+                <tr>
+                    <th>Precio:</th>
+                    <td>@Model.precio.ToString("C")</td>
+                </tr>
+                <tr>
+                    <th>Fecha de lanzamiento:</th>
+                    <td>@Model.ReleaseDate:dd/MM/yyyy</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer text-end">
+        @Html.ActionLink("Editar", "Details", new { id = Model.id, compact = true },
+                         new { @class = "btn btn-sm btn-outline-primary" })
+        @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-sm btn-secondary ms-2" })
+    </div>
+</div>

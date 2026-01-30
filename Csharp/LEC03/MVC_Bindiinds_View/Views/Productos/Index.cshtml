@@ -1,0 +1,11 @@
+﻿// Vista para mostrar una lista de productos
+@model IEnumerable<MVC_Bindiinds_View.Models.Producto> 
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach(var item in Model)
+        {
+            <div class="col">
+                @Html.Partial("_Card", item)
+            </div>
+        }
+    </div>

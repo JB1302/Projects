@@ -1,0 +1,15 @@
+﻿@model MVC_Bindiinds_View.Models.Producto
+
+
+<div class="card h-100">
+ 
+    <div class="card h-100">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Nombre</h5>
+            <p class="card-text">Precio: @Model.precio.ToString("C")</p>
+           
+            @Html.ActionLink(linkText: "Ver", actionName: "Details", new { id = Model.id, compact = true },
+                 new { @class = "btn btn-sm btn-outline-primary" })
+        </div>
+        </div>
+    </div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "About";
+
+    var items = new List<string> { "Manzana", "Pera", "Limon" };
+    var isLoggedIn = true;
+    var numero = 3;
+}
+
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <p>Use this area to provide additional information.</p>
+
+    <!--Para cada item en la lista items-->
+    <ul>
+
+        @foreach (var item in items)
+        {
+            <table class= "table table-striped">
+                <tr>
+                    <td>
+                        <!--Generar una fila con el nombre-->
+            <li>Nombre: @item</li>
+            </td>
+            </tr>
+            </table>
+        }
+    </ul>
+
+    <!--Cambiar un mensaje dependiendo del status de la variable-->
+    @if (isLoggedIn)
+    {
+        <p>El usuario está logueado.</p>
+    }
+    else
+    {
+        <p>El usuario no está logueado.</p>
+    }
+</main>

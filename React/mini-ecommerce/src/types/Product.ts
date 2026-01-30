@@ -8,7 +8,7 @@ export type Product = {
 	stock: number;
 
 	//Diferentes Categorias
-	category: "GPU" | "CPU" | "RAM" | "SSD" | "PSU";
+	category: string;
 
 	//Imagen Opcional+
 	imageUrl?: string;

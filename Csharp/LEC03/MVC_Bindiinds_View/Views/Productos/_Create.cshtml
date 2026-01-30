@@ -1,0 +1,24 @@
+﻿@model MVC_Bindiinds_View.Models.ViewModel.ProductoViewModels
+@{
+    ViewBag.Title = "Crear producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.price)
+        @Html.TextBoxFor(m => m.price, new { @class = "form-control", type = "number", step = "0.01" })
+        @Html.ValidationMessageFor(m => m.price, "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

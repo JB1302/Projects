@@ -1,22 +1,84 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { products } from "../data/Products";
+import type { Product } from "../types/Product";
+import { mapDummyToProduct } from "../api/dummyjsonAdapter";
+import type { DummyJsonProduct } from "../api/dummyjsonAdapter";
+import { useCart } from "../context/useCart";
 
 export default function ProductDetailPage() {
 	const { id } = useParams<{ id: string }>();
 
-	const product = useMemo(() => {
-		if (!id) return undefined;
-		return products.find((p) => p.id === id);
+	const { dispatch } = useCart();
+
+	const [product, setProduct] = useState<Product | null>(null);
+	const [loading, setLoading] = useState<boolean>(true);
+	const [error, setError] = useState<string | null>(null);
+
+	const [qty, setQty] = useState<number>(1);
+	const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+	useEffect(() => {
+		document.title = "Detalle del producto";
+	}, []);
+
+	useEffect(() => {
+		let cancelled = false;
+
+		const safe = (fn: () => void) => {
+			if (!cancelled) fn();
+		};
+
+		async function load() {
+			if (!id) {
+				safe(() => {
+					setError("Producto no encontrado");
+					setProduct(null);
+					setLoading(false);
+				});
+				return;
+			}
+
+			safe(() => {
+				setLoading(true);
+				setError(null);
+			});
+
+			try {
+				const res = await fetch(`https://dummyjson.com/products/${id}`);
+				if (!res.ok) throw new Error("Producto no encontrado");
+
+				const data: DummyJsonProduct = await res.json();
+				const mapped = mapDummyToProduct(data);
+
+				safe(() => {
+					setProduct(mapped);
+				});
+			} catch (e) {
+				safe(() => {
+					setError(e instanceof Error ? e.message : "Error cargando producto");
+					setProduct(null);
+				});
+			} finally {
+				safe(() => setLoading(false));
+			}
+		}
+
+		load();
+
+		return () => {
+			cancelled = true;
+		};
 	}, [id]);
 
-	const [qty, setQty] = useState(1);
-	const [selectedIndex, setSelectedIndex] = useState(0);
+	if (loading) {
+		return <p className="text-white-50">Cargando producto...</p>;
+	}
 
-	if (!product) {
+	if (error || !product) {
 		return (
 			<div className="text-white">
 				<h1>Producto no encontrado</h1>
+				<p className="text-white-50">{error ?? "No existe."}</p>
 				<Link to="/productos" className="btn btn-outline-light mt-3">
 					Volver
 				</Link>
@@ -24,13 +86,12 @@ export default function ProductDetailPage() {
 		);
 	}
 
-	// Galería (por ahora repetimos la misma imagen si solo tenés una)
+	// Galería: si viene una sola, repetimos para el layout
 	const images = product.imageUrl
 		? [product.imageUrl, product.imageUrl, product.imageUrl, product.imageUrl]
 		: [];
 
 	const mainImage = images[selectedIndex];
-
 	const inStock = product.stock > 0;
 
 	return (
@@ -55,7 +116,6 @@ export default function ProductDetailPage() {
 				<div className="col-12 col-lg-7">
 					<div className="card border-0 bg-white">
 						<div className="card-body">
-							{/* Imagen grande */}
 							<div
 								className="d-flex align-items-center justify-content-center"
 								style={{ minHeight: 380 }}
@@ -75,7 +135,6 @@ export default function ProductDetailPage() {
 								)}
 							</div>
 
-							{/* Miniaturas */}
 							{images.length > 0 && (
 								<div className="d-flex gap-2 mt-3 flex-wrap">
 									{images.map((img, idx) => (
@@ -116,34 +175,27 @@ export default function ProductDetailPage() {
 				<div className="col-12 col-lg-5">
 					<div className="card border-0 bg-white h-100">
 						<div className="card-body">
-							{/* Meta: marca */}
 							<div className="text-muted small mb-1">{product.brand}</div>
 
-							{/* Título */}
 							<h2 className="fw-bold text-dark mb-2">{product.name}</h2>
 
-							{/* rating fake (solo UI) */}
 							<div className="mb-2">
 								<span className="text-warning">★★★★☆</span>
 								<span className="text-muted small ms-2">(123)</span>
 							</div>
 
-							{/* Precio */}
 							<div className="mb-3">
 								<div className="fs-4 fw-bold text-primary">
 									₡{product.price}
 								</div>
 							</div>
 
-							{/* descripción placeholder */}
 							<p className="text-muted small">
-								Descripción breve del producto (placeholder). Aquí podés poner
-								beneficios, materiales, etc.
+								Descripción breve del producto (placeholder).
 							</p>
 
 							<hr />
 
-							{/* QTY + (opcional) otro selector */}
 							<div className="row g-3 align-items-end">
 								<div className="col-6">
 									<div className="text-muted small mb-1">QTY</div>
@@ -181,12 +233,17 @@ export default function ProductDetailPage() {
 								</div>
 							</div>
 
-							{/* Botones */}
 							<div className="d-flex gap-2 mt-4">
 								<button
 									className="btn btn-warning flex-grow-1"
 									disabled={!inStock}
-									onClick={() => alert(`Agregaste ${qty} x ${product.name}`)}
+									onClick={() =>
+										dispatch({
+											type: "ADD_ITEM",
+											product,
+											quantity: qty,
+										})
+									}
 								>
 									ADD TO CART
 								</button>
@@ -194,14 +251,12 @@ export default function ProductDetailPage() {
 								<button
 									className="btn btn-outline-secondary"
 									type="button"
-									onClick={() => alert("Favoritos (pendiente)")}
 									aria-label="Favorito"
 								>
 									♥
 								</button>
 							</div>
 
-							{/* Stock */}
 							<div className="mt-3">
 								<span
 									className={`badge ${inStock ? "bg-success" : "bg-danger"}`}
@@ -210,7 +265,6 @@ export default function ProductDetailPage() {
 								</span>
 							</div>
 
-							{/* Share placeholder */}
 							<div className="mt-4 text-muted small">
 								SHARE IT <span className="ms-2">ⓕ ⓧ ⓘ</span>
 							</div>

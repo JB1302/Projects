@@ -1,0 +1,29 @@
+﻿
+@model MV_HTTPS.Models.Persona
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>Página Index de Persona</p>
+
+<div class="form-group">
+    <!--Bloque para el ID -->
+    @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Id, new { @class = "form-control" })
+    </div>
+    <!--Bloque para el Nombre -->
+    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+    </div>
+    <!--Bloque para la Edad -->
+    @Html.LabelFor(model => model.Edad, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Edad, new { @class = "form-control" })
+    </div>
+</div>

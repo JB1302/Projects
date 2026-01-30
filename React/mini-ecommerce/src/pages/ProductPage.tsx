@@ -1,13 +1,11 @@
-import { useEffect, useMemo } from "react";
-import { products } from "../data/Products";
+import { useEffect, useMemo, useState } from "react";
 import Card from "../components/Card";
 import FilterBar from "../components/FilterBar";
 import Pagination from "../components/Pagination";
-//Para el Carrito
 import { useCart } from "../context/useCart";
-
-//Navegacion
 import { useNavigate, useSearchParams } from "react-router-dom";
+import type { Product } from "../types/Product";
+import { fetchProducts } from "../api/productsApi";
 
 export default function ProductPage() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -17,33 +15,66 @@ export default function ProductPage() {
 	const categoriaSeleccionada = searchParams.get("cat") ?? "Todas";
 	const textoBusqueda = searchParams.get("q") ?? "";
 
-	const pageSize = 20;
+	const pageSize = 12;
+
+	// ✅ state para API
+	const [items, setItems] = useState<Product[]>([]);
+	const [total, setTotal] = useState<number>(0);
+	const [loading, setLoading] = useState<boolean>(false);
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		document.title = "Productos";
 	}, []);
 
-	const categories = useMemo(() => {
-		return Array.from(
-			new Set(products.map((p) => p.category).filter(Boolean)),
-		).sort();
-	}, []);
+	// ✅ cargar desde API cuando cambie page/q/cat
+	useEffect(() => {
+		let cancelled = false;
 
-	const productosFiltrados = products.filter((p) => {
-		const coincideCategoria =
-			categoriaSeleccionada === "Todas" || p.category === categoriaSeleccionada;
+		const safe = (fn: () => void) => {
+			if (!cancelled) fn();
+		};
 
-		const coincideTexto =
-			textoBusqueda.trim() === "" ||
-			p.name.toLowerCase().includes(textoBusqueda.trim().toLowerCase());
+		async function load() {
+			safe(() => {
+				setLoading(true);
+				setError(null);
+			});
 
-		return coincideCategoria && coincideTexto;
-	});
+			try {
+				const result = await fetchProducts({
+					page: currentPage,
+					pageSize,
+					q: textoBusqueda,
+					cat: categoriaSeleccionada,
+				});
 
-	const totalItems = productosFiltrados.length;
-	const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+				safe(() => {
+					setItems(result.items);
+					setTotal(result.total);
+				});
+			} catch (e) {
+				safe(() => {
+					setError(e instanceof Error ? e.message : "Error desconocido");
+				});
+			} finally {
+				safe(() => {
+					setLoading(false);
+				});
+			}
+		}
 
-	// ✅ si el URL trae page inválida, lo corregimos (ej: filtros bajan totalPages)
+		load();
+
+		return () => {
+			cancelled = true;
+		};
+	}, [currentPage, pageSize, textoBusqueda, categoriaSeleccionada]);
+
+	// ✅ totalPages ahora viene de API (total)
+	const totalPages = Math.max(1, Math.ceil(total / pageSize));
+
+	// ✅ si el URL trae page inválida, lo corregimos
 	useEffect(() => {
 		if (currentPage < 1 || currentPage > totalPages) {
 			setSearchParams((prev) => {
@@ -55,18 +86,25 @@ export default function ProductPage() {
 	}, [currentPage, totalPages, setSearchParams]);
 
 	const safePage = Math.min(Math.max(currentPage, 1), totalPages);
-	const startIndex = (safePage - 1) * pageSize;
-	const productosPaginados = productosFiltrados.slice(
-		startIndex,
-		startIndex + pageSize,
-	);
+
+	// ✅ categorías: con API hay 2 opciones:
+	// - (A) Hardcode "Todas" + las tuyas
+	// - (B) Pedir categorías reales al API (mejor, lo hacemos luego)
+	//
+	// Por ahora, mantenemos un set desde lo cargado (página actual).
+	// Si querés categorías globales, hacemos fetch a /products/categories.
+	const categories = useMemo(() => {
+		return Array.from(
+			new Set(items.map((p) => p.category).filter(Boolean)),
+		).sort();
+	}, [items]);
 
 	// ✅ handlers que actualizan el URL
 	const handleCategoryChange = (value: string) => {
 		setSearchParams((prev) => {
 			const next = new URLSearchParams(prev);
 			next.set("cat", value);
-			next.set("page", "1"); // al cambiar filtro, volver a 1
+			next.set("page", "1");
 			return next;
 		});
 	};
@@ -75,7 +113,7 @@ export default function ProductPage() {
 		setSearchParams((prev) => {
 			const next = new URLSearchParams(prev);
 			next.set("q", value);
-			next.set("page", "1"); // al buscar, volver a 1
+			next.set("page", "1");
 			return next;
 		});
 	};
@@ -92,7 +130,6 @@ export default function ProductPage() {
 		setSearchParams({ page: "1", cat: "Todas", q: "" });
 	};
 
-	//Definir usarCarrito
 	const { dispatch } = useCart();
 	const navigate = useNavigate();
 
@@ -109,8 +146,18 @@ export default function ProductPage() {
 				onClear={limpiar}
 			/>
 
+			{/* Estado loading/error */}
+			{error && (
+				<div className="alert alert-danger">
+					<strong>Error:</strong> {error}
+				</div>
+			)}
+
+			{loading && <p className="text-white-50">Cargando productos...</p>}
+
+			{/* Grid */}
 			<div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3">
-				{productosPaginados.map((product) => (
+				{items.map((product) => (
 					<div key={product.id} className="col">
 						<Card
 							name={product.name}
@@ -122,7 +169,7 @@ export default function ProductPage() {
 							onAdd={() =>
 								dispatch({
 									type: "ADD_ITEM",
-									product: product,
+									product,
 									quantity: 1,
 								})
 							}
