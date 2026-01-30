@@ -4,20 +4,19 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
 ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?logo=thymeleaf&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
 
-A set of full-stack web applications built with Spring Boot, featuring layered architecture, CRUD workflows, and database integrations.
-Expect clean separation of controllers/services/repositories, responsive UIs, and production-style configuration.
+A collection of full-stack web applications built with Spring Boot. These projects emphasize layered architecture, clean CRUD workflows, and production-style configuration with MySQL persistence and responsive UI.
 
 ---
 
 ## ✨ Highlights
 
-- **Layered Architecture:** Controllers, services, repositories, and domain models.
-- **Full CRUD Flows:** Create, read, update, and delete with validation.
+- **Layered Architecture:** controllers, services, repositories, and domain models.
+- **Full CRUD Flows:** create, read, update, delete with validation.
 - **Database Integration:** JPA + MySQL persistence.
-- **Templated UIs:** Thymeleaf + Bootstrap for clean interfaces.
-- **Media Support:** Image upload flows (Firebase Storage).
-- **Config Management:** Centralized settings in `application.properties`.
+- **Templated UIs:** Thymeleaf + Bootstrap for fast, clean interfaces.
+- **Media Support:** Firebase Storage for image uploads in select projects.
 
 ---
 
@@ -35,5 +34,13 @@ Expect clean separation of controllers/services/repositories, responsive UIs, an
 ## ▶️ How to Run
 
 1. Enter a project folder.
-2. Follow its `README.md` for setup (DB scripts, configs).
-3. Run with Maven or your IDE.
+2. Follow its README for database setup and configuration.
+3. Run with Maven or your IDE:
+
+```sh
+./mvnw spring-boot:run
+```
+
+---
+
+Need Docker, a REST API version, or Postman collections? I can add them.

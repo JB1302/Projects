@@ -1,10 +1,10 @@
-# 🧱 HTML Projects
+# 🧱 HTML & CSS Projects
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![Responsive](https://img.shields.io/badge/Responsive-Layouts-22C55E?logo=css3&logoColor=white)
 
-Static prototypes and layout exercises built with HTML and CSS.
-Great for reviewing semantic structure, styling, and responsive layouts.
+Static prototypes and layout exercises built with HTML and CSS. This section focuses on semantic structure, clean styling, and responsive patterns without frameworks.
 
 ---
 
@@ -18,4 +18,8 @@ Great for reviewing semantic structure, styling, and responsive layouts.
 
 ## ▶️ How to Run
 
-Open `index.html` directly in your browser.
+Open `index.html` directly in your browser. No build step required.
+
+---
+
+Want a converted React/Bootstrap version? I can create one.

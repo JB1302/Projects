@@ -1,96 +1,103 @@
-SuperDuperApp – Gestión de Tareas con Login
+# SuperDuperApp — Task Manager with Login
 
-Aplicación web sencilla en PHP para gestionar tareas con sistema de
-registro y login de usuarios, usando MySQL y Bootstrap.
-Cada usuario puede crear, listar y eliminar sus propias tareas.
+![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 
-------------------------------------------------------------------------
+A simple PHP web app for managing tasks with user registration and login. Each user can create, list, and delete their own tasks. The project ships with a Docker + phpMyAdmin setup for local development.
 
-Funcionalidades
+---
 
--   Registro de usuarios (nombre, email y contraseña encriptada).
--   Inicio y cierre de sesión usando $_SESSION.
--   CRUD básico de tareas:
-    -   Crear tarea (título y descripción).
-    -   Listar tareas del usuario logueado.
-    -   Eliminar tarea.
--   Interfaz sencilla con Bootstrap 5.
--   Despliegue con Docker y Docker Compose.
--   Administración de la base de datos con phpMyAdmin.
+## ✅ Features
 
-------------------------------------------------------------------------
+- User registration (name, email, encrypted password).
+- Login/logout with `$_SESSION`.
+- Task CRUD for each user:
+  - Create task (title + description)
+  - List tasks
+  - Delete task
+- Bootstrap 5 UI for clean styling.
+- Docker Compose environment with MySQL + phpMyAdmin.
 
-Tecnologías utilizadas
+---
 
--   PHP 8.2 (Apache)
--   MySQL 8.0
--   Bootstrap 5
--   Docker y Docker Compose
--   phpMyAdmin
+## 🛠️ Tech Stack
 
-------------------------------------------------------------------------
+- PHP 8.2 (Apache)
+- MySQL 8.0
+- Bootstrap 5
+- Docker + Docker Compose
+- phpMyAdmin
 
-Requisitos previos
+---
 
--   Tener instalados:
-    -   Docker
-    -   Docker Compose
+## ✅ Requirements
 
-------------------------------------------------------------------------
+- Docker
+- Docker Compose
 
-Cómo ejecutar el proyecto
+---
 
-1.  Clona o descarga el repositorio en tu máquina.
+## ▶️ How to Run
 
-2.  En la raíz del proyecto (donde está docker-compose.yml), ejecuta:
+1. Clone or download this project.
+2. From the project root (where `docker-compose.yml` is located), run:
 
-        docker-compose up -d
+```sh
+docker-compose up -d
+```
 
-3.  Accede a la aplicación:
+3. Access the app:
 
-    -   Aplicación web: http://localhost:8080
-    -   phpMyAdmin: http://localhost:8081
+- Web app: `http://localhost:8080`
+- phpMyAdmin: `http://localhost:8081`
 
-4.  La base de datos se crea con:
+---
 
-        CREATE TABLE usuarios (
-          id INT AUTO_INCREMENT PRIMARY KEY,
-          nombre VARCHAR(100) NOT NULL,
-          email VARCHAR(150) NOT NULL UNIQUE,
-          password_hash VARCHAR(255) NOT NULL,
-          creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );
+## 🗄️ Database Schema
 
-        CREATE TABLE tareas (
-          id INT AUTO_INCREMENT PRIMARY KEY,
-          titulo VARCHAR(255) NOT NULL,
-          descripcion TEXT,
-          id_usuario INT NOT NULL,
-          creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-          FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
-            ON DELETE CASCADE
-        );
+```sql
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-    Usuario administrador:
+CREATE TABLE tareas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(255) NOT NULL,
+  descripcion TEXT,
+  id_usuario INT NOT NULL,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+    ON DELETE CASCADE
+);
 
-        INSERT INTO usuarios (nombre, email, password_hash)
-        VALUES ('Administrador', 'admin@admin.com',
-        '$2y$10$68Z1fW6kHL88KTObQ1Hjvu5rdRuoMOh.0kJfd2gwQD7PWHWDHX4xu');
+INSERT INTO usuarios (nombre, email, password_hash)
+VALUES (
+  'Administrador',
+  'admin@admin.com',
+  '$2y$10$68Z1fW6kHL88KTObQ1Hjvu5rdRuoMOh.0kJfd2gwQD7PWHWDHX4xu'
+);
+```
 
-------------------------------------------------------------------------
+---
 
-Estructura lógica
+## 🧭 Project Structure
 
--   index.php → Renderiza login, register o Tasks según sesión.
--   Views/ → Formularios y logout.
--   Controllers/ → Manejo de login/registro y CRUD de tareas.
--   Models/ → Acceso a BD con PDO.
--   Config/database.php → Conexión a MySQL.
+- `index.php` → Renders login, registration, or tasks based on session.
+- `Views/` → Forms and logout.
+- `Controllers/` → Auth + task CRUD.
+- `Models/` → PDO database access.
+- `Config/database.php` → MySQL connection.
 
-------------------------------------------------------------------------
+---
 
-Notas
+## 📝 Notes
 
--   Contraseñas encriptadas con password_hash().
--   Las tareas son por usuario (relación 1 a muchos).
--   Configurable mediante Docker.
+- Passwords are stored using `password_hash()`.
+- Tasks are scoped per user (one-to-many).
+- Docker configuration is easy to customize for other environments.

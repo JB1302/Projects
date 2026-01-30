@@ -1,84 +1,77 @@
-# 🛒 Product Manager – Spring Boot CRUD Demo
+# 🛒 Product Manager — Spring Boot CRUD Demo
 
-A modern, full-stack CRUD web application for managing products, built with **Spring Boot**, **MySQL**, **Spring Data JPA**, and a responsive frontend using **Thymeleaf**, **Bootstrap**, and **Firebase Storage** for image uploads.
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
+
+A modern, full-stack CRUD web application for managing products, built with **Spring Boot**, **MySQL**, **Spring Data JPA**, and a responsive UI using **Thymeleaf**, **Bootstrap**, and **Firebase Storage** for image uploads.
 
 ---
 
 ## 🗂️ Project Overview
 
-| Feature              | Description                                                           |
-|----------------------|-----------------------------------------------------------------------|
-| List Products        | View all products in a styled, sortable table                         |
-| Add Product          | Create new product with details, quantity, expiry, and image upload   |
-| Edit Product         | Update product info with form validation (modal/edit view)            |
-| Delete Product       | Remove a product with confirmation modal                              |
-| Image Support        | Upload and display product images using Firebase Storage              |
-| Multi-language UI    | All UI texts are externalized for easy localization                   |
-| SQL Bootstrap        | Ready-to-use scripts for DB, table, user, and sample data             |
+| Feature | Description |
+| --- | --- |
+| List Products | View all products in a styled, sortable table. |
+| Add Product | Create products with details, quantity, expiry, and image upload. |
+| Edit Product | Update product info with validation. |
+| Delete Product | Remove a product with confirmation modal. |
+| Image Support | Upload and display product images via Firebase Storage. |
+| Multi-language UI | Text labels centralized for easy localization. |
+| SQL Bootstrap | Ready-to-use scripts for DB, user, and demo data. |
 
 ---
 
 ## 🚀 Features
 
-- **Layered Architecture**: Clean separation of controller, service, and repository
-- **Thymeleaf Views**: Modular HTML fragments, multi-language messages, and DRY templates
-- **Bootstrap UI**: Responsive, mobile-first design and FontAwesome icons
-- **Firebase Storage**: Easy product image upload and retrieval
-- **Message Source**: All texts are defined in an external file for easy translation
-- **SQL Included**: Scripts for MySQL DB/user/table setup and sample records
+- **Layered Architecture**: clean controller, service, and repository layers.
+- **Thymeleaf Views**: modular HTML fragments and message bundles.
+- **Bootstrap UI**: responsive layout and FontAwesome icons.
+- **Firebase Storage**: image upload and retrieval per product.
+- **SQL Included**: MySQL schema + seed data provided.
 
 ---
 
 ## 📦 Technologies Used
 
-- **Backend:**  
-  - Java 17+  
-  - Spring Boot  
-  - Spring Data JPA  
-  - MySQL  
-  - Firebase Storage SDK (for images)
-- **Frontend:**  
-  - Thymeleaf  
-  - Bootstrap 5  
-  - FontAwesome
-- **Internationalization:**  
-  - messages.properties
-- **Build/Config:**  
-  - Maven  
-  - application.properties
+- **Backend:** Java 17+, Spring Boot, Spring Data JPA, MySQL
+- **Frontend:** Thymeleaf, Bootstrap 5, FontAwesome
+- **Storage:** Firebase Storage SDK
+- **Build/Config:** Maven, `application.properties`
 
 ---
 
 ## 📁 Project Structure
 
+```
 src/
 ├── main/
-│ ├── java/com/caso1/
-│ │ ├── controller/ # Web controllers (ProductoController)
-│ │ ├── service/ # Business logic (ProductoService, FirebaseStorageService)
-│ │ ├── domain/ # JPA entities (Producto)
-│ │ └── repository/ # JPA repositories (ProductoRepository)
-│ └── resources/
-│ ├── templates/ # Thymeleaf views & HTML fragments
-│ │ └── producto/
-│ ├── static/ # CSS, JS, images
-│ ├── messages.properties # UI texts/messages
-│ └── application.properties
-
+│   ├── java/com/caso1/
+│   │   ├── controller/
+│   │   ├── service/
+│   │   ├── domain/
+│   │   └── repository/
+│   └── resources/
+│       ├── templates/
+│       │   └── producto/
+│       ├── static/
+│       ├── messages.properties
+│       └── application.properties
+```
 
 ---
 
 ## ⚡ Getting Started
 
-1. **Clone the repository**  
+1. **Clone the repository**
     ```sh
     git clone https://github.com/yourusername/product-manager-springboot.git
     cd product-manager-springboot
     ```
 
-2. **Setup MySQL Database**  
-   Use the following script to create the schema, user, table, and insert demo data:
-
+2. **Setup MySQL Database**
     ```sql
     DROP SCHEMA IF EXISTS esquemaBD01;
     DROP USER IF EXISTS estudiante01;
@@ -104,8 +97,7 @@ src/
     ('Galleta Integral', '2025-09-20', 75, 'https://walmartcr.vtexassets.com/arquivos/ids/566123/Galleta-Integral-Pozuelo-Ajonjoli-Tosh-Libre-De-Az-car-252g-1-29039.jpg?v=638458983255730000');
     ```
 
-3. **Configure the application**  
-   Edit `src/main/resources/application.properties`:
+3. **Configure the application** (`src/main/resources/application.properties`)
     ```properties
     spring.application.name=caso01
     server.port=80
@@ -119,36 +111,18 @@ src/
     logging.level.org.type.descriptor.sql.BasicBinder=TRACE
     ```
 
-4. **Run the Application**  
+4. **Run the Application**
     ```sh
     ./mvnw spring-boot:run
     ```
-    Access the app at [http://localhost/producto/listado](http://localhost/producto/listado).
-
----
-
-## 👀 How It Works
-
-- **Product List:**  
-  View all products, including details, expiration, quantity, and image.  
-  Supports "edit" and "delete" actions with confirmation.
-
-- **Add/Edit Product:**  
-  Submit new products or update existing ones.  
-  Upload images, which are stored in Firebase Storage.
-
-- **Delete Product:**  
-  Remove products securely using a confirmation modal.
-
-- **Internationalization:**  
-  All texts/messages are defined in `messages.properties` for easy translation or updates.
 
 ---
 
 ## 🌍 Localization Example
 
-All UI strings are defined in `/src/main/resources/messages.properties`:
+All UI strings are centralized in `messages.properties` for easy translation:
 
+```
 producto.listado=Product List
 producto.detalle=Description
 producto.fecha_vence=Expiration Date
@@ -164,3 +138,8 @@ accion.confirmar=Confirm Deletion
 accion.confirmar.texto1=Are you sure you want to delete the product
 mensaje.eliminado=Product deleted successfully.
 mensaje.actualizado=Product updated successfully.
+```
+
+---
+
+**A production-style CRUD app with image uploads—perfect for a Spring Boot portfolio.**
