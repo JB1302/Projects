@@ -1,0 +1,73 @@
+﻿@model LoginAppV2.Models.Matricula
+
+@{
+    ViewBag.Title = "Detalle de matrícula";
+    bool esAdmin = User.IsInRole("Admin");
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Detalle de solicitud</h4>
+                </div>
+
+                <div class="card-body">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4">Fecha</dt>
+                        <dd class="col-sm-8">@Model.FechaMatricula.ToString("dd/MM/yyyy HH:mm")</dd>
+
+                        <dt class="col-sm-4">Curso</dt>
+                        <dd class="col-sm-8">
+                            <div class="fw-semibold">@(Model.Curso != null ? Model.Curso.Nombre : "")</div>
+                            <small class="text-muted">@(Model.Curso != null ? Model.Curso.Codigo : "")</small>
+                        </dd>
+
+                        @if (esAdmin)
+                        {
+                            <dt class="col-sm-4">Estudiante</dt>
+                            <dd class="col-sm-8">@(Model.Estudiante != null ? Model.Estudiante.NombreCompleto : "")</dd>
+
+                            <dt class="col-sm-4">Correo</dt>
+                            <dd class="col-sm-8">@(Model.Estudiante != null ? Model.Estudiante.Email : "")</dd>
+
+                            <dt class="col-sm-4">Teléfono</dt>
+                            <dd class="col-sm-8">@(Model.Estudiante != null ? Model.Estudiante.PhoneNumber : "")</dd>
+                        }
+
+                        <dt class="col-sm-4">Estado</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.Estado == LoginAppV2.Models.EstadoMatricula.EnRevision)
+                            {
+                                <span class="badge bg-warning text-dark">En revisión</span>
+                            }
+                            else if (Model.Estado == LoginAppV2.Models.EstadoMatricula.Aceptado)
+                            {
+                                <span class="badge bg-success">Aceptado</span>
+                            }
+                            else if (Model.Estado == LoginAppV2.Models.EstadoMatricula.Denegado)
+                            {
+                                <span class="badge bg-danger">Denegado</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="card-footer bg-white">
+                    <a href="@Url.Action("Index", "Matriculas")" class="btn btn-outline-secondary">
+                        Volver
+                    </a>
+
+                    @if (esAdmin)
+                    {
+                        <a href="@Url.Action("Edit", "Matriculas", new { id = Model.MatriculaId })"
+                           class="btn btn-primary">
+                            Modificar estado
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

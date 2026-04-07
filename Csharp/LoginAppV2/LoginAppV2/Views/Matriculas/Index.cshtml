@@ -1,0 +1,104 @@
+﻿@model IEnumerable<LoginAppV2.Models.Matricula>
+
+@{
+    ViewBag.Title = "Solicitudes de matrícula";
+    bool esAdmin = User.IsInRole("Admin");
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="mb-1">Solicitudes de matrícula</h2>
+            <p class="text-muted mb-0">
+                @(esAdmin ? "Visualiza y gestiona todas las solicitudes." : "Consulta el estado de tus solicitudes.")
+            </p>
+        </div>
+
+        @if (!esAdmin)
+        {
+            <a href="@Url.Action("Create", "Matriculas")" class="btn btn-primary">
+                Nueva solicitud
+            </a>
+        }
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            No hay solicitudes registradas.
+        </div>
+    }
+    else
+    {
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="ps-3">Fecha</th>
+                                <th>Curso</th>
+                                @if (esAdmin)
+                                {
+                                    <th>Estudiante</th>
+                                }
+                                <th>Estado</th>
+                                <th class="text-center pe-3">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="ps-3">@item.FechaMatricula.ToString("dd/MM/yyyy")</td>
+                                    <td>
+                                        <div class="fw-semibold">@(item.Curso != null ? item.Curso.Nombre : "")</div>
+                                        <small class="text-muted">@(item.Curso != null ? item.Curso.Codigo : "")</small>
+                                    </td>
+
+                                    @if (esAdmin)
+                                    {
+                                        <td>
+                                            <div class="fw-semibold">@(item.Estudiante != null ? item.Estudiante.NombreCompleto : "")</div>
+                                            <small class="text-muted">@(item.Estudiante != null ? item.Estudiante.Email : "")</small>
+                                        </td>
+                                    }
+
+                                    <td>
+                                        @if (item.Estado == LoginAppV2.Models.EstadoMatricula.EnRevision)
+                                        {
+                                            <span class="badge bg-warning text-dark">En revisión</span>
+                                        }
+                                        else if (item.Estado == LoginAppV2.Models.EstadoMatricula.Aceptado)
+                                        {
+                                            <span class="badge bg-success">Aceptado</span>
+                                        }
+                                        else if (item.Estado == LoginAppV2.Models.EstadoMatricula.Denegado)
+                                        {
+                                            <span class="badge bg-danger">Denegado</span>
+                                        }
+                                    </td>
+
+                                    <td class="text-center pe-3">
+                                        <a href="@Url.Action("Details", "Matriculas", new { id = item.MatriculaId })"
+                                           class="btn btn-sm btn-outline-secondary me-1">
+                                            Ver
+                                        </a>
+
+                                        @if (esAdmin)
+                                        {
+                                            <a href="@Url.Action("Edit", "Matriculas", new { id = item.MatriculaId })"
+                                               class="btn btn-sm btn-outline-primary">
+                                                Modificar
+                                            </a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>

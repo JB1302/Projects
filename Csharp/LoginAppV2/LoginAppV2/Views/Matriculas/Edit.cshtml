@@ -1,0 +1,55 @@
+﻿@model LoginAppV2.Models.Matricula
+
+@{
+    ViewBag.Title = "Modificar matrícula";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Modificar estado de la solicitud</h4>
+                </div>
+
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(m => m.MatriculaId)
+
+                        <div class="mb-3">
+                            <label class="form-label">Curso</label>
+                            <input type="text" class="form-control" value="@(Model.Curso != null ? Model.Curso.Nombre : "")" disabled />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Estudiante</label>
+                            <input type="text" class="form-control" value="@(Model.Estudiante != null ? Model.Estudiante.NombreCompleto : "")" disabled />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Fecha de solicitud</label>
+                            <input type="text" class="form-control" value="@Model.FechaMatricula.ToString("dd/MM/yyyy HH:mm")" disabled />
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(m => m.Estado, new { @class = "form-label" })
+                            @Html.EnumDropDownListFor(m => m.Estado, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Estado, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                            <a href="@Url.Action("Index", "Matriculas")" class="btn btn-outline-secondary">Cancelar</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

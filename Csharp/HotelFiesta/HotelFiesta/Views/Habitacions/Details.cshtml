@@ -1,0 +1,50 @@
+﻿@model HotelFiesta.Models.Habitacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Habitacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoHabitacion.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoHabitacion.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroHabitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroHabitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Piso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Piso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

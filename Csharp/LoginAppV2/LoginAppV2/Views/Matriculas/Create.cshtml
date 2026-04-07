@@ -1,0 +1,54 @@
+﻿@model LoginAppV2.Models.Matricula
+
+@{
+    ViewBag.Title = "Nueva solicitud de matrícula";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Nueva solicitud de matrícula</h4>
+                </div>
+
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="text-danger mb-3">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Fecha de solicitud</label>
+                            <input type="text" class="form-control" value="@DateTime.Now.ToString("dd/MM/yyyy HH:mm")" disabled />
+                            <small class="text-muted">La fecha real se registra automáticamente al guardar.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            @Html.LabelFor(model => model.CursoId, "Curso", htmlAttributes: new { @class = "form-label" })
+                            @Html.DropDownList("CursoId", null, "Seleccione un curso", new { @class = "form-select form-control" })
+                            @Html.ValidationMessageFor(model => model.CursoId, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Estado inicial</label>
+                            <input type="text" class="form-control" value="En revisión" disabled />
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+                            @Html.ActionLink("Volver", "Index", "Matriculas", null, new { @class = "btn btn-outline-secondary" })
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
