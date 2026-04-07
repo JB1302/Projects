@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EF_Demos.Models.Producto>
+
+@{
+    ViewBag.Title = "Lista de Productos";
+}
+
+<h2>Lista de Productos</h2>
+
+<p>
+    @Html.ActionLink("Agregar Nuevo Producto", "Create", null, new{@class = "btn btn-primary"})
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductoId }, new {@class="btn btn-warning" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductoId }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductoId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
